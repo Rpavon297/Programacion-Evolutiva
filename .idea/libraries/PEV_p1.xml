@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="PEV_p1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JMathIO.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JMathPlot.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JMathArray.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
