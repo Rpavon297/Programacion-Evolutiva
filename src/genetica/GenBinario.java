@@ -71,15 +71,11 @@ public class GenBinario extends Gen {
 	@Override
 	public void setGenotipo(double valor) {
 		// TODO Auto-generated method stub
-		if(valor < this.min)
-			valor = this.min;
-		if(valor > this.max)
-			valor = this.max;
-
 		if(valor < 0) {
 			this.neg = true;
 			valor = -valor;
-		}
+		}else this.neg = false;
+
 		int l = (int) (valor/this.prec);
 
 		String arr = Integer.toBinaryString(l);

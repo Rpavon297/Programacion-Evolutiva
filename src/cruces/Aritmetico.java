@@ -19,6 +19,8 @@ public class Aritmetico extends AlgoritmoCruce{
 		for(int i = 0; i < fenotipo1.size(); i++){
 			double media = (fenotipo1.get(i) + fenotipo2.get(i)) / 2;
 			hijo.get(i).setGenotipo(media);
+			if(hijo.get(i).getFenotipo() < hijo.get(i).getMin())
+				System.out.println("stop");
 		}
 		
 		this.hijos = new ArrayList<>();
