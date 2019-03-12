@@ -31,12 +31,21 @@ public class BLX extends AlgoritmoCruce {
 				hijo1.get(i).setGenotipo(cmin);
 				hijo2.get(i).setGenotipo(cmin);
 			}else{
+				double alfa,Ialfa,minI,maxI;
 
-				double alfa = ThreadLocalRandom.current().nextDouble(0, 1);
-				double Ialfa = (cmax - cmin) * alfa;
+				do {
+					alfa = ThreadLocalRandom.current().nextDouble(0, 1);
+					Ialfa = (cmax - cmin) * alfa;
 
-				hijo1.get(i).randomize(cmin - Ialfa, cmax + Ialfa);
-				hijo2.get(i).randomize(cmin - Ialfa, cmax + Ialfa);
+					minI = cmin - Ialfa;
+					maxI = cmax + Ialfa;
+
+					if(minI < hijo1.get(i).getMin()) minI = hijo1.get(i).getMin();
+					if(maxI > hijo1.get(i).getMax() || maxI < minI) maxI = hijo1.get(i).getMax();
+				}while(minI == maxI);
+
+				hijo1.get(i).randomize(minI, maxI);
+				hijo2.get(i).randomize(minI, maxI);
 			}
 		}
 		

@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1369f4ca-1098-4947-94de-2fe28aad16d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/genetica/Gen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/genetica/Gen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/genetica/GenBinario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/genetica/GenBinario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cruces/Aritmetico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/Aritmetico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Aritmetico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Aritmetico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/BLX.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/cruces/BLX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Monopunto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Monopunto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Multipunto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Multipunto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Uniforme.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Uniforme.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/genetica/GenReal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/genetica/GenReal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cruces/BLX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/BLX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cruces/Monopunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/Monopunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cruces/Multipunto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/Multipunto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cruces/Uniforme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/Uniforme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/genetica/GenBinario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/genetica/GenBinario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/genetica/GenReal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/genetica/GenReal.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,17 +23,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="135" selection-start-line="135" selection-end-line="135" />
+            <state relative-caret-position="113">
+              <caret line="137" selection-start-line="137" selection-end-line="137" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cruces/BLX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cruces/BLX.java">
+        <entry file="file://$PROJECT_DIR$/src/vista/Vista.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+            <state relative-caret-position="68">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -76,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cruces/Uniforme.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
+            <state relative-caret-position="162">
               <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
             </state>
           </provider>
@@ -97,17 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/genetica/GenBinario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/genetica/GenReal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+            <state relative-caret-position="113">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -132,10 +130,10 @@
         <option value="$PROJECT_DIR$/src/cruces/Aritmetico.java" />
         <option value="$PROJECT_DIR$/src/genetica/GenReal.java" />
         <option value="$PROJECT_DIR$/src/genetica/GenBinario.java" />
-        <option value="$PROJECT_DIR$/src/cruces/BLX.java" />
         <option value="$PROJECT_DIR$/src/cruces/Monopunto.java" />
         <option value="$PROJECT_DIR$/src/cruces/Multipunto.java" />
         <option value="$PROJECT_DIR$/src/cruces/Uniforme.java" />
+        <option value="$PROJECT_DIR$/src/cruces/BLX.java" />
       </list>
     </option>
   </component>
@@ -198,7 +196,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552397370977" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552398629555" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -251,7 +249,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552299536939</updated>
-      <workItem from="1552299538689" duration="6828000" />
+      <workItem from="1552299538689" duration="8103000" />
     </task>
     <task id="LOCAL-00001" summary="Iniciando rama local">
       <created>1552299773578</created>
@@ -274,11 +272,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552396116086</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Commiteando rama local">
+      <created>1552397428558</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552397428558</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6828000" />
+    <option name="totallyTimeSpent" value="8103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -290,7 +295,7 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -300,8 +305,8 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22258593" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32242227" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -321,19 +326,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Iniciando rama local" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iniciando rama local" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java</url>
-          <line>135</line>
-          <properties />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Commiteando rama local" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commiteando rama local" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
@@ -378,38 +372,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/genetica/GenBinario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cruces/BLX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cruces/FactoriaOperadores.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cruces/Monopunto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="20" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -429,8 +395,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cruces/Uniforme.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
+        <state relative-caret-position="162">
           <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/Monopunto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/Vista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/genetica/GenBinario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/BLX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
         </state>
       </provider>
     </entry>
