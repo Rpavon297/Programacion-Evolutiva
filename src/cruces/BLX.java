@@ -15,9 +15,12 @@ public class BLX extends AlgoritmoCruce {
 		
 		List<Double> fenotipo1 = padre1.getFenotipo();
 		List<Double> fenotipo2 = padre2.getFenotipo();
-		
-		List<Gen> hijo1 = new ArrayList<>(padre1.getGenes());
-		List<Gen> hijo2 = new ArrayList<>(padre1.getGenes());
+
+		Individuo h1 = new Individuo(padre1);
+		Individuo h2 = new Individuo(padre2);
+
+		List<Gen> hijo1 = h1.getGenes();
+		List<Gen> hijo2 = h2.getGenes();
 		
 		
 		for(int i = 0; i < hijo1.size(); i++){
