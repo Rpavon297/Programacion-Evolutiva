@@ -24,6 +24,9 @@ public class GenBinario extends Gen {
 	
 	@Override
 	public void randomize(double min, double max) {
+		this.max = max;
+		this.min = min;
+
 		Double aux = ThreadLocalRandom.current().nextDouble(min, max);
 		
 		int max_int = (int) (max/this.prec);

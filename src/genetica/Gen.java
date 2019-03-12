@@ -7,8 +7,12 @@ public abstract class Gen {
 	protected float prec;
 	protected boolean neg;
 	protected int tam_cod;
-	
+	protected double min;
+	protected double max;
+
 	public Gen(Gen nGen){
+		this.min = nGen.getMin();
+		this.max = nGen.getMax();
 		this.prec = nGen.getPrec();
 		this.neg = nGen.getNeg();
 		this.alelos = new ArrayList<Object>();	
@@ -35,6 +39,8 @@ public abstract class Gen {
 		
 		return ret;
 	}*/
+	public double getMin(){return this.min;}
+	public double getMax(){return this.max;}
 	public boolean getNeg(){return this.neg;}
 	public int getTam() {return this.alelos.size();}
 	public float getPrec() {return this.prec;}
