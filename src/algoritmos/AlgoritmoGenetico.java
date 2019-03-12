@@ -133,7 +133,7 @@ public class AlgoritmoGenetico {
 				elite = new Poblacion(poblacion.getPoblacion().subList(0, salvados+1));
 			
 			//Seleccionamos parte de la poblacion
-			Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.getPoblacion(), parametroTruncProb).getPobSeleccionada());
+			Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.copy(), parametroTruncProb).getPobSeleccionada());
 			//Cruzamos la poblacion seleccionada y reemplazamos los peores con los hijos obtenidos
 			poblacion.substitute(FactoriaOperadores.cruzarPoblacion(pobsel, cruce, parametroCruce));
 			//Aplicamos mutaciones

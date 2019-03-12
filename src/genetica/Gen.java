@@ -45,7 +45,10 @@ public abstract class Gen {
 	public int getTam() {return this.alelos.size();}
 	public float getPrec() {return this.prec;}
 	
-	public void setAlelos(List<Object> alelos) {this.alelos = alelos;}
+	public void setAlelos(List<Object> alelos) {
+		this.alelos = alelos;
+		if(this.getFenotipo() < this.min || this.getFenotipo() > this.max) this.neg = !this.neg;
+	}
 	public abstract void setGenotipo(double valor);
 	
 	public abstract double getFenotipo();

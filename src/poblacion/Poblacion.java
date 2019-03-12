@@ -16,6 +16,13 @@ public class Poblacion {
 		for(Individuo ind : pob)
 			this.poblacion.add(new Individuo(ind));
 	}
+	public List<Individuo> copy(){
+		List<Individuo> ret = new ArrayList<Individuo>();
+		for(Individuo ind: poblacion)
+			ret.add(new Individuo(ind));
+
+		return ret;
+	}
 	
 	public List<Individuo> getPoblacion() {
 		return poblacion;
