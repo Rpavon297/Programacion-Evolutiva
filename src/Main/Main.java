@@ -4,7 +4,8 @@ import vista.Vista;
 
 public class Main {
 	public static void main(String[] args) {
-		//COMENTARIO DE PRUEBA
+		System.out.println("Seleccione algoritmo a utilizar ([e]volutivo,[g]enetico): ");
+
 		Vista frame = new Vista();
 		frame.setVisible(true);
 	}
