@@ -12,12 +12,15 @@ public class Aritmetico extends AlgoritmoCruce{
 	public void cruzar(Individuo padre1, Individuo padre2, int param) {
 		List<Double> fenotipo1 = padre1.getFenotipo();
 		List<Double> fenotipo2 = padre2.getFenotipo();
-		
-		List<Gen> hijo = new ArrayList<>(padre1.getGenes());
+
+		Individuo copia_padre = new Individuo(padre1);
+		List<Gen> hijo = copia_padre.getGenes();
 		
 		for(int i = 0; i < fenotipo1.size(); i++){
 			double media = (fenotipo1.get(i) + fenotipo2.get(i)) / 2;
 			hijo.get(i).setGenotipo(media);
+			if(hijo.get(i).getFenotipo() < hijo.get(i).getMin())
+				System.out.println("stop");
 		}
 		
 		this.hijos = new ArrayList<>();

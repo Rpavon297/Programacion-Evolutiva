@@ -13,6 +13,8 @@ public class GenBinario extends Gen {
 	}
 	
 	public GenBinario(GenBinario nGen){
+		this.min = nGen.getMin();
+		this.max = nGen.getMax();
 		this.prec = nGen.getPrec();
 		this.neg = nGen.getNeg();
 		this.alelos = new ArrayList<Object>();	
@@ -24,6 +26,9 @@ public class GenBinario extends Gen {
 	
 	@Override
 	public void randomize(double min, double max) {
+		this.max = max;
+		this.min = min;
+
 		Double aux = ThreadLocalRandom.current().nextDouble(min, max);
 		
 		int max_int = (int) (max/this.prec);
@@ -69,7 +74,8 @@ public class GenBinario extends Gen {
 		if(valor < 0) {
 			this.neg = true;
 			valor = -valor;
-		}
+		}else this.neg = false;
+
 		int l = (int) (valor/this.prec);
 
 		String arr = Integer.toBinaryString(l);

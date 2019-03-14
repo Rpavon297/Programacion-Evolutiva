@@ -15,9 +15,12 @@ public class BLX extends AlgoritmoCruce {
 		
 		List<Double> fenotipo1 = padre1.getFenotipo();
 		List<Double> fenotipo2 = padre2.getFenotipo();
-		
-		List<Gen> hijo1 = new ArrayList<>(padre1.getGenes());
-		List<Gen> hijo2 = new ArrayList<>(padre1.getGenes());
+
+		Individuo h1 = new Individuo(padre1);
+		Individuo h2 = new Individuo(padre2);
+
+		List<Gen> hijo1 = h1.getGenes();
+		List<Gen> hijo2 = h2.getGenes();
 		
 		
 		for(int i = 0; i < hijo1.size(); i++){
@@ -28,12 +31,21 @@ public class BLX extends AlgoritmoCruce {
 				hijo1.get(i).setGenotipo(cmin);
 				hijo2.get(i).setGenotipo(cmin);
 			}else{
+				double alfa,Ialfa,minI,maxI;
 
-				double alfa = ThreadLocalRandom.current().nextDouble(0, 1);
-				double Ialfa = (cmax - cmin) * alfa;
+				do {
+					alfa = ThreadLocalRandom.current().nextDouble(0, 1);
+					Ialfa = (cmax - cmin) * alfa;
 
-				hijo1.get(i).randomize(cmin - Ialfa, cmax + Ialfa);
-				hijo2.get(i).randomize(cmin - Ialfa, cmax + Ialfa);
+					minI = cmin - Ialfa;
+					maxI = cmax + Ialfa;
+
+					if(minI < hijo1.get(i).getMin()) minI = hijo1.get(i).getMin();
+					if(maxI > hijo1.get(i).getMax() || maxI < minI) maxI = hijo1.get(i).getMax();
+				}while(minI == maxI);
+
+				hijo1.get(i).randomize(minI, maxI);
+				hijo2.get(i).randomize(minI, maxI);
 			}
 		}
 		

@@ -16,8 +16,11 @@ public class Multipunto extends AlgoritmoCruce {
 		
 		int nCruces = param;
 
-		List<Gen> genes1 = new ArrayList<>(padre1.getGenes());
-		List<Gen> genes2 = new ArrayList<>(padre2.getGenes());
+		Individuo h1 = new Individuo(padre1);
+		Individuo h2 = new Individuo(padre2);
+
+		List<Gen> genes1 = h1.getGenes();
+		List<Gen> genes2 = h2.getGenes();
 		
 		List<Object> alelos1 = padre1.getAlelos();
 		List<Object> alelos2 = padre2.getAlelos();

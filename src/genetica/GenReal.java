@@ -16,6 +16,8 @@ public class GenReal extends Gen {
 	}
 	
 	public GenReal(GenReal nGen){
+		this.min = nGen.getMax();
+		this.max = nGen.getMax();
 		this.prec = nGen.getPrec();
 		this.neg = nGen.getNeg();
 		this.alelos = new ArrayList<Object>();	
