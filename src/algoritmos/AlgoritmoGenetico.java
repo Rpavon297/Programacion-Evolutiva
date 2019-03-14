@@ -6,11 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import cruces.FactoriaOperadores;
-import funciones.Funcion;
-import funciones.Funcion1;
-import funciones.Funcion2;
-import funciones.Funcion3;
-import funciones.Funcion4;
+import funciones.*;
 import genetica.Gen;
 import genetica.GenBinario;
 import genetica.GenReal;
@@ -27,24 +23,9 @@ public class AlgoritmoGenetico {
 			boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce) {
 		
 		Poblacion poblacion = new Poblacion();
-		Funcion f;
 		
 		//Creamos la funcion correspondiente
-		switch (funcion) {
-		case 1:
-			f = new Funcion1();
-			break;
-		case 2:
-			f = new Funcion2();
-			break;
-		case 3:
-			f = new Funcion3();
-			break;
-		default:
-			f = new Funcion4();
-			break;
-		}
-		
+		Funcion f = crearFuncion(funcion);
 		//Inicializamos los parametros que necesitar� la funcion de mutacion
 		List<Double> paramsMutacion = new ArrayList<>();
 		paramsMutacion.add(probabilidadMutacion);
@@ -89,6 +70,29 @@ public class AlgoritmoGenetico {
 		mostrarSolucion(generaciones, funcion, precision);
 
 		return poblacion;
+	}
+
+	private Funcion crearFuncion(int funcion) {
+		Funcion f = new Funcion1();
+
+		switch (funcion) {
+			case 1:
+				f = new Funcion1();
+				break;
+			case 2:
+				f = new Funcion2();
+				break;
+			case 3:
+				f = new Funcion3();
+				break;
+			case 4:
+				f = new Funcion4();
+				break;
+			case 5:
+				f = new FuncionViajante();
+				break;
+		}
+		return f;
 	}
 
 	public void inicalizarPoblacion(Poblacion poblacion, int poblacionSize, double precision, int funcion, int paramsFuncion){
