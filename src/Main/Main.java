@@ -1,5 +1,6 @@
 package Main;
 
+import poblacion.Mapa;
 import vista.VistaGenetico;
 import java.util.Scanner;
 
