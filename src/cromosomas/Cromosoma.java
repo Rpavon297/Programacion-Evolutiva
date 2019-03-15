@@ -1,8 +1,8 @@
 package cromosomas;
 
-import java.util.*;
+import genetica.Gen;
 
-import cromosomas.Gen;
+import java.util.*;
 
 public class Cromosoma {
 	protected List<Gen> genes;

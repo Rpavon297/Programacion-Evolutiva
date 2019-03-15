@@ -9,6 +9,7 @@ import cruces.FactoriaOperadores;
 import funciones.*;
 import genetica.Gen;
 import genetica.GenBinario;
+import genetica.GenEntero;
 import genetica.GenReal;
 import poblacion.Individuo;
 import poblacion.Poblacion;
@@ -121,12 +122,14 @@ public class AlgoritmoGenetico {
 					genes.get(0).randomize(-10, 10);
 					genes.get(1).randomize(-10, 10);
 					break;
-				default:
+				case 4:
 					for(int j = 0; j < paramsFuncion; j++) {
 						genes.add(new GenReal((float) precision));
 						genes.get(j).randomize(0, Math.PI);
 					}
 					break;
+				case 5:
+					genes.add(new GenEntero());
 			}
 			poblacion.getPoblacion().add(new Individuo(genes));
 		}
