@@ -1,12 +1,29 @@
 package Main;
 
-import vista.Vista;
+import vista.VistaGenetico;
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Seleccione algoritmo a utilizar ([e]volutivo,[g]enetico): ");
+		Scanner scan = new Scanner(System.in);
+		String input = "";
+		boolean seguir = true;
 
-		Vista frame = new Vista();
-		frame.setVisible(true);
+		while(seguir) {
+			System.out.println("Introduzca una opcion ([g]enetica,[e]volutiva, [s]alir):");
+
+			input = scan.next();
+
+			if(input.equals("g") || input.equals("genetica")){
+				System.out.println("Cargando...");
+				VistaGenetico frame = new VistaGenetico();
+				frame.setVisible(true);
+				seguir = false;
+			}else if(input.equals("e") || input.equals("evolutiva")){
+				System.out.println("vista evolutiva");
+				seguir = false;
+			}else if(input.equals("s") || input.equals("salir"))
+				seguir = false;
+		}
 	}
 }

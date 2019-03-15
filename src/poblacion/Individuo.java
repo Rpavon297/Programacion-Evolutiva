@@ -7,7 +7,7 @@ import genetica.GenBinario;
 import genetica.GenReal;
 
 public class Individuo {
-	protected List<Gen> genes;
+	private List<Gen> genes;
 	private int nGenes;
 	private double acumulado;
 	private double fitness;
@@ -88,7 +88,5 @@ public class Individuo {
 
 	public void setFitnessAdaptado(double fitnessAdaptado) {
 		this.fitnessAdaptado = fitnessAdaptado;
-	}	
-	
-	
+	}
 }

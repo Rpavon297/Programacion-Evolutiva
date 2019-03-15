@@ -6,20 +6,16 @@ import java.util.Comparator;
 import java.util.List;
 
 import cruces.FactoriaOperadores;
-import funciones.Funcion;
-import funciones.Funcion1;
-import funciones.Funcion2;
-import funciones.Funcion3;
-import funciones.Funcion4;
+import funciones.*;
 import genetica.Gen;
 import genetica.GenBinario;
 import genetica.GenReal;
 import poblacion.Individuo;
 import poblacion.Poblacion;
 import selecciones.FactoriaSeleccion;
-import selecciones.Pair;
-import vista.Vista;
+import vista.VistaGenetico;
 
+@SuppressWarnings("ALL")
 public class AlgoritmoGenetico {
 
 	public Poblacion ejecutarAlgoritmo(int funcion, int paramsFuncion, int poblacionSize, int numGeneraciones,
@@ -27,133 +23,114 @@ public class AlgoritmoGenetico {
 			boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce) {
 		
 		Poblacion poblacion = new Poblacion();
-		Funcion f;
 		
 		//Creamos la funcion correspondiente
-		switch (funcion) {
-		case 1:
-			f = new Funcion1();
-			break;
-		case 2:
-			f = new Funcion2();
-			break;
-		case 3:
-			f = new Funcion3();
-			break;
-		default:
-			f = new Funcion4();
-			break;
-		}
-		
-		//Inicializamos los parametros que necesitará la funcion de mutacion
-
+		Funcion f = crearFuncion(funcion);
+		//Inicializamos los parametros que necesitarï¿½ la funcion de mutacion
 		List<Double> paramsMutacion = new ArrayList<>();
 		paramsMutacion.add(probabilidadMutacion);
 		paramsMutacion.addAll(f.getIntervalo());
 		
 		//Inicializamos la poblacion
-		for(int i = 0; i < poblacionSize; i++) {
-			List<Gen> genes = new ArrayList<>();
-			
-			switch (funcion) {
-			case 1:
-				genes.add(new GenBinario((float) precision));
-				genes.add(new GenBinario((float) precision));
-				genes.get(0).randomize(-3, 12.1);
-				genes.get(1).randomize(4.1, 5.8);
-				
-				break;
-			case 2:
-				genes.add(new GenBinario((float) precision));
-				genes.add(new GenBinario((float) precision));
-				
-				genes.get(0).randomize(-512, 512);
-				genes.get(1).randomize(-512, 512);
-				break;
-			case 3:
-				genes.add(new GenBinario((float) precision));
-				genes.add(new GenBinario((float) precision));
-				
-				genes.get(0).randomize(-10, 10);
-				genes.get(1).randomize(-10, 10);
-				break;
-			default:
-				for(int j = 0; j < paramsFuncion; j++) {
-					genes.add(new GenReal((float) precision));
-					genes.get(j).randomize(0, Math.PI);
-				}
-				break;
-			}
-			poblacion.getPoblacion().add(new Individuo(genes));
-		}
-		
-		double maxAbs = 0;
-		List<Double> sols = new ArrayList();
-		double[] mejorAbsoluto = new double[numGeneraciones];
-		double[] mejor = new double[numGeneraciones];
-		double[] media = new double[numGeneraciones];
-		double[] peor = new double[numGeneraciones];
-		
-		double fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
-		
+		inicalizarPoblacion(poblacion,poblacionSize,precision,funcion,paramsFuncion);
+
+		//Inicializamos el resto de datos necesarios para la ejecuciÃ³n
+		List<Generacion> generaciones = new ArrayList<>();
 		int salvados = (int) Math.ceil(poblacion.getPoblacion().size() * percentElitismo);
 		Poblacion elite = new Poblacion();
 		
 		//INICIO DEL ALGORITMO
+
+		//EVALUAR LA POBLACION INICIAL
+		double fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
+
 		for(int i = 0; i < numGeneraciones; i++) {
-			
-			//Calculamos maximo, minimo, media y maximo absoluto. La solucion será el maximo absoluto en la ultima generacion
-			double max = poblacion.getPoblacion().get(0).getFitness();
-			double min = poblacion.getPoblacion().get(poblacion.getPoblacion().size() -1).getFitness();
-			double med = fitnessTotal / poblacion.getPoblacion().size();
-			
-			if(funcion == 1) {
-				if(maxAbs < max) {
-					maxAbs = max;
-					sols = new ArrayList();
-					sols.addAll(poblacion.getPoblacion().get(0).getFenotipo());
-					
-				}
-			}
-			else {
-				if(maxAbs > max) {
-					maxAbs = max;
-					sols = new ArrayList();
-					sols.addAll(poblacion.getPoblacion().get(0).getFenotipo());
-				}
-			}
-			
-			mejorAbsoluto[i] = maxAbs;
-			mejor[i] = max;
-			media[i] = med;
-			peor[i] = min;
+
+			generaciones.add(new Generacion(poblacion, fitnessTotal));
 		
-			//Si hay elitismo, guardamos el porcentaje designado en una poblacion auxiliar
+			//GUARDAR ELITE
 			if(elitismo) 
 				elite = new Poblacion(poblacion.getPoblacion().subList(0, salvados+1));
 			
-			//Seleccionamos parte de la poblacion
-			Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.copy(), parametroTruncProb).getPobSeleccionada());
-			//Cruzamos la poblacion seleccionada y reemplazamos los peores con los hijos obtenidos
+			//SELECCIONAR POBLACION
+			Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.getPoblacion(), parametroTruncProb).getPobSeleccionada());
+			//CRUZAR POBLACION
 			poblacion.substitute(FactoriaOperadores.cruzarPoblacion(pobsel, cruce, parametroCruce));
-			//Aplicamos mutaciones
+			//MUTAR POBLACION
 			poblacion = new Poblacion(FactoriaOperadores.mutarPoblacion(poblacion, paramsMutacion).getPobMutada());
 			
-			//Actualizamos fitness y orden de nuestra poblacion
+			//EVALUAR POBLACION
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
-			//Introducimos la elite y volvemos a calcular fitness
+			//REINTRODUCIR ELITE
 			poblacion.substitute(elite);
+			//REEVALUAR CON LA ELITE
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 		}
-		
-		maxAbs = Math.floor(maxAbs / precision) * precision;
-		Vista.mostrarGrafica(mejorAbsoluto, mejor, media, peor,maxAbs,sols);
-		System.out.println("Solucion de la funcion: ");
-		System.out.println(maxAbs);
-		
+		//Se muestra el resultado por pantalla
+		mostrarSolucion(generaciones, funcion, precision);
+
 		return poblacion;
 	}
-	
+
+	private Funcion crearFuncion(int funcion) {
+		Funcion f = new Funcion1();
+
+		switch (funcion) {
+			case 1:
+				f = new Funcion1();
+				break;
+			case 2:
+				f = new Funcion2();
+				break;
+			case 3:
+				f = new Funcion3();
+				break;
+			case 4:
+				f = new Funcion4();
+				break;
+			case 5:
+				f = new FuncionViajante();
+				break;
+		}
+		return f;
+	}
+
+	public void inicalizarPoblacion(Poblacion poblacion, int poblacionSize, double precision, int funcion, int paramsFuncion){
+		for(int i = 0; i < poblacionSize; i++) {
+			List<Gen> genes = new ArrayList<>();
+
+			switch (funcion) {
+				case 1:
+					genes.add(new GenBinario((float) precision));
+					genes.add(new GenBinario((float) precision));
+					genes.get(0).randomize(-3, 12.1);
+					genes.get(1).randomize(4.1, 5.8);
+
+					break;
+				case 2:
+					genes.add(new GenBinario((float) precision));
+					genes.add(new GenBinario((float) precision));
+
+					genes.get(0).randomize(-512, 512);
+					genes.get(1).randomize(-512, 512);
+					break;
+				case 3:
+					genes.add(new GenBinario((float) precision));
+					genes.add(new GenBinario((float) precision));
+
+					genes.get(0).randomize(-10, 10);
+					genes.get(1).randomize(-10, 10);
+					break;
+				default:
+					for(int j = 0; j < paramsFuncion; j++) {
+						genes.add(new GenReal((float) precision));
+						genes.get(j).randomize(0, Math.PI);
+					}
+					break;
+			}
+			poblacion.getPoblacion().add(new Individuo(genes));
+		}
+	}
 	public void ordenarPoblacion(Poblacion poblacion){
 		Collections.sort(poblacion.getPoblacion(), new Comparator<Individuo>() {
 
@@ -186,5 +163,40 @@ public class AlgoritmoGenetico {
 		poblacion.setProbSeleccion(fitnessTotal);
 		
 		return fitnessTotalNA;
+	}
+
+	public void mostrarSolucion(List<Generacion> generaciones, int funcion, double precision){
+		int numGeneraciones = generaciones.size();
+		double maxAbs = 0;
+		List<Double> sols = new ArrayList();
+		double[] mejorAbsoluto = new double[numGeneraciones];
+		double[] mejor = new double[numGeneraciones];
+		double[] media = new double[numGeneraciones];
+		double[] peor = new double[numGeneraciones];
+
+		for (int i = 0;i < numGeneraciones; i++){
+			if(funcion == 1) {
+				if(maxAbs < generaciones.get(i).getMejor()) {
+					maxAbs = generaciones.get(i).getMejor();
+					sols = (generaciones.get(i).getSolucion());
+
+				}
+			}
+			else {
+				if(maxAbs > generaciones.get(i).getMejor()) {
+					maxAbs = generaciones.get(i).getMejor();
+					sols = (generaciones.get(i).getSolucion());
+				}
+			}
+			Generacion gen = generaciones.get(i);
+			mejorAbsoluto[i] = maxAbs;
+			mejor[i] = gen.getMejor();
+			media[i] = gen.getMedia();
+			peor[i] = gen.getPeor();
+		}
+
+		maxAbs = Math.floor(maxAbs / precision) * precision;
+
+		VistaGenetico.mostrarGrafica(mejorAbsoluto, mejor, media, peor,maxAbs,sols);
 	}
 }

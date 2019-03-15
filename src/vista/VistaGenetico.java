@@ -28,7 +28,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-public class Vista extends JFrame {
+public class VistaGenetico extends JFrame {
 
 	/**
 	 * 
@@ -58,8 +58,8 @@ public class Vista extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Vista() {
-		setTitle("Práctica 1");
+	public VistaGenetico() {
+		setTitle("Practica 1");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1064, 700);
@@ -83,20 +83,20 @@ public class Vista extends JFrame {
 		separator.setBounds(10, 63, 255, 2);
 		panelParams.add(separator);
 		
-		JLabel labelFuncion = new JLabel("Función:");
+		JLabel labelFuncion = new JLabel("Funcion:");
 		labelFuncion.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelFuncion.setBounds(10, 79, 61, 19);
 		panelParams.add(labelFuncion);
 		
 		combofuncion = new JComboBox<String>();
-		combofuncion.addItem("Función 1");
-		combofuncion.addItem("Función 2");
-		combofuncion.addItem("Función 3");
-		combofuncion.addItem("Función 4");
+		combofuncion.addItem("Funcion 1");
+		combofuncion.addItem("Funcion 2");
+		combofuncion.addItem("Funcion 3");
+		combofuncion.addItem("Funcion 4");
 		combofuncion.setBounds(81, 77, 184, 27);
 		panelParams.add(combofuncion);
 		
-		JLabel labelParamsFunc = new JLabel("Parametros Función:");
+		JLabel labelParamsFunc = new JLabel("Parametros Funcion:");
 		labelParamsFunc.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelParamsFunc.setBounds(10, 117, 158, 19);
 		panelParams.add(labelParamsFunc);
@@ -114,7 +114,7 @@ public class Vista extends JFrame {
 		separator_1.setBounds(10, 153, 255, 2);
 		panelParams.add(separator_1);
 		
-		JLabel labelPoblacion = new JLabel("Tamaño de la Población:");
+		JLabel labelPoblacion = new JLabel("TamaÃ±o de la Poblacion:");
 		labelPoblacion.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelPoblacion.setBounds(10, 166, 158, 19);
 		panelParams.add(labelPoblacion);
@@ -145,13 +145,13 @@ public class Vista extends JFrame {
 		separator_2.setBounds(10, 240, 255, 2);
 		panelParams.add(separator_2);
 		
-		JLabel labelSeleccion = new JLabel("Selección:");
+		JLabel labelSeleccion = new JLabel("Seleccion:");
 		labelSeleccion.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelSeleccion.setBounds(10, 253, 77, 19);
 		panelParams.add(labelSeleccion);
 		
 		comboSeleccion = new JComboBox<String>();
-		comboSeleccion.addItem("Estocástica Univ.");
+		comboSeleccion.addItem("Estocastica Univ.");
 		comboSeleccion.addItem("Ruleta");
 		comboSeleccion.addItem("Torneo");
 		comboSeleccion.addItem("Torneo Prob.");
@@ -165,7 +165,7 @@ public class Vista extends JFrame {
 		panelParams.add(labelCruce);
 		
 		comboCruce = new JComboBox<String>();
-		comboCruce.addItem("Arítmetico");
+		comboCruce.addItem("Aritmetico");
 		comboCruce.addItem("BLX");
 		comboCruce.addItem("Monopunto");
 		comboCruce.addItem("Multipunto");
@@ -217,7 +217,7 @@ public class Vista extends JFrame {
 		percent2.setBounds(249, 374, 16, 19);
 		panelParams.add(percent2);
 		
-		JLabel labelPrecision = new JLabel("Precisión:");
+		JLabel labelPrecision = new JLabel("Precision:");
 		labelPrecision.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelPrecision.setBounds(10, 412, 158, 19);
 		panelParams.add(labelPrecision);
@@ -319,7 +319,7 @@ public class Vista extends JFrame {
 		contentPane.add(panelNombres);
 		panelNombres.setLayout(null);
 		
-		JLabel labelNombres = new JLabel("Grupo 2 - Programación Evolutiva - Jesus Granizo y Roberto Pavon");
+		JLabel labelNombres = new JLabel("Grupo 2 - Programacion Evolutiva - Jesus Granizo y Roberto Pavon");
 		labelNombres.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNombres.setBounds(0, 0, 784, 21);
 		panelNombres.add(labelNombres);
@@ -533,7 +533,7 @@ public class Vista extends JFrame {
 			String text = "X" + String.valueOf(i) + ": " + String.valueOf(d);
 			textField_1.addItem(text);
 			
-		}
+		};
 		
 		panelMathPlot.addLegend("SOUTH");
 		panelMathPlot.addLinePlot("Mejor Absoluto", Color.MAGENTA, x, mejorAbs);
