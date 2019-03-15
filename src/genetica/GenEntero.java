@@ -6,6 +6,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GenEntero extends Gen {
 
+	private int foo;
+	private int faa;
 	@Override
 	public void randomize(double min, double max) {
 		int minint = (int) min;
