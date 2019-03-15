@@ -2,6 +2,7 @@ package Main;
 
 import poblacion.Mapa;
 import vista.VistaGenetico;
+
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +15,9 @@ public class Main {
 			System.out.println("Introduzca una opcion ([g]enetica,[e]volutiva, [s]alir):");
 
 			input = scan.next();
+			System.out.println(Mapa.calcularDistancias(Mapa.Almeria, Mapa.Madrid));
+			System.out.println(Mapa.calcularDistancias(Mapa.Madrid, Mapa.Almeria));
+
 
 			if(input.equals("g") || input.equals("genetica")){
 				System.out.println("Cargando...");

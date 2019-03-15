@@ -2,6 +2,35 @@ package poblacion;
 
 public class Mapa {
 
+    public final static int Albacete = 0;
+    public final static int Alicante = 1;
+    public final static int Almeria = 2;
+    public final static int Avila = 3;
+    public final static int Badajoz = 4;
+    public final static int Barcelona = 5;
+    public final static int Bilbao = 6;
+    public final static int Burgos = 7;
+    public final static int Caceres = 8;
+    public final static int Cadiz = 9;
+    public final static int Castellon = 10;
+    public final static int Ciudad_Real = 11;
+    public final static int Cordoba = 12;
+    public final static int A_corunia = 13;
+    public final static int Cuenca = 14;
+    public final static int Gerona = 15;
+    public final static int Granada = 16;
+    public final static int Guadalajara = 17;
+    public final static int Huelva = 18;
+    public final static int Huesca = 19;
+    public final static int Jaen = 20;
+    public final static int Leon = 21;
+    public final static int Lerida = 22;
+    public final static int Logronio = 23;
+    public final static int Lugo = 24;
+    public final static int Madrid = 25;
+    public final static int Malaga = 26;
+    public final static int Murcia = 27;
+
     public final static int[][] _DIST = {
 
             {},
@@ -61,7 +90,7 @@ public class Mapa {
             {150,  75,    219,   516,   675,   590,   796,   638,   654,   613,   306,   357,   444,   1010,  292,   690,   278,   459,   628,   611,   340,   734,   583,   694,   912,   401,   407}
     };
 
-    public static enum ciudades {Albacete, Alicante, Almeria, Avila, Badajoz, Barcelona, Bilbao,
-        Burgos, Caceres, Cadiz, Castellon, Ciudad_Real, Cordoba, A_corunia, Cuenca, Gerona, Granada,
-        Guadalajara, Huelva, Huesca, Jaen, Leon, Lerida, Logronio, lugo, Madrid, Malaga, Murcia};
+    public static int calcularDistancias(int origen, int destino){
+        return _DIST[Math.max(origen, destino)][Math.min(origen, destino)];
+    }
 }
