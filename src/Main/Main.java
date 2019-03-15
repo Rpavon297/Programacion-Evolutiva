@@ -10,7 +10,7 @@ public class Main {
 		boolean seguir = true;
 
 		while(seguir) {
-			System.out.println("Introduzca una opción ([g]enetica,[e]volutiva, [s]alir):");
+			System.out.println("Introduzca una opcion ([g]enetica,[e]volutiva, [s]alir):");
 
 			input = scan.next();
 

@@ -59,7 +59,7 @@ public class VistaGenetico extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaGenetico() {
-		setTitle("Pr�ctica 1");
+		setTitle("Practica 1");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1064, 700);
@@ -83,20 +83,20 @@ public class VistaGenetico extends JFrame {
 		separator.setBounds(10, 63, 255, 2);
 		panelParams.add(separator);
 		
-		JLabel labelFuncion = new JLabel("Funci�n:");
+		JLabel labelFuncion = new JLabel("Funcion:");
 		labelFuncion.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelFuncion.setBounds(10, 79, 61, 19);
 		panelParams.add(labelFuncion);
 		
 		combofuncion = new JComboBox<String>();
-		combofuncion.addItem("Funci�n 1");
-		combofuncion.addItem("Funci�n 2");
-		combofuncion.addItem("Funci�n 3");
-		combofuncion.addItem("Funci�n 4");
+		combofuncion.addItem("Funcion 1");
+		combofuncion.addItem("Funcion 2");
+		combofuncion.addItem("Funcion 3");
+		combofuncion.addItem("Funcion 4");
 		combofuncion.setBounds(81, 77, 184, 27);
 		panelParams.add(combofuncion);
 		
-		JLabel labelParamsFunc = new JLabel("Parametros Funci�n:");
+		JLabel labelParamsFunc = new JLabel("Parametros Funcion:");
 		labelParamsFunc.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelParamsFunc.setBounds(10, 117, 158, 19);
 		panelParams.add(labelParamsFunc);
@@ -114,7 +114,7 @@ public class VistaGenetico extends JFrame {
 		separator_1.setBounds(10, 153, 255, 2);
 		panelParams.add(separator_1);
 		
-		JLabel labelPoblacion = new JLabel("Tama�o de la Poblaci�n:");
+		JLabel labelPoblacion = new JLabel("Tamaño de la Poblacion:");
 		labelPoblacion.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelPoblacion.setBounds(10, 166, 158, 19);
 		panelParams.add(labelPoblacion);
@@ -145,13 +145,13 @@ public class VistaGenetico extends JFrame {
 		separator_2.setBounds(10, 240, 255, 2);
 		panelParams.add(separator_2);
 		
-		JLabel labelSeleccion = new JLabel("Selecci�n:");
+		JLabel labelSeleccion = new JLabel("Seleccion:");
 		labelSeleccion.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelSeleccion.setBounds(10, 253, 77, 19);
 		panelParams.add(labelSeleccion);
 		
 		comboSeleccion = new JComboBox<String>();
-		comboSeleccion.addItem("Estoc�stica Univ.");
+		comboSeleccion.addItem("Estocastica Univ.");
 		comboSeleccion.addItem("Ruleta");
 		comboSeleccion.addItem("Torneo");
 		comboSeleccion.addItem("Torneo Prob.");
@@ -165,7 +165,7 @@ public class VistaGenetico extends JFrame {
 		panelParams.add(labelCruce);
 		
 		comboCruce = new JComboBox<String>();
-		comboCruce.addItem("Ar�tmetico");
+		comboCruce.addItem("Aritmetico");
 		comboCruce.addItem("BLX");
 		comboCruce.addItem("Monopunto");
 		comboCruce.addItem("Multipunto");
@@ -217,7 +217,7 @@ public class VistaGenetico extends JFrame {
 		percent2.setBounds(249, 374, 16, 19);
 		panelParams.add(percent2);
 		
-		JLabel labelPrecision = new JLabel("Precisi�n:");
+		JLabel labelPrecision = new JLabel("Precision:");
 		labelPrecision.setFont(new Font("Yu Gothic UI", Font.BOLD, 14));
 		labelPrecision.setBounds(10, 412, 158, 19);
 		panelParams.add(labelPrecision);
@@ -319,7 +319,7 @@ public class VistaGenetico extends JFrame {
 		contentPane.add(panelNombres);
 		panelNombres.setLayout(null);
 		
-		JLabel labelNombres = new JLabel("Grupo 2 - Programaci�n Evolutiva - Jesus Granizo y Roberto Pavon");
+		JLabel labelNombres = new JLabel("Grupo 2 - Programacion Evolutiva - Jesus Granizo y Roberto Pavon");
 		labelNombres.setHorizontalAlignment(SwingConstants.CENTER);
 		labelNombres.setBounds(0, 0, 784, 21);
 		panelNombres.add(labelNombres);
