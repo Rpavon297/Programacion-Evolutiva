@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import cruces.FactoriaOperadores;
 import funciones.*;
@@ -129,7 +130,18 @@ public class AlgoritmoGenetico {
 					}
 					break;
 				case 5:
-					genes.add(new GenEntero());
+					Gen gen = new GenEntero();
+					gen.setGenotipo(0);
+					genes.add(gen);
+
+					for(int j = 0; j < 26; j++){
+						while(genes.contains(gen)){
+							int aux = ThreadLocalRandom.current().nextInt(0,26);
+							gen = new GenEntero();
+							gen.setGenotipo(aux);
+						}
+					}
+
 			}
 			poblacion.getPoblacion().add(new Individuo(genes));
 		}
