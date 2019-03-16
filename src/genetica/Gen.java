@@ -10,6 +10,7 @@ public abstract class Gen {
 	protected double min;
 	protected double max;
 
+
 	public Gen(Gen nGen){
 		this.min = nGen.getMin();
 		this.max = nGen.getMax();
@@ -50,7 +51,14 @@ public abstract class Gen {
 		if(this.getFenotipo() < this.min || this.getFenotipo() > this.max) this.neg = !this.neg;
 	}
 	public abstract void setGenotipo(double valor);
-	
+	public void setMin(double min) {
+		this.min = min;
+	}
+
+	public void setMax(double max) {
+		this.max = max;
+	}
+
 	public abstract double getFenotipo();
 	public abstract void randomize(double min, double max);
 	public abstract List<Object> getAlelosNum();

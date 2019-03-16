@@ -13,6 +13,7 @@ import genetica.GenBinario;
 import genetica.GenEntero;
 import genetica.GenReal;
 import poblacion.Individuo;
+import poblacion.Mapa;
 import poblacion.Poblacion;
 import selecciones.FactoriaSeleccion;
 import vista.Vista;
@@ -53,7 +54,6 @@ public class AlgoritmoGenetico {
 		double fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 
 		for(int i = 0; i < numGeneraciones; i++) {
-
 			generaciones.add(new Generacion(poblacion, fitnessTotal));
 		
 			//GUARDAR ELITE
@@ -65,8 +65,8 @@ public class AlgoritmoGenetico {
 			//CRUZAR POBLACION
 			poblacion.substitute(FactoriaOperadores.cruzarPoblacion(pobsel, cruce, parametroCruce));
 			//MUTAR POBLACION
-			poblacion = new Poblacion(FactoriaOperadores.mutarPoblacion(poblacion, paramsMutacion).getPobMutada());
-			
+			System.out.println(poblacion);
+			//poblacion = new Poblacion(FactoriaOperadores.mutarPoblacion(poblacion, paramsMutacion).getPobMutada());
 			//EVALUAR POBLACION
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 			//REINTRODUCIR ELITE
@@ -137,18 +137,24 @@ public class AlgoritmoGenetico {
 					break;
 				case 5:
 					Gen gen = new GenEntero();
-					gen.setGenotipo(0);
+					gen.setGenotipo((double)Mapa.Madrid);
+					gen.setMin(0);
+					gen.setMax(27);
 					genes.add(gen);
 
 					for(int j = 0; j < 26; j++){
 						while(genes.contains(gen)){
-							int aux = ThreadLocalRandom.current().nextInt(0,26);
 							gen = new GenEntero();
-							gen.setGenotipo(aux);
+							gen.randomize(0,27);
 						}
 						genes.add(gen);
 					}
 
+					gen = new GenEntero();
+					gen.setGenotipo((double)Mapa.Madrid);
+					gen.setMin(0);
+					gen.setMax(27);
+					genes.add(gen);
 			}
 			poblacion.getPoblacion().add(new Individuo(genes));
 		}

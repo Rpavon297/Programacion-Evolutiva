@@ -16,8 +16,9 @@ public class Main {
 		while(seguir) {
 			System.out.println("Introduzca una opcion ([g]enetica,[e]volutiva, [s]alir):");
 
-			input = scan.next();
-			System.out.println(Mapa.calcularDistancias(Mapa.Almeria, Mapa.Madrid));
+			//input = scan.next();
+			input = "e";
+			System.out.println(Mapa.calcularDistancias(Mapa.Almeria, Mapa.Murcia));
 
 
 			if(input.equals("g") || input.equals("genetica")){

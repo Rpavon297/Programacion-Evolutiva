@@ -11,26 +11,29 @@ public class FactoriaOperadores {
 		
 		AlgoritmoCruce cruce;
 		switch(algoritmo) {
-		case "Monopunto":
-			cruce = new Monopunto();
-			cruce.cruzar(padre1, padre2, param);
-			break;
-		case "Uniforme":
-			cruce = new Uniforme();
-			cruce.cruzar(padre1, padre2, param);
-			break;
-		case "Multipunto":
-			cruce = new Multipunto();
-			cruce.cruzar(padre1, padre2, param);
-			break;
-		case "BLX":
-			cruce = new BLX();
-			cruce.cruzar(padre1, padre2, param);
-			break;
-		default:
-			cruce = new Aritmetico();
-			cruce.cruzar(padre1, padre2, param);
-		}
+			case "Monopunto":
+				cruce = new Monopunto();
+				cruce.cruzar(padre1, padre2, param);
+				break;
+			case "Uniforme":
+				cruce = new Uniforme();
+				cruce.cruzar(padre1, padre2, param);
+				break;
+			case "Multipunto":
+				cruce = new Multipunto();
+				cruce.cruzar(padre1, padre2, param);
+				break;
+			case "BLX":
+				cruce = new BLX();
+				cruce.cruzar(padre1, padre2, param);
+				break;
+			case "PMX":
+				cruce = new PMX();
+				cruce.cruzar(padre1,padre2, param);
+			default:
+				cruce = new Aritmetico();
+				cruce.cruzar(padre1, padre2, param);
+			}
 		return cruce;
 	}
 
@@ -60,25 +63,4 @@ public class FactoriaOperadores {
 		return pob;
 	}
 
-	//VIEJO
-	/*public static Poblacion cruzarPoblacion(Poblacion poblacion, String Algoritmo, double probabilidad) {
-		
-		Poblacion pob = new Poblacion();
-		int aCruzar = 0;
-		Individuo j = null;
-		Object[] params = null;
-		
-		for(Individuo i : poblacion.getPoblacion()) {
-			if(probabilidad >= Math.random() * 1) {
-				aCruzar++;
-				if(aCruzar == 1)
-					j = i;
-				if(aCruzar == 2) {
-					aCruzar = 0;
-					pob.getPoblacion().addAll(getAlgoritmoCruce(Algoritmo, i, j, params).getHijos());
-				}
-			}
-		}
-		return pob;
-	}*/
 }

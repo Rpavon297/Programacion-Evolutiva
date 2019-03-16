@@ -33,7 +33,7 @@ public class Mapa {
 
     public final static int[][] _DIST = {
 
-            {},
+            {0},
 
             {171},
 
@@ -91,6 +91,7 @@ public class Mapa {
     };
 
     public static int calcularDistancias(int origen, int destino){
+        if(origen == destino) return 0;
         return _DIST[Math.max(origen, destino)][Math.min(origen, destino)];
     }
 }

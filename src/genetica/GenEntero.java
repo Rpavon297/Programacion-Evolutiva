@@ -7,8 +7,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GenEntero extends Gen {
 
 	public GenEntero(){}
+
 	public GenEntero(GenEntero nGen){
-		this.min = nGen.getMax();
+		this.min = nGen.getMin();
 		this.max = nGen.getMax();
 		this.prec = nGen.getPrec();
 		this.neg = nGen.getNeg();
@@ -21,12 +22,16 @@ public class GenEntero extends Gen {
 
 	@Override
 	public void randomize(double min, double max) {
+		this.min = min;
+		this.max = max;
+
 		setGenotipo((ThreadLocalRandom.current().nextInt((int)min, (int)max)));
 	}
 
 	@Override
 	public double getFenotipo() {
-		return (double) alelos.get(0);
+		double d = (int)alelos.get(0);
+		return d;
 	}
 
 	@Override
@@ -38,7 +43,7 @@ public class GenEntero extends Gen {
 	public void setGenotipo(double valor) {
 		this.alelos = new ArrayList<>();
 
-		this.alelos.add(valor);
+		this.alelos.add((int)valor);
 	}
 
 }

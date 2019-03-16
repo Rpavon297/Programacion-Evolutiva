@@ -83,4 +83,14 @@ public class Poblacion {
 			i--;
 		}
 	}
+
+	//Para debugear
+
+	public String toString(){
+		String cadena = "";
+		for (Individuo in : this.poblacion)
+			cadena += in.getFenotipo() + "\n";
+
+		return cadena;
+	}
 }

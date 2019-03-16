@@ -9,12 +9,12 @@ public class VistaDebugging extends Vista{
     public void test(){
         AlgoritmoGenetico algoritmo = new AlgoritmoGenetico(this);
 
-        int funcion = 1;
+        int funcion = 5;
         int paramsFuncion = 2;
         int poblacionSize = 100;
         int numGeneraciones = 100;
-        String seleccion = "Ruleta";
-        String cruce = "Monopunto";
+        String seleccion = "Estocastico";
+        String cruce = "PMX";
         double probabilidadCruce = 0.6;
         double probabilidadMutacion = 0.05;
         double precision = 0.01;

@@ -4,6 +4,7 @@ import java.util.*;
 
 import genetica.Gen;
 import genetica.GenBinario;
+import genetica.GenEntero;
 import genetica.GenReal;
 
 public class Individuo {
@@ -26,7 +27,8 @@ public class Individuo {
 				this.genes.add(new GenBinario((GenBinario)g));
 			else if(g instanceof GenReal)
 				this.genes.add(new GenReal((GenReal)g));
-			
+			else if(g instanceof GenEntero)
+				this.genes.add(new GenEntero((GenEntero)g));
 		}
 	}
 	
