@@ -28,7 +28,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-public class VistaGenetico extends JFrame {
+public class VistaGenetico extends Vista {
 
 	/**
 	 * 
@@ -508,12 +508,12 @@ public class VistaGenetico extends JFrame {
 		if(cruce == "Multipunto")
 			parametroCruce = (int) this.spinnerParamCruce.getValue();
 		
-		ag = new AlgoritmoGenetico();
+		ag = new AlgoritmoGenetico(this);
 		ag.ejecutarAlgoritmo(funcion, paramsFuncion, poblacionSize, numGeneraciones, seleccion, cruce, probabilidadCruce,
 				probabilidadMutacion, precision, elitismo, percentElitismo, parametroTruncProb, parametroCruce);
 	}
 
-	public static void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
+	public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
 		
 		panelMathPlot.removeAllPlots();
 		double [] x = new double[mejorAbs.length];

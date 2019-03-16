@@ -15,10 +15,16 @@ import genetica.GenReal;
 import poblacion.Individuo;
 import poblacion.Poblacion;
 import selecciones.FactoriaSeleccion;
+import vista.Vista;
+import vista.VistaEvolutivo;
 import vista.VistaGenetico;
 
 @SuppressWarnings("ALL")
 public class AlgoritmoGenetico {
+	private Vista vista;
+
+
+	public AlgoritmoGenetico(Vista vista){this.vista = vista;}
 
 	public Poblacion ejecutarAlgoritmo(int funcion, int paramsFuncion, int poblacionSize, int numGeneraciones,
 			String seleccion, String cruce, double probabilidadCruce, double probabilidadMutacion, double precision,
@@ -140,6 +146,7 @@ public class AlgoritmoGenetico {
 							gen = new GenEntero();
 							gen.setGenotipo(aux);
 						}
+						genes.add(gen);
 					}
 
 			}
@@ -212,6 +219,6 @@ public class AlgoritmoGenetico {
 
 		maxAbs = Math.floor(maxAbs / precision) * precision;
 
-		VistaGenetico.mostrarGrafica(mejorAbsoluto, mejor, media, peor,maxAbs,sols);
+		this.vista.mostrarGrafica(mejorAbsoluto, mejor, media, peor,maxAbs,sols);
 	}
 }

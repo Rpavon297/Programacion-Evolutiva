@@ -54,4 +54,11 @@ public abstract class Gen {
 	public abstract double getFenotipo();
 	public abstract void randomize(double min, double max);
 	public abstract List<Object> getAlelosNum();
+
+	public boolean equals(Object o){
+		if(!(o instanceof  Gen)) return false;
+
+		Gen g = (Gen)o;
+		return g.getFenotipo() == this.getFenotipo();
+	}
 }
