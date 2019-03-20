@@ -55,7 +55,7 @@ public class VistaEvolutivo extends Vista {
     /**
      * Create the frame.
      */
-    private VistaEvolutivo() {
+    public VistaEvolutivo() {
         setTitle("Practica 1");
         setResizable(false);
         setBounds(100, 100, 1064, 700);
