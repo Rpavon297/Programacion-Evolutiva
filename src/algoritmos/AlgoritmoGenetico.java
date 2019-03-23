@@ -196,7 +196,10 @@ public class AlgoritmoGenetico {
 
 	public void mostrarSolucion(List<Generacion> generaciones, int funcion, double precision){
 		int numGeneraciones = generaciones.size();
-		double maxAbs = 0;
+		double maxAbs = Double.POSITIVE_INFINITY;
+		if(funcion == 1)
+			maxAbs = Double.NEGATIVE_INFINITY;
+
 		List<Double> sols = new ArrayList();
 		double[] mejorAbsoluto = new double[numGeneraciones];
 		double[] mejor = new double[numGeneraciones];
@@ -214,7 +217,7 @@ public class AlgoritmoGenetico {
 			else {
 				if(maxAbs > generaciones.get(i).getMejor()) {
 					maxAbs = generaciones.get(i).getMejor();
-					sols = (generaciones.get(i).getSolucion());
+					sols = generaciones.get(i).getSolucion();
 				}
 			}
 			Generacion gen = generaciones.get(i);

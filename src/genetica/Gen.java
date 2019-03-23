@@ -69,4 +69,6 @@ public abstract class Gen {
 		Gen g = (Gen)o;
 		return g.getFenotipo() == this.getFenotipo();
 	}
+
+	public String toString(){return Double.toString(this.getFenotipo());}
 }

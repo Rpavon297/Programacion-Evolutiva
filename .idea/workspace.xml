@@ -2,19 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1369f4ca-1098-4947-94de-2fe28aad16d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/cruces/PMX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cruces/OX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/poblacion/Poblacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/poblacion/Poblacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cromosomas/Cromosoma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/AlgoritmoCruce.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Aritmetico.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/BLX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/FactoriaOperadores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/cruces/FactoriaOperadores.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Monopunto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Multipunto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Mutacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/MutacionBasica.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/cruces/Uniforme.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/funciones/Funcion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/funciones/Funcion1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/funciones/Funcion2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/funciones/Funcion3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/funciones/Funcion4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/genetica/Gen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PEV_p1/genetica/Gen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/genetica/GenBinario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/genetica/GenReal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/AlgoritmoSeleccion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/EstocasticoUniversal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/FactoriaSeleccion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/Pair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/Ruleta.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/Torneo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/TorneoProb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PEV_p1/selecciones/Truncamiento.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cruces/AlgoritmoCruce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/AlgoritmoCruce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cruces/FactoriaOperadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/FactoriaOperadores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/funciones/FuncionViajante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/funciones/FuncionViajante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cruces/PMX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cruces/PMX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/genetica/Gen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/genetica/Gen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/genetica/GenEntero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/genetica/GenEntero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/poblacion/Individuo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/poblacion/Individuo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/poblacion/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/poblacion/Mapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/poblacion/Poblacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/poblacion/Poblacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vista/VistaDebugging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/VistaDebugging.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,64 +48,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="189" selection-start-line="189" selection-end-line="189" />
+            <state relative-caret-position="204">
+              <caret line="197" selection-start-line="197" selection-end-line="197" />
               <folding>
-                <element signature="e#477#501#0" expanded="true" />
+                <element signature="e#529#553#0" expanded="true" />
+                <element signature="method#crearFuncion#0;class#AlgoritmoGenetico#0" />
+                <element signature="method#inicalizarPoblacion#0;class#AlgoritmoGenetico#0" />
+                <element signature="method#ordenarPoblacion#0;class#AlgoritmoGenetico#0" />
+                <element signature="method#actualizarPoblacion#0;class#AlgoritmoGenetico#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vista/VistaDebugging.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/genetica/Gen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1045">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/genetica/GenEntero.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/selecciones/EstocasticoUniversal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cruces/PMX.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+            <state relative-caret-position="315">
+              <caret line="74" column="8" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="76" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,12 +93,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/algoritmos/Generacion.java">
+        <entry file="file://$PROJECT_DIR$/src/poblacion/Individuo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" selection-start-line="16" selection-end-line="17" />
+            <state relative-caret-position="85">
+              <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+              <folding>
+                <element signature="method#Individuo#0;class#Individuo#0" />
+                <element signature="e#1833#1834#0" expanded="true" />
+                <element signature="e#1929#1930#0" expanded="true" />
+                <element signature="e#1997#1998#0" expanded="true" />
+                <element signature="e#2101#2102#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cruces/FactoriaOperadores.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cruces/OX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#211#242#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,19 +143,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cruces/Monopunto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+              <folding>
+                <element signature="method#cruzar#0;class#Monopunto#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cruces/Multipunto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
+            <state relative-caret-position="-705">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/poblacion/Mapa.java">
+        <entry file="file://$PROJECT_DIR$/src/cruces/AlgoritmoCruce.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+            <state relative-caret-position="145">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#201#202#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/vista/VistaDebugging.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,6 +201,7 @@
       <find>fitnessTotal</find>
       <find>probabil</find>
       <find>25</find>
+      <find>system</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,21 +215,29 @@
         <option value="$PROJECT_DIR$/src/algoritmos/Generacion.java" />
         <option value="$PROJECT_DIR$/src/vista/Vista.java" />
         <option value="$PROJECT_DIR$/src/vista/VistaGenetico.java" />
-        <option value="$PROJECT_DIR$/src/vista/VistaEvolutivo.java" />
         <option value="$PROJECT_DIR$/src/funciones/FuncionViajante.java" />
-        <option value="$PROJECT_DIR$/src/Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/cruces/AlgoritmoCruce.java" />
-        <option value="$PROJECT_DIR$/src/cruces/FactoriaOperadores.java" />
-        <option value="$PROJECT_DIR$/src/vista/VistaDebugging.java" />
-        <option value="$PROJECT_DIR$/src/poblacion/Individuo.java" />
-        <option value="$PROJECT_DIR$/src/genetica/Gen.java" />
         <option value="$PROJECT_DIR$/src/poblacion/Poblacion.java" />
         <option value="$PROJECT_DIR$/src/poblacion/Mapa.java" />
         <option value="$PROJECT_DIR$/src/genetica/GenEntero.java" />
-        <option value="$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java" />
+        <option value="$PROJECT_DIR$/src/vista/VistaEvolutivo.java" />
+        <option value="$PROJECT_DIR$/src/vista/VistaInicial.java" />
+        <option value="$PROJECT_DIR$/src/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/genetica/Gen.java" />
         <option value="$PROJECT_DIR$/src/cruces/PMX.java" />
+        <option value="$PROJECT_DIR$/src/poblacion/Individuo.java" />
+        <option value="$PROJECT_DIR$/src/cruces/OX.java" />
+        <option value="$PROJECT_DIR$/src/cruces/AlgoritmoCruce.java" />
+        <option value="$PROJECT_DIR$/src/cruces/FactoriaOperadores.java" />
+        <option value="$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java" />
+        <option value="$PROJECT_DIR$/src/vista/VistaDebugging.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-5" />
@@ -183,51 +251,58 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="algoritmos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="cruces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="funciones" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="genetica" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="poblacion" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="selecciones" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="vista" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -235,14 +310,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552769161418" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553337995362" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -346,13 +420,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18337000" />
+    <option name="totallyTimeSpent" value="33542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26012793" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -360,11 +434,10 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Image Layers" order="7" />
-      <window_info anchor="bottom" id="Duplicate detector" weight="0.32900432" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50108224" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.45670995" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13747954" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.049099836" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -373,17 +446,50 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32900432" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3289689" />
+      <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Learn" order="5" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.24962178" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="4" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="bottom" id="Find" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32242227" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.39934534" />
+      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="right" id="Maven" order="0" />
+      <window_info anchor="right" id="Palette" order="1" />
+      <window_info anchor="right" id="Capture Analysis" order="2" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -404,21 +510,47 @@
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java</url>
+          <line>231</line>
+          <properties />
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java</url>
+          <line>229</line>
+          <properties />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java</url>
+          <line>219</line>
+          <properties />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="h1" />
+        <watch expression="padre2" />
+        <watch expression="padre2" language="JAVA" />
+        <watch expression="poblacion.poblacion.get(0)" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/genetica/GenReal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="425">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/genetica/GenBinario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+        <state relative-caret-position="493">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -440,16 +572,6 @@
           <folding>
             <element signature="e#11135#11136#0" expanded="true" />
             <element signature="e#11160#11161#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/VistaEvolutivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -482,31 +604,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="576" selection-start-line="576" selection-end-line="576" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_65/src.zip!/java/util/ArrayList.java" />
     <entry file="file://$PROJECT_DIR$/src/funciones/Funcion1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cruces/Monopunto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="41" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="20" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -535,30 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/poblacion/Individuo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cruces/AlgoritmoCruce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="79" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cruces/FactoriaOperadores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/selecciones/Torneo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -573,41 +651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/funciones/FuncionViajante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/poblacion/Poblacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/poblacion/Mapa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cruces/Mutacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cruces/Multipunto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -618,37 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/genetica/Gen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/genetica/GenEntero.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/VistaDebugging.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="189" selection-start-line="189" selection-end-line="189" />
-          <folding>
-            <element signature="e#477#501#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -662,10 +682,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cromosomas/Cromosoma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/VistaInicial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/VistaEvolutivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="438" lean-forward="true" selection-start-line="438" selection-end-line="502" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#12272#12273#0" expanded="true" />
+            <element signature="e#12318#12319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/BLX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/genetica/Gen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="69" column="15" lean-forward="true" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/funciones/FuncionViajante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/poblacion/Poblacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="47" column="25" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/poblacion/Individuo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+          <folding>
+            <element signature="method#Individuo#0;class#Individuo#0" />
+            <element signature="e#1833#1834#0" expanded="true" />
+            <element signature="e#1929#1930#0" expanded="true" />
+            <element signature="e#1997#1998#0" expanded="true" />
+            <element signature="e#2101#2102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/Multipunto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-705">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/Mutacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/Monopunto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="71" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+          <folding>
+            <element signature="method#cruzar#0;class#Monopunto#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/FactoriaOperadores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/OX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#211#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cruces/AlgoritmoCruce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#201#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algoritmos/AlgoritmoGenetico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+          <folding>
+            <element signature="e#529#553#0" expanded="true" />
+            <element signature="method#crearFuncion#0;class#AlgoritmoGenetico#0" />
+            <element signature="method#inicalizarPoblacion#0;class#AlgoritmoGenetico#0" />
+            <element signature="method#ordenarPoblacion#0;class#AlgoritmoGenetico#0" />
+            <element signature="method#actualizarPoblacion#0;class#AlgoritmoGenetico#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cruces/PMX.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+        <state relative-caret-position="315">
+          <caret line="74" column="8" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="76" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/VistaDebugging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

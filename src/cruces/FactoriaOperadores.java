@@ -30,6 +30,11 @@ public class FactoriaOperadores {
 			case "PMX":
 				cruce = new PMX();
 				cruce.cruzar(padre1,padre2, param);
+				break;
+			case "OX":
+				cruce = new OX();
+				cruce.cruzar(padre1,padre2,param);
+				break;
 			default:
 				cruce = new Aritmetico();
 				cruce.cruzar(padre1, padre2, param);

@@ -32,9 +32,7 @@ public class Individuo {
 		}
 	}
 	
-	public Individuo(List<Gen> genes){
-		this.genes = genes;
-	}
+	public Individuo(List<Gen> genes){ this.genes = genes; }
 	
 	
 	public List<Double> getFenotipo(){
@@ -47,7 +45,7 @@ public class Individuo {
 	
 	public List<Object> getAlelos(){
 		List<Object> alelos = new ArrayList<>();
-				
+
 		for(Gen g : this.genes) 
 			alelos.addAll(g.getAlelos());
 		

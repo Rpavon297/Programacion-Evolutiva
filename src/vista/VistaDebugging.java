@@ -28,5 +28,6 @@ public class VistaDebugging extends Vista{
     @Override
     public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
         System.out.println(solucion);
+        System.out.println(sol);
     }
 }
