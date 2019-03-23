@@ -504,8 +504,9 @@ public class VistaGenetico extends Vista {
 		if(cruce == "Multipunto")
 			parametroCruce = (int) this.spinnerParamCruce.getValue();
 
+		String mutacion = "MutacionBasica";
 		ag = new AlgoritmoGenetico(this);
-		ag.ejecutarAlgoritmo(funcion, paramsFuncion, poblacionSize, numGeneraciones, seleccion, cruce, probabilidadCruce,
+		ag.ejecutarAlgoritmo(funcion, paramsFuncion, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
 				probabilidadMutacion, precision, elitismo, percentElitismo, parametroTruncProb, parametroCruce);
 	}
 

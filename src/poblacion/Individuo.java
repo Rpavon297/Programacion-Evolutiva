@@ -89,4 +89,8 @@ public class Individuo {
 	public void setFitnessAdaptado(double fitnessAdaptado) {
 		this.fitnessAdaptado = fitnessAdaptado;
 	}
+
+    public void setGenes(List<Gen> genes) {
+		this.genes = genes;
+    }
 }

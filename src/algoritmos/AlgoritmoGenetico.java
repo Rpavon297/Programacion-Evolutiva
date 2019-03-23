@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 import cruces.FactoriaOperadores;
 import funciones.*;
@@ -17,8 +16,6 @@ import poblacion.Mapa;
 import poblacion.Poblacion;
 import selecciones.FactoriaSeleccion;
 import vista.Vista;
-import vista.VistaEvolutivo;
-import vista.VistaGenetico;
 
 @SuppressWarnings("ALL")
 public class AlgoritmoGenetico {
@@ -28,8 +25,8 @@ public class AlgoritmoGenetico {
 	public AlgoritmoGenetico(Vista vista){this.vista = vista;}
 
 	public Poblacion ejecutarAlgoritmo(int funcion, int paramsFuncion, int poblacionSize, int numGeneraciones,
-			String seleccion, String cruce, double probabilidadCruce, double probabilidadMutacion, double precision,
-			boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce) {
+									   String seleccion, String cruce, String mutacion, double probabilidadCruce, double probabilidadMutacion, double precision,
+									   boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce) {
 		
 		Poblacion poblacion = new Poblacion();
 		
@@ -66,7 +63,7 @@ public class AlgoritmoGenetico {
 			poblacion.substitute(FactoriaOperadores.cruzarPoblacion(pobsel, cruce, parametroCruce));
 			//MUTAR POBLACION
 			System.out.println(poblacion);
-			//poblacion = new Poblacion(FactoriaOperadores.mutarPoblacion(poblacion, paramsMutacion).getPobMutada());
+			poblacion = new Poblacion(FactoriaOperadores.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
 			//EVALUAR POBLACION
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 			//REINTRODUCIR ELITE

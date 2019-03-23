@@ -42,9 +42,24 @@ public class FactoriaOperadores {
 		return cruce;
 	}
 
-	public static Mutacion mutarPoblacion(Poblacion poblacion, List<Double> params) {
+	public static Mutacion getAlgoritmoMutacion(String mutacion){
+		Mutacion mut;
+		switch (mutacion){
+			case "MutacionBasica":
+				mut = new MutacionBasica();
+				break;
+			default:
+				mut = new MutacionInsercion();
+				break;
+		}
+		return mut;
+
+	}
+
+
+	public static Mutacion mutarPoblacion(String nmutacion, Poblacion poblacion, List<Double> params) {
 		
-		Mutacion mutacion = new MutacionBasica();
+		Mutacion mutacion = getAlgoritmoMutacion(nmutacion);
 		mutacion.mutar(poblacion.getPoblacion(), params);
 		return mutacion;
 	}

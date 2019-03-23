@@ -14,7 +14,8 @@ public class VistaDebugging extends Vista{
         int poblacionSize = 100;
         int numGeneraciones = 100;
         String seleccion = "Estocastico";
-        String cruce = "PMX";
+        String cruce = "OX";
+        String mutacion = "MutacionInsercion";
         double probabilidadCruce = 0.6;
         double probabilidadMutacion = 0.05;
         double precision = 0.01;
@@ -22,7 +23,8 @@ public class VistaDebugging extends Vista{
         double percentElitismo = 0.1;
         double parametroTruncProb = 0.1;
         int parametroCruce = 0;
-        algoritmo.ejecutarAlgoritmo(funcion,paramsFuncion,poblacionSize,numGeneraciones,seleccion,cruce,probabilidadCruce,probabilidadMutacion,precision,elitismo,percentElitismo,parametroTruncProb,parametroCruce);
+        algoritmo.ejecutarAlgoritmo(funcion,paramsFuncion,poblacionSize,numGeneraciones,
+                seleccion,cruce,mutacion,probabilidadCruce,probabilidadMutacion,precision,elitismo,percentElitismo,parametroTruncProb,parametroCruce);
     }
 
     @Override
