@@ -2,6 +2,10 @@ package poblacion;
 
 public class Mapa {
 
+    public final static String[] Ciudades = {"Albacete", "Alicante", "Almeria", "Almeria", "Avila", "Badajoz", "Barcelona",
+            "Bilbao", "Burgos", "Burgos", "Caceres", "Cadiz", "Castellon", "Ciudad_Real", "Cordoba", "A_corunia", "Cuenca", "Gerona", "Granada",
+            "Guadalajara", "Huelva", "Huesca", "Jaen", "Leon", "Lerida", "Logronio", "Lugo", "Madrid", "Malaga", "Murcia"};
+
     public final static int Albacete = 0;
     public final static int Alicante = 1;
     public final static int Almeria = 2;
@@ -31,7 +35,7 @@ public class Mapa {
     public final static int Malaga = 26;
     public final static int Murcia = 27;
 
-    public final static int[][] _DIST = {
+    public final static int[][] Distancias = {
 
             {0},
 
@@ -92,6 +96,14 @@ public class Mapa {
 
     public static int calcularDistancias(int origen, int destino){
         if(origen == destino) return 0;
-        return _DIST[Math.max(origen, destino)][Math.min(origen, destino)];
+        return Distancias[Math.max(origen, destino)][Math.min(origen, destino)];
+    }
+
+
+    public static int getId(String ciudad){
+        for(int i = 0; i <Ciudades.length; i++)
+            if(ciudad == Ciudades[i])
+                return i;
+        return -1;
     }
 }

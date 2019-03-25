@@ -1,4 +1,4 @@
-package cruces;
+package mutaciones;
 
 import genetica.Gen;
 import poblacion.Individuo;

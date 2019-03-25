@@ -5,12 +5,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import cruces.FactoriaOperadores;
+import cruces.FactoriaCruces;
 import funciones.*;
 import genetica.Gen;
 import genetica.GenBinario;
 import genetica.GenEntero;
 import genetica.GenReal;
+import mutaciones.FactoriaMutacion;
 import poblacion.Individuo;
 import poblacion.Mapa;
 import poblacion.Poblacion;
@@ -60,10 +61,10 @@ public class AlgoritmoGenetico {
 			//SELECCIONAR POBLACION
 			Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.getPoblacion(), parametroTruncProb).getPobSeleccionada());
 			//CRUZAR POBLACION
-			poblacion.substitute(FactoriaOperadores.cruzarPoblacion(pobsel, cruce, parametroCruce));
+			poblacion.substitute(FactoriaCruces.cruzarPoblacion(pobsel, cruce, parametroCruce));
 			//MUTAR POBLACION
 			System.out.println(poblacion);
-			poblacion = new Poblacion(FactoriaOperadores.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
+			poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
 			//EVALUAR POBLACION
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 			//REINTRODUCIR ELITE

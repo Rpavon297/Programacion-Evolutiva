@@ -57,7 +57,7 @@ public class VistaInicial extends JFrame{
         btnP2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                VistaEvolutivo frame = new VistaEvolutivo();
+                VistaViajante frame = new VistaViajante();
                 frame.setVisible(true);
                 setVisible(false);
             }

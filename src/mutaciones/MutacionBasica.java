@@ -1,4 +1,4 @@
-package cruces;
+package mutaciones;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;

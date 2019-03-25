@@ -1,13 +1,11 @@
 package cruces;
 
-import java.util.List;
-
 import poblacion.Individuo;
 import poblacion.Poblacion;
 
-public class FactoriaOperadores {
+public class FactoriaCruces {
 	
-	public static AlgoritmoCruce getAlgoritmoCruce(String algoritmo, Individuo padre1, Individuo padre2, int param) {
+	private static AlgoritmoCruce getAlgoritmoCruce(String algoritmo, Individuo padre1, Individuo padre2, int param) {
 		
 		AlgoritmoCruce cruce;
 		switch(algoritmo) {
@@ -40,28 +38,6 @@ public class FactoriaOperadores {
 				cruce.cruzar(padre1, padre2, param);
 			}
 		return cruce;
-	}
-
-	public static Mutacion getAlgoritmoMutacion(String mutacion){
-		Mutacion mut;
-		switch (mutacion){
-			case "MutacionBasica":
-				mut = new MutacionBasica();
-				break;
-			default:
-				mut = new MutacionInsercion();
-				break;
-		}
-		return mut;
-
-	}
-
-
-	public static Mutacion mutarPoblacion(String nmutacion, Poblacion poblacion, List<Double> params) {
-		
-		Mutacion mutacion = getAlgoritmoMutacion(nmutacion);
-		mutacion.mutar(poblacion.getPoblacion(), params);
-		return mutacion;
 	}
 
 	public static Poblacion cruzarPoblacion(Poblacion poblacion, String Algoritmo, int param) {
