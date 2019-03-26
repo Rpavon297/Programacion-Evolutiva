@@ -18,6 +18,9 @@ public class FactoriaMutacion {
             case "Inversion":
                 mut = new Inversion();
                 break;
+            case "Heuristica":
+                mut = new Heuristica();
+                break;
             default:
                 mut = new Insercion();
                 break;

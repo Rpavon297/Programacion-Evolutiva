@@ -9,7 +9,6 @@ import genetica.GenReal;
 
 public class Individuo {
 	private List<Gen> genes;
-	private int nGenes;
 	private double acumulado;
 	private double fitness;
 	private double probSeleccion;
@@ -20,7 +19,7 @@ public class Individuo {
 		this.fitness = nCrom.getFitness();
 		this.fitnessAdaptado = nCrom.getFitnessAdaptado();
 		this.probSeleccion = nCrom.getProbSeleccion();
-		this.genes = new ArrayList<Gen>();
+		this.genes = new ArrayList<>();
 		
 		for(Gen g : nCrom.getGenes()){
 			if(g instanceof GenBinario)
@@ -67,7 +66,6 @@ public class Individuo {
 	public List<Gen> getGenes() {return genes;}
 	public int get() {return genes.size();}
 	public double getFitness() {return fitness;}
-	public int getNGenes(){return this.nGenes;}
 	public double getAcumulado() {return acumulado;}
 	
 	

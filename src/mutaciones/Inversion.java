@@ -26,10 +26,16 @@ public class Inversion extends Mutacion {
                     pos2 = (int) (Math.random() * size);
                 } while (pos2 == 0 || pos2 == size-1 || pos2 == pos1);
 
-                List<Gen> list = ind.getGenes().subList(Math.min(pos1, pos2), Math.max(pos1, pos2));
-                Collections.reverse(list);
-                ind.getGenes().removeAll(list);
-                ind.getGenes().addAll(Math.min(pos1, pos2), list);
+                int min = Math.min(pos1, pos2);
+                int max = Math.max(pos1, pos2);
+
+                while(min < max) {
+                    Gen aux = ind.getGenes().get(min);
+                    ind.getGenes().set(min, ind.getGenes().get(max));
+                    ind.getGenes().set(max, aux);
+                    min++;
+                    max--;
+                }
             }
         }
         this.nPoblacion = poblacion;
