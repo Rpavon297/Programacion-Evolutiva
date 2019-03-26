@@ -12,6 +12,9 @@ public class FactoriaMutacion {
             case "MutacionBasica":
                 mut = new MutacionBasica();
                 break;
+            case "MutacionIntercambio":
+                mut = new MutacionIntercambio();
+                break;
             default:
                 mut = new MutacionInsercion();
                 break;
