@@ -9,14 +9,17 @@ public class FactoriaMutacion {
     private static Mutacion getAlgoritmoMutacion(String mutacion){
         Mutacion mut;
         switch (mutacion){
-            case "MutacionBasica":
-                mut = new MutacionBasica();
+            case "Basica":
+                mut = new Basica();
                 break;
-            case "MutacionIntercambio":
-                mut = new MutacionIntercambio();
+            case "Intercambio":
+                mut = new Intercambio();
+                break;
+            case "Inversion":
+                mut = new Inversion();
                 break;
             default:
-                mut = new MutacionInsercion();
+                mut = new Insercion();
                 break;
         }
         return mut;

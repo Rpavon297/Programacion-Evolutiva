@@ -394,7 +394,7 @@ public class VistaViajante extends Vista {
 //        if(cruce == "Multipunto")
 //            parametroCruce = (int) this.spinnerParamCruce.getValue();
 
-//        String mutacion ="MutacionBasica";
+//        String mutacion ="Basica";
 //        AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
 //        ag.ejecutarAlgoritmo(funcion, paramsFuncion, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
 //                probabilidadMutacion, precision, elitismo, percentElitismo, parametroTruncProb, parametroCruce);

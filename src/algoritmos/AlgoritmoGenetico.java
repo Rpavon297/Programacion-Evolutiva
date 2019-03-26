@@ -138,13 +138,13 @@ public class AlgoritmoGenetico {
 					Gen gen = new GenEntero();
 					gen.setGenotipo((double)Mapa.Madrid);
 					gen.setMin(0);
-					gen.setMax(27);
+					gen.setMax(28);
 					genes.add(gen);
 
 					for(int j = 0; j < 27; j++){
 						while(genes.contains(gen)){
 							gen = new GenEntero();
-							gen.randomize(0,27);
+							gen.randomize(0,28);
 						}
 						genes.add(gen);
 					}
@@ -152,7 +152,7 @@ public class AlgoritmoGenetico {
 					gen = new GenEntero();
 					gen.setGenotipo((double)Mapa.Madrid);
 					gen.setMin(0);
-					gen.setMax(27);
+					gen.setMax(28);
 					genes.add(gen);
 			}
 			poblacion.getPoblacion().add(new Individuo(genes));

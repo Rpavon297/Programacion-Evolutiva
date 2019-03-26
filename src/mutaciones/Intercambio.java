@@ -5,7 +5,7 @@ import poblacion.Individuo;
 
 import java.util.List;
 
-public class MutacionIntercambio extends Mutacion{
+public class Intercambio extends Mutacion{
     @Override
     public void mutar(List<Individuo> poblacion, List<Double> params) {
 

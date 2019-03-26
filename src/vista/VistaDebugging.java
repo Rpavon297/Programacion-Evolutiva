@@ -15,7 +15,7 @@ public class VistaDebugging extends Vista{
         int numGeneraciones = 100;
         String seleccion = "Estocastico";
         String cruce = "OX";
-        String mutacion = "MutacionIntercambio";
+        String mutacion = "Inversion";
         double probabilidadCruce = 0;
         double probabilidadMutacion = 0.05;
         double precision = 0.01;

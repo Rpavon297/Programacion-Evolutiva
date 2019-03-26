@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import genetica.Gen;
 import poblacion.Individuo;
 
-public class MutacionBasica extends Mutacion{
+public class Basica extends Mutacion{
 
 	@Override
 	public void mutar(List<Individuo> poblacion, List<Double> params) {
