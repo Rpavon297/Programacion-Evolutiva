@@ -65,7 +65,6 @@ public class AlgoritmoGenetico {
 			//MUTAR POBLACION
 			System.out.println(poblacion);
 			poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
-			System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOO");
 			System.out.println(poblacion);
 			//EVALUAR POBLACION
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
@@ -142,7 +141,7 @@ public class AlgoritmoGenetico {
 					gen.setMax(27);
 					genes.add(gen);
 
-					for(int j = 0; j < 26; j++){
+					for(int j = 0; j < 27; j++){
 						while(genes.contains(gen)){
 							gen = new GenEntero();
 							gen.randomize(0,27);
