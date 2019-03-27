@@ -1,6 +1,7 @@
 package vista;
 
 import algoritmos.AlgoritmoGenetico;
+import poblacion.Mapa;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ public class VistaDebugging extends Vista{
     public void test(){
         AlgoritmoGenetico algoritmo = new AlgoritmoGenetico(this);
 
+        int ciudadInicio = Mapa.Madrid;
         int funcion = 5;
         int paramsFuncion = 2;
         int poblacionSize = 100;
@@ -24,7 +26,7 @@ public class VistaDebugging extends Vista{
         double parametroTruncProb = 0.1;
         int parametroCruce = 0;
         algoritmo.ejecutarAlgoritmo(funcion,paramsFuncion,poblacionSize,numGeneraciones,
-                seleccion,cruce,mutacion,probabilidadCruce,probabilidadMutacion,precision,elitismo,percentElitismo,parametroTruncProb,parametroCruce);
+                seleccion,cruce,mutacion,probabilidadCruce,probabilidadMutacion,precision,elitismo,percentElitismo,parametroTruncProb,parametroCruce, ciudadInicio);
     }
 
     @Override

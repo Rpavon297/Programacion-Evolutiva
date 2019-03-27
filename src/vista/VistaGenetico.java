@@ -507,7 +507,7 @@ public class VistaGenetico extends Vista {
 		String mutacion = "Basica";
 		ag = new AlgoritmoGenetico(this);
 		ag.ejecutarAlgoritmo(funcion, paramsFuncion, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
-				probabilidadMutacion, precision, elitismo, percentElitismo, parametroTruncProb, parametroCruce);
+				probabilidadMutacion, precision, elitismo, percentElitismo, parametroTruncProb, parametroCruce, 0);
 	}
 
 	public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {

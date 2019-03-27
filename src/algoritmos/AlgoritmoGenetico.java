@@ -26,8 +26,8 @@ public class AlgoritmoGenetico {
 	public AlgoritmoGenetico(Vista vista){this.vista = vista;}
 
 	public Poblacion ejecutarAlgoritmo(int funcion, int paramsFuncion, int poblacionSize, int numGeneraciones,
-									   String seleccion, String cruce, String mutacion, double probabilidadCruce, double probabilidadMutacion, double precision,
-									   boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce) {
+                                       String seleccion, String cruce, String mutacion, double probabilidadCruce, double probabilidadMutacion, double precision,
+                                       boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce, int ciudadInicio) {
 		
 		Poblacion poblacion = new Poblacion();
 		
@@ -39,7 +39,7 @@ public class AlgoritmoGenetico {
 		paramsMutacion.addAll(f.getIntervalo());
 		
 		//Inicializamos la poblacion
-		inicalizarPoblacion(poblacion,poblacionSize,precision,funcion,paramsFuncion);
+		inicalizarPoblacion(poblacion,poblacionSize,precision,funcion,paramsFuncion, ciudadInicio);
 
 		//Inicializamos el resto de datos necesarios para la ejecución
 		List<Generacion> generaciones = new ArrayList<>();
@@ -102,7 +102,7 @@ public class AlgoritmoGenetico {
 		return f;
 	}
 
-	public void inicalizarPoblacion(Poblacion poblacion, int poblacionSize, double precision, int funcion, int paramsFuncion){
+	public void inicalizarPoblacion(Poblacion poblacion, int poblacionSize, double precision, int funcion, int paramsFuncion, int ciudadInicio){
 		for(int i = 0; i < poblacionSize; i++) {
 			List<Gen> genes = new ArrayList<>();
 
@@ -136,7 +136,7 @@ public class AlgoritmoGenetico {
 					break;
 				case 5:
 					Gen gen = new GenEntero();
-					gen.setGenotipo((double)Mapa.Madrid);
+					gen.setGenotipo((double)ciudadInicio);
 					gen.setMin(0);
 					gen.setMax(28);
 					genes.add(gen);
@@ -150,7 +150,7 @@ public class AlgoritmoGenetico {
 					}
 
 					gen = new GenEntero();
-					gen.setGenotipo((double)Mapa.Madrid);
+					gen.setGenotipo((double)ciudadInicio);
 					gen.setMin(0);
 					gen.setMax(28);
 					genes.add(gen);

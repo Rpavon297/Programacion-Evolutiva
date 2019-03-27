@@ -11,7 +11,7 @@ public class FactoriaSeleccion {
 		
 		AlgoritmoSeleccion sel;
 		switch(algoritmo) {
-		case "Estocastico":
+		case "Estocastica":
 			sel = new EstocasticoUniversal();
 			sel.seleccion(poblacion, TAM_SELECCION);
 			break;
@@ -23,7 +23,7 @@ public class FactoriaSeleccion {
 			sel = new Torneo();
 			sel.seleccion(poblacion, TAM_SELECCION);
 			break;
-		case "TorneoProb":
+		case "Torneo Probabilistico":
 			sel = new TorneoProb();
 			sel.seleccion(poblacion, new Pair(TAM_SELECCION, param));
 			break;

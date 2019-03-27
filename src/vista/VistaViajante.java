@@ -6,7 +6,7 @@ import javax.swing.border.EmptyBorder;
 
 import org.math.plot.Plot2DPanel;
 import poblacion.Mapa;
-//import algoritmos.AlgoritmoGenetico;
+import algoritmos.AlgoritmoGenetico;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -28,6 +28,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import java.awt.Panel;
+import java.awt.TextField;
 
 public class VistaViajante extends Vista {
 
@@ -42,6 +43,11 @@ public class VistaViajante extends Vista {
     private JComboBox<String> comboCiudad;
     private JSpinner spinnerElitismo;
     private JCheckBox chckbxElitismo;
+    private JComboBox<String> comboMutacion;
+    private JLabel labelKilometros;
+    private TextField textFieldCiudades;
+    private JLabel labelTruncProb;
+    private JSpinner spinnerTruncProb;
 
     /**
      * Create the frame.
@@ -72,6 +78,20 @@ public class VistaViajante extends Vista {
         separator.setBounds(10, 64, 286, 14);
         panelParams.add(separator);
 
+        JLabel lblCiudad = new JLabel("Ciudad Origen:");
+        lblCiudad.setFont(new Font("Dialog", Font.PLAIN, 14));
+        lblCiudad.setBounds(10, 76, 115, 19);
+        panelParams.add(lblCiudad);
+
+        comboCiudad = new JComboBox<String>(Mapa.Ciudades);
+        comboCiudad.setSelectedItem("Madrid");
+        comboCiudad.setBounds(128, 72, 168, 27);
+        panelParams.add(comboCiudad);
+
+        JSeparator separator_1 = new JSeparator();
+        separator_1.setBounds(10, 107, 286, 14);
+        panelParams.add(separator_1);
+
         JLabel labelPoblacion = new JLabel("Tamanio de la Poblacion:");
         labelPoblacion.setFont(new Font("Dialog", Font.PLAIN, 14));
         labelPoblacion.setBounds(10, 119, 207, 19);
@@ -99,20 +119,20 @@ public class VistaViajante extends Vista {
         spinnerGeners.setBounds(209, 148, 87, 27);
         panelParams.add(spinnerGeners);
 
-        JSeparator separator_1 = new JSeparator();
-        separator_1.setBounds(10, 182, 286, 14);
-        panelParams.add(separator_1);
+        JSeparator separator_2 = new JSeparator();
+        separator_2.setBounds(10, 182, 286, 14);
+        panelParams.add(separator_2);
 
         JLabel labelSeleccion = new JLabel("Seleccion:");
         labelSeleccion.setFont(new Font("Dialog", Font.PLAIN, 14));
         labelSeleccion.setBounds(10, 193, 77, 19);
         panelParams.add(labelSeleccion);
 
-        comboSeleccion = new JComboBox<>();
-        comboSeleccion.addItem("Estocastica Univ.");
+        comboSeleccion = new JComboBox<String>();
+        comboSeleccion.addItem("Estocastica");
         comboSeleccion.addItem("Ruleta");
         comboSeleccion.addItem("Torneo");
-        comboSeleccion.addItem("Torneo Prob.");
+        comboSeleccion.addItem("Torneo Probabilistico");
         comboSeleccion.addItem("Truncamiento");
         comboSeleccion.setBounds(128, 190, 168, 27);
         panelParams.add(comboSeleccion);
@@ -122,7 +142,7 @@ public class VistaViajante extends Vista {
         labelCruce.setBounds(10, 227, 115, 19);
         panelParams.add(labelCruce);
 
-        comboCruce = new JComboBox<>();
+        comboCruce = new JComboBox<String>();
         comboCruce.addItem("Aritmetico");
         comboCruce.addItem("BLX");
         comboCruce.addItem("Monopunto");
@@ -131,17 +151,30 @@ public class VistaViajante extends Vista {
         comboCruce.setBounds(128, 223, 168, 27);
         panelParams.add(comboCruce);
 
-        JSeparator separator_2 = new JSeparator();
-        separator_2.setBounds(10, 257, 286, 14);
-        panelParams.add(separator_2);
+        JLabel lblMutacion = new JLabel("Mutacion:");
+        lblMutacion.setFont(new Font("Dialog", Font.PLAIN, 14));
+        lblMutacion.setBounds(10, 261, 115, 19);
+        panelParams.add(lblMutacion);
+
+        comboMutacion = new JComboBox<String>();
+        comboMutacion.addItem("Heuristica");
+        comboMutacion.addItem("Insercion");
+        comboMutacion.addItem("Intercambio");
+        comboMutacion.addItem("Inversion");
+        comboMutacion.setBounds(128, 257, 168, 27);
+        panelParams.add(comboMutacion);
+
+        JSeparator separator_3 = new JSeparator();
+        separator_3.setBounds(10, 291, 286, 14);
+        panelParams.add(separator_3);
 
         JLabel labelCruces = new JLabel("Probabilidad Cruces:");
         labelCruces.setFont(new Font("Dialog", Font.PLAIN, 14));
-        labelCruces.setBounds(10, 270, 197, 19);
+        labelCruces.setBounds(10, 304, 197, 19);
         panelParams.add(labelCruces);
 
         spinnerCruces = new JSpinner();
-        spinnerCruces.setBounds(212, 266, 58, 27);
+        spinnerCruces.setBounds(212, 300, 58, 27);
         SpinnerModel crucesModel = new SpinnerNumberModel(60, 0, 100, 1);
         spinnerCruces.setModel(crucesModel);
         ((DefaultEditor) spinnerCruces.getEditor()).getTextField().setEditable(false);
@@ -150,16 +183,16 @@ public class VistaViajante extends Vista {
 
         JLabel percent1 = new JLabel("%");
         percent1.setFont(new Font("Dialog", Font.PLAIN, 16));
-        percent1.setBounds(276, 270, 16, 19);
+        percent1.setBounds(276, 304, 16, 19);
         panelParams.add(percent1);
 
         JLabel labelMutaciones = new JLabel("Probabilidad Mutaciones:");
         labelMutaciones.setFont(new Font("Dialog", Font.PLAIN, 14));
-        labelMutaciones.setBounds(10, 304, 184, 19);
+        labelMutaciones.setBounds(10, 338, 184, 19);
         panelParams.add(labelMutaciones);
 
         spinnerMutaciones = new JSpinner();
-        spinnerMutaciones.setBounds(212, 300, 58, 27);
+        spinnerMutaciones.setBounds(212, 334, 58, 27);
         SpinnerModel mutacionesModel = new SpinnerNumberModel(5, 0, 100, 1);
         spinnerMutaciones.setModel(mutacionesModel);
         ((DefaultEditor) spinnerMutaciones.getEditor()).getTextField().setEditable(false);
@@ -168,21 +201,21 @@ public class VistaViajante extends Vista {
 
         JLabel percent2 = new JLabel("%");
         percent2.setFont(new Font("Dialog", Font.PLAIN, 16));
-        percent2.setBounds(275, 304, 16, 19);
+        percent2.setBounds(275, 338, 16, 19);
         panelParams.add(percent2);
 
-        JSeparator separator_3 = new JSeparator();
-        separator_3.setBounds(10, 333, 286, 14);
-        panelParams.add(separator_3);
+        JSeparator separator_4 = new JSeparator();
+        separator_4.setBounds(10, 367, 286, 14);
+        panelParams.add(separator_4);
 
         chckbxElitismo = new JCheckBox("Elitismo:");
         chckbxElitismo.setHorizontalAlignment(SwingConstants.CENTER);
         chckbxElitismo.setFont(new Font("Dialog", Font.PLAIN, 14));
-        chckbxElitismo.setBounds(10, 344, 184, 23);
+        chckbxElitismo.setBounds(10, 378, 184, 23);
         panelParams.add(chckbxElitismo);
 
         spinnerElitismo = new JSpinner();
-        spinnerElitismo.setBounds(212, 342, 58, 27);
+        spinnerElitismo.setBounds(212, 376, 58, 27);
         SpinnerModel elitismoModel = new SpinnerNumberModel(2, 0, 5, 1);
         spinnerElitismo.setModel(elitismoModel);
         ((DefaultEditor) spinnerElitismo.getEditor()).getTextField().setEditable(false);
@@ -191,45 +224,29 @@ public class VistaViajante extends Vista {
 
         JLabel percent3 = new JLabel("%");
         percent3.setFont(new Font("Dialog", Font.PLAIN, 16));
-        percent3.setBounds(275, 346, 16, 19);
+        percent3.setBounds(275, 380, 16, 19);
         panelParams.add(percent3);
 
-        JSeparator separator_4 = new JSeparator();
-        separator_4.setBounds(10, 374, 286, 14);
-        panelParams.add(separator_4);
-
-        JLabel lblCiudad = new JLabel("Ciudad Origen:");
-        lblCiudad.setFont(new Font("Dialog", Font.PLAIN, 14));
-        lblCiudad.setBounds(10, 76, 115, 19);
-        panelParams.add(lblCiudad);
-
-        comboCiudad = new JComboBox<String>(Mapa.Ciudades);
-        comboCiudad.setSelectedItem("Madrid");
-        comboCiudad.setBounds(128, 72, 168, 27);
-        panelParams.add(comboCiudad);
-
         JSeparator separator_5 = new JSeparator();
-        separator_5.setBounds(10, 107, 286, 14);
+        separator_5.setBounds(10, 408, 286, 14);
         panelParams.add(separator_5);
 
-        panelMathPlot = new Plot2DPanel();
-        panelMathPlot.setBounds(300, 0, 764, 527);
-        contentPane.add(panelMathPlot);
+        labelTruncProb = new JLabel("Probabilidad Mutaciones:");
+        labelTruncProb.setFont(new Font("Dialog", Font.PLAIN, 14));
+        labelTruncProb.setBounds(10, 420, 197, 19);
+        panelParams.add(labelTruncProb);
+        labelTruncProb.setVisible(false);
 
-        JPanel panelNombres = new JPanel();
-        panelNombres.setBounds(300, 651, 764, 27);
-        contentPane.add(panelNombres);
-        panelNombres.setLayout(null);
+        spinnerTruncProb = new JSpinner();
+        spinnerTruncProb.setBounds(212, 416, 58, 27);
+        panelParams.add(spinnerTruncProb);
+        spinnerTruncProb.setVisible(false);
 
-        JLabel labelNombres = new JLabel("Grupo 2 - Programacion Evolutiva - Jesus Granizo y Roberto Pavon");
-        labelNombres.setHorizontalAlignment(SwingConstants.CENTER);
-        labelNombres.setBounds(0, 0, 752, 27);
-        panelNombres.add(labelNombres);
-
-        JPanel panelSolucion = new JPanel();
-        panelSolucion.setBounds(300, 527, 764, 125);
-        contentPane.add(panelSolucion);
-        panelSolucion.setLayout(null);
+        JLabel percent4 = new JLabel("%");
+        percent4.setFont(new Font("Dialog", Font.PLAIN, 16));
+        percent4.setBounds(275, 420, 16, 19);
+        panelParams.add(percent4);
+        percent4.setVisible(false);
 
         Panel panelBotones = new Panel();
         panelBotones.setBounds(0, 587, 302, 91);
@@ -261,56 +278,71 @@ public class VistaViajante extends Vista {
             }
         });
 
+        panelMathPlot = new Plot2DPanel();
+        panelMathPlot.setBounds(300, 0, 764, 527);
+        contentPane.add(panelMathPlot);
+
+        JPanel panelSolucion = new JPanel();
+        panelSolucion.setBounds(300, 527, 764, 125);
+        contentPane.add(panelSolucion);
+        panelSolucion.setLayout(null);
+
+        JLabel lblResultado = new JLabel("Resultado");
+        lblResultado.setHorizontalAlignment(SwingConstants.CENTER);
+        lblResultado.setFont(new Font("Dialog", Font.PLAIN, 14));
+        lblResultado.setBounds(10, 22, 132, 19);
+        panelSolucion.add(lblResultado);
+
+        labelKilometros = new JLabel("");
+        labelKilometros.setHorizontalAlignment(SwingConstants.CENTER);
+        labelKilometros.setFont(new Font("Dialog", Font.PLAIN, 14));
+        labelKilometros.setBounds(10, 52, 131, 19);
+        panelSolucion.add(labelKilometros);
+
+        textFieldCiudades = new TextField();
+        textFieldCiudades.setEditable(false);
+        textFieldCiudades.setBounds(147, 10, 607, 105);
+        panelSolucion.add(textFieldCiudades);
+
+        JPanel panelNombres = new JPanel();
+        panelNombres.setBounds(300, 651, 764, 27);
+        contentPane.add(panelNombres);
+        panelNombres.setLayout(null);
+
+        JLabel labelNombres = new JLabel("Grupo 2 - Programacion Evolutiva - Jesus Granizo y Roberto Pavon");
+        labelNombres.setHorizontalAlignment(SwingConstants.CENTER);
+        labelNombres.setBounds(0, 0, 752, 27);
+        panelNombres.add(labelNombres);
+
         comboSeleccion.addItemListener(new ItemListener() {
 
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if(comboSeleccion.getSelectedIndex() == 3) {
-//                    labelTruncProb.setText("Parametro Torneo: ");
-//                    labelTruncProb.setVisible(true);
-//                    SpinnerModel probModel = new SpinnerNumberModel(50, 50, 100, 1);
-//                    spinnerTruncProb.setModel(probModel);
-//                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setEditable(false);
-//                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
-//                    spinnerTruncProb.setVisible(true);
-//                    percent4.setVisible(true);
+                    labelTruncProb.setText("Parametro Torneo: ");
+                    labelTruncProb.setVisible(true);
+                    SpinnerModel probModel = new SpinnerNumberModel(50, 50, 100, 1);
+                    spinnerTruncProb.setModel(probModel);
+                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setEditable(false);
+                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
+                    spinnerTruncProb.setVisible(true);
+                    percent4.setVisible(true);
                 }
                 else if(comboSeleccion.getSelectedIndex() == 4) {
-//                    labelTruncProb.setText("Umbral Truncamiento: ");
-//                    labelTruncProb.setVisible(true);
-//                    SpinnerModel truncModel = new SpinnerNumberModel(50, 10, 50, 10);
-//                    spinnerTruncProb.setModel(truncModel);
-//                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setEditable(false);
-//                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
-//                    spinnerTruncProb.setVisible(true);
-//                    percent4.setVisible(true);
+                    labelTruncProb.setText("Umbral Truncamiento: ");
+                    labelTruncProb.setVisible(true);
+                    SpinnerModel truncModel = new SpinnerNumberModel(50, 10, 50, 10);
+                    spinnerTruncProb.setModel(truncModel);
+                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setEditable(false);
+                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
+                    spinnerTruncProb.setVisible(true);
+                    percent4.setVisible(true);
                 }
                 else{
-//                    labelTruncProb.setText("");
-//                    labelTruncProb.setVisible(false);
-//                    spinnerTruncProb.setVisible(false);
-//                    percent4.setVisible(false);
-                }
-
-            }
-        });
-
-        comboCruce.addItemListener(new ItemListener() {
-
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if(comboCruce.getSelectedIndex() == 3) {
-//                    labelParamCruce.setText("Numero de Cruces: ");
-//                    labelParamCruce.setVisible(true);
-//                    SpinnerModel probModel = new SpinnerNumberModel(3, 1, 5, 1);
-//                    spinnerParamCruce.setModel(probModel);
-//                    ((DefaultEditor) spinnerParamCruce.getEditor()).getTextField().setEditable(false);
-//                    ((DefaultEditor) spinnerParamCruce.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
-//                    spinnerParamCruce.setVisible(true);
-                }
-                else{
-//                    labelParamCruce.setVisible(false);
-//                    spinnerParamCruce.setVisible(false);
+                    labelTruncProb.setText("");
+                    labelTruncProb.setVisible(false);
+                    spinnerTruncProb.setVisible(false);
+                    percent4.setVisible(false);
                 }
 
             }
@@ -323,6 +355,7 @@ public class VistaViajante extends Vista {
         spinnerGeners.setValue(100);
         comboSeleccion.setSelectedIndex(0);
         comboCruce.setSelectedIndex(0);
+        comboMutacion.setSelectedIndex(0);
         spinnerCruces.setValue(60);
         spinnerMutaciones.setValue(5);
         chckbxElitismo.setSelected(false);
@@ -331,75 +364,32 @@ public class VistaViajante extends Vista {
 
     private void capturaDatos() {
 
-//        int funcion = this.combofuncion.getSelectedIndex() + 1;
-//        int paramsFuncion = (int) this.spinnerFunc.getValue();
-//        int poblacionSize = (int) this.spinnerPoblacion.getValue();
-//        int numGeneraciones = (int) this.spinnerGeners.getValue();
+        int ciudadInicio = this.comboCiudad.getSelectedIndex();
+        int poblacionSize = (int) this.spinnerPoblacion.getValue();
+        int numGeneraciones = (int) this.spinnerGeners.getValue();
 
-        int numSeleccion = this.comboSeleccion.getSelectedIndex();
-        String seleccion;
-        switch (numSeleccion) {
-            case 0:
-                seleccion = "Estocastico";
-                break;
-            case 1:
-                seleccion = "Ruleta";
-                break;
-            case 2:
-                seleccion = "Torneo";
-                break;
-            case 3:
-                seleccion = "TorneoProb";
-                break;
-            default:
-                seleccion = "Truncamiento";
-                break;
-        }
-
-        int numCruce = this.comboCruce.getSelectedIndex();
-        String cruce;
-        switch (numCruce) {
-            case 0:
-                cruce = "Aritmetico";
-                break;
-            case 1:
-                cruce = "BLX";
-                break;
-            case 2:
-                cruce = "Monopunto";
-                break;
-            case 3:
-                cruce = "Multipunto";
-                break;
-            default:
-                cruce = "Uniforme";
-                break;
-        }
+        String seleccion = (String) this.comboSeleccion.getSelectedItem();
+        String cruce = (String) this.comboCruce.getSelectedItem();
+        String mutacion = (String) this.comboMutacion.getSelectedItem();
 
         double probabilidadCruce =  (int) this.spinnerCruces.getValue();
         probabilidadCruce = probabilidadCruce / 100;
         double probabilidadMutacion =  (int) this.spinnerMutaciones.getValue();
         probabilidadMutacion = probabilidadMutacion / 100;
-//        double precision = 1 / (Math.pow(10, (int) this.spinnerPrecision.getValue()));
-//        boolean elitismo = this.chckbxElitismo.isSelected();
-//        double percentElitismo = (int) this.spinnerElitismo.getValue();
-//        percentElitismo = percentElitismo / 100;
+        boolean elitismo = this.chckbxElitismo.isSelected();
+        double percentElitismo = (int) this.spinnerElitismo.getValue();
+        percentElitismo = percentElitismo / 100;
 
         double parametroTruncProb = 0;
-//        int parametroCruce = 0;
 
         if(seleccion == "TorneoProb" || seleccion == "Truncamiento") {
-//            parametroTruncProb = (int) this.spinnerTruncProb.getValue();
+            parametroTruncProb = (int) this.spinnerTruncProb.getValue();
             parametroTruncProb = parametroTruncProb / 100;
         }
 
-//        if(cruce == "Multipunto")
-//            parametroCruce = (int) this.spinnerParamCruce.getValue();
-
-//        String mutacion ="Basica";
-//        AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
-//        ag.ejecutarAlgoritmo(funcion, paramsFuncion, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
-//                probabilidadMutacion, precision, elitismo, percentElitismo, parametroTruncProb, parametroCruce);
+        AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
+        ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
+                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
     }
 
     public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
@@ -409,19 +399,11 @@ public class VistaViajante extends Vista {
         for(int i = 0; i < x.length; i++)
             x[i] = i+1;
 
-//        textField.setText(String.valueOf(solucion));
-//        textField_1.removeAllItems();
+        labelKilometros.setText(String.valueOf(solucion) + " km.");
+        textFieldCiudades.setText("");
 
-        int i = 0;
-
-        for(Double d : sol) {
-            i++;
-            d = Math.floor(d / 0.0001) * 0.0001;
-
-//            String text = "X" + String.valueOf(i) + ": " + String.valueOf(d);
-//            textField_1.addItem(text);
-
-        };
+        for(Double d : sol)
+            textFieldCiudades.setText(textFieldCiudades.getText()+ " -> " + Mapa.Ciudades[d.intValue()]);
 
         panelMathPlot.addLegend("SOUTH");
         panelMathPlot.addLinePlot("Mejor Absoluto", Color.MAGENTA, x, mejorAbs);

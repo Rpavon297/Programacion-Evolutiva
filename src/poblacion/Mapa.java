@@ -2,8 +2,8 @@ package poblacion;
 
 public class Mapa {
 
-    public final static String[] Ciudades = {"Albacete", "Alicante", "Almeria", "Almeria", "Avila", "Badajoz", "Barcelona",
-            "Bilbao", "Burgos", "Burgos", "Caceres", "Cadiz", "Castellon", "Ciudad_Real", "Cordoba", "A_corunia", "Cuenca", "Gerona", "Granada",
+    public final static String[] Ciudades = {"Albacete", "A_corunia", "Alicante", "Almeria", "Avila", "Badajoz", "Barcelona",
+            "Bilbao", "Burgos", "Caceres", "Cadiz", "Castellon", "Ciudad_Real", "Cordoba", "Cuenca", "Gerona", "Granada",
             "Guadalajara", "Huelva", "Huesca", "Jaen", "Leon", "Lerida", "Logronio", "Lugo", "Madrid", "Malaga", "Murcia"};
 
     public final static int Albacete = 0;
