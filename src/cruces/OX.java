@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class OX extends AlgoritmoCruce {
-    @SuppressWarnings("Duplicates")
     @Override
     public void cruzar(Individuo padre1, Individuo padre2, int param) {
         int min = (int)padre1.getGenes().get(0).getMin();
@@ -46,55 +45,39 @@ public class OX extends AlgoritmoCruce {
         int i = Math.max(c1,c2);
         int acum = i;
 
-        while(i < hijo1.size()-1){
-            if(!hijo1.contains(genes1.get(acum))) {
-                hijo1.set(i, genes1.get(acum));
-                i++;
-            }
-
-            acum++;
-            if(acum == genes1.size()-1) acum = 1;
-        }
-
-        i = 1;
-
-        while(i < Math.min(c1,c2)){
-            if(!hijo1.contains(genes1.get(acum))) {
-                hijo1.set(i, genes1.get(acum));
-                i++;
-            }
-            acum++;
-            if(acum == genes1.size()-1) acum = 1;
-        }
+        fill(genes1, hijo1, c1, c2, i, acum, genes1.size());
 
         i = Math.max(c1,c2);
         acum = i;
 
-        while(i < hijo2.size()-1){
-            if(!hijo2.contains(genes2.get(acum))) {
-                hijo2.set(i, genes2.get(acum));
+        fill(genes2, hijo2, c1, c2, i, acum, genes1.size());
+
+        this.hijos = new ArrayList<>();
+
+        this.hijos.add(new Individuo(hijo1));
+        this.hijos.add(new Individuo(hijo2));
+    }
+
+    private void fill(List<Gen> genes, List<Gen> hijo, int c1, int c2, int i, int acum, int size) {
+        while(i < hijo.size()-1){
+            if(!hijo.contains(genes.get(acum))) {
+                hijo.set(i, genes.get(acum));
                 i++;
             }
 
             acum++;
-            if(acum == genes1.size()-1) acum = 1;
-
+            if(acum == size -1) acum = 1;
         }
 
         i = 1;
 
         while(i < Math.min(c1,c2)){
-            if(!hijo2.contains(genes2.get(acum))) {
-                hijo2.set(i, genes2.get(acum));
+            if(!hijo.contains(genes.get(acum))) {
+                hijo.set(i, genes.get(acum));
                 i++;
             }
             acum++;
-            if(acum == genes1.size()-1) acum = 1;
+            if(acum == size -1) acum = 1;
         }
-
-        this.hijos = new ArrayList<Individuo>();
-
-        this.hijos.add(new Individuo(hijo1));
-        this.hijos.add(new Individuo(hijo2));
     }
 }

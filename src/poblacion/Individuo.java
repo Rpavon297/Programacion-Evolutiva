@@ -9,7 +9,6 @@ import genetica.GenReal;
 
 public class Individuo {
 	private List<Gen> genes;
-	private int nGenes;
 	private double acumulado;
 	private double fitness;
 	private double probSeleccion;
@@ -67,7 +66,6 @@ public class Individuo {
 	public List<Gen> getGenes() {return genes;}
 	public int get() {return genes.size();}
 	public double getFitness() {return fitness;}
-	public int getNGenes(){return this.nGenes;}
 	public double getAcumulado() {return acumulado;}
 	
 	
