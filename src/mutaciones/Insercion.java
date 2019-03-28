@@ -6,7 +6,7 @@ import poblacion.Individuo;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class MutacionInsercion extends Mutacion {
+public class Insercion extends Mutacion {
     @Override
     public void mutar(List<Individuo> poblacion, List<Double> params) {
         double probabilidad = params.get(0);

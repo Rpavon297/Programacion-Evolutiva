@@ -19,7 +19,7 @@ public class Individuo {
 		this.fitness = nCrom.getFitness();
 		this.fitnessAdaptado = nCrom.getFitnessAdaptado();
 		this.probSeleccion = nCrom.getProbSeleccion();
-		this.genes = new ArrayList<Gen>();
+		this.genes = new ArrayList<>();
 		
 		for(Gen g : nCrom.getGenes()){
 			if(g instanceof GenBinario)

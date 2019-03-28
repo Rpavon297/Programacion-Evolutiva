@@ -26,8 +26,8 @@ public class AlgoritmoGenetico {
 	public AlgoritmoGenetico(Vista vista){this.vista = vista;}
 
 	public Poblacion ejecutarAlgoritmo(int funcion, int paramsFuncion, int poblacionSize, int numGeneraciones,
-									   String seleccion, String cruce, String mutacion, double probabilidadCruce, double probabilidadMutacion, double precision,
-									   boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce) {
+                                       String seleccion, String cruce, String mutacion, double probabilidadCruce, double probabilidadMutacion, double precision,
+                                       boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce, int ciudadInicio) {
 		
 		Poblacion poblacion = new Poblacion();
 		
@@ -39,7 +39,7 @@ public class AlgoritmoGenetico {
 		paramsMutacion.addAll(f.getIntervalo());
 		
 		//Inicializamos la poblacion
-		inicalizarPoblacion(poblacion,poblacionSize,precision,funcion,paramsFuncion);
+		inicalizarPoblacion(poblacion,poblacionSize,precision,funcion,paramsFuncion, ciudadInicio);
 
 		//Inicializamos el resto de datos necesarios para la ejecución
 		List<Generacion> generaciones = new ArrayList<>();
@@ -65,6 +65,7 @@ public class AlgoritmoGenetico {
 			//MUTAR POBLACION
 			System.out.println(poblacion);
 			poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
+			System.out.println(poblacion);
 			//EVALUAR POBLACION
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 			//REINTRODUCIR ELITE
@@ -101,7 +102,7 @@ public class AlgoritmoGenetico {
 		return f;
 	}
 
-	public void inicalizarPoblacion(Poblacion poblacion, int poblacionSize, double precision, int funcion, int paramsFuncion){
+	public void inicalizarPoblacion(Poblacion poblacion, int poblacionSize, double precision, int funcion, int paramsFuncion, int ciudadInicio){
 		for(int i = 0; i < poblacionSize; i++) {
 			List<Gen> genes = new ArrayList<>();
 
@@ -135,23 +136,23 @@ public class AlgoritmoGenetico {
 					break;
 				case 5:
 					Gen gen = new GenEntero();
-					gen.setGenotipo((double)Mapa.Madrid);
+					gen.setGenotipo((double)ciudadInicio);
 					gen.setMin(0);
-					gen.setMax(27);
+					gen.setMax(28);
 					genes.add(gen);
 
-					for(int j = 0; j < 26; j++){
+					for(int j = 0; j < 27; j++){
 						while(genes.contains(gen)){
 							gen = new GenEntero();
-							gen.randomize(0,27);
+							gen.randomize(0,28);
 						}
 						genes.add(gen);
 					}
 
 					gen = new GenEntero();
-					gen.setGenotipo((double)Mapa.Madrid);
+					gen.setGenotipo((double)ciudadInicio);
 					gen.setMin(0);
-					gen.setMax(27);
+					gen.setMax(28);
 					genes.add(gen);
 			}
 			poblacion.getPoblacion().add(new Individuo(genes));
@@ -160,7 +161,6 @@ public class AlgoritmoGenetico {
 
 	public void ordenarPoblacion(Poblacion poblacion){
 		Collections.sort(poblacion.getPoblacion(), new Comparator<Individuo>() {
-
 			@Override
 			public int compare(Individuo i1, Individuo i2) {
 				return new Double(i2.getFitnessAdaptado()).compareTo(new Double(i1.getFitnessAdaptado()));
@@ -225,7 +225,7 @@ public class AlgoritmoGenetico {
 			peor[i] = gen.getPeor();
 		}
 
-		maxAbs = Math.floor(maxAbs / precision) * precision;
+		//maxAbs = Math.floor(maxAbs / precision) * precision;
 
 		this.vista.mostrarGrafica(mejorAbsoluto, mejor, media, peor, maxAbs, sols);
 	}
