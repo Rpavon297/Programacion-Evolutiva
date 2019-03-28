@@ -36,6 +36,15 @@ public class FactoriaCruces {
 			case "OX posiciones prioritarias":
 				cruce = new OXPP();
 				cruce.cruzar(padre1,padre2,param);
+				break;
+			case "OX orden prioritario":
+				cruce = new OXOP();
+				cruce.cruzar(padre1,padre2,param);
+				break;
+			case "Ciclos":
+				cruce = new Ciclos();
+				cruce.cruzar(padre1,padre2,param);
+				break;
 			default:
 				cruce = new Aritmetico();
 				cruce.cruzar(padre1, padre2, param);

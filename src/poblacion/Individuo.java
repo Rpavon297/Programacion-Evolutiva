@@ -91,4 +91,13 @@ public class Individuo {
     public void setGenes(List<Gen> genes) {
 		this.genes = genes;
     }
+
+    public String toString(){
+		String cad = "[";
+		for(Gen g : this.genes)
+			cad = cad + g + ", ";
+		cad += "]";
+
+		return cad;
+	}
 }

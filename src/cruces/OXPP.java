@@ -51,16 +51,16 @@ public class OXPP extends AlgoritmoCruce {
             hijo2.set(c, genes1.get(c));
         }
 
-        int i = pcorte.get(NINTERCAMBIOS - 1), acum = i;
+        int i = pcorte.get(NINTERCAMBIOS - 1) + 1, acum = i;
 
         fill(genes1, hijo1, i, acum);
 
-        i = pcorte.get(NINTERCAMBIOS - 1);
+        i = pcorte.get(NINTERCAMBIOS - 1) + 1;
         acum = i;
 
         fill(genes2, hijo2, i, acum);
 
-        this.hijos = new ArrayList<Individuo>();
+        this.hijos = new ArrayList<>();
 
         this.hijos.add(new Individuo(hijo1));
         this.hijos.add(new Individuo(hijo2));
@@ -86,8 +86,6 @@ public class OXPP extends AlgoritmoCruce {
                 }
                 acum++;
                 if (acum == genes.size() - 1) acum = 1;
-                while (hijo.get(acum).getFenotipo() == -1)
-                    acum++;
             }
             else i++;
         }

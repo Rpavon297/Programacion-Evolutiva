@@ -146,6 +146,7 @@ public class VistaViajante extends Vista {
         comboCruce.addItem("OX");
         comboCruce.addItem("PMX");
         comboCruce.addItem("OX posiciones prioritarias");
+        comboCruce.addItem("Ciclos");
         comboCruce.setBounds(128, 223, 168, 27);
         panelParams.add(comboCruce);
 

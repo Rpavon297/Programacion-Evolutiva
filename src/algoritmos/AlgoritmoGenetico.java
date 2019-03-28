@@ -63,10 +63,9 @@ public class AlgoritmoGenetico {
 			//CRUZAR POBLACION
 			poblacion.substitute(FactoriaCruces.cruzarPoblacion(pobsel, cruce, parametroCruce));
 			//MUTAR POBLACION
-			System.out.println(poblacion);
 			poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
-			System.out.println(poblacion);
 			//EVALUAR POBLACION
+			//System.out.println(poblacion);
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 			//REINTRODUCIR ELITE
 			poblacion.substitute(elite);
