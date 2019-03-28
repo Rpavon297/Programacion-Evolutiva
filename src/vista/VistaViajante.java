@@ -145,6 +145,7 @@ public class VistaViajante extends Vista {
         comboCruce = new JComboBox<String>();
         comboCruce.addItem("OX");
         comboCruce.addItem("PMX");
+        comboCruce.addItem("OX posiciones prioritarias");
         comboCruce.setBounds(128, 223, 168, 27);
         panelParams.add(comboCruce);
 
