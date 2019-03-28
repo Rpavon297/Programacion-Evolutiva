@@ -161,7 +161,6 @@ public class AlgoritmoGenetico {
 
 	public void ordenarPoblacion(Poblacion poblacion){
 		Collections.sort(poblacion.getPoblacion(), new Comparator<Individuo>() {
-
 			@Override
 			public int compare(Individuo i1, Individuo i2) {
 				return new Double(i2.getFitnessAdaptado()).compareTo(new Double(i1.getFitnessAdaptado()));
@@ -226,7 +225,7 @@ public class AlgoritmoGenetico {
 			peor[i] = gen.getPeor();
 		}
 
-		maxAbs = Math.floor(maxAbs / precision) * precision;
+		//maxAbs = Math.floor(maxAbs / precision) * precision;
 
 		this.vista.mostrarGrafica(mejorAbsoluto, mejor, media, peor, maxAbs, sols);
 	}

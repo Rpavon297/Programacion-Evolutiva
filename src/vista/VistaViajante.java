@@ -143,11 +143,8 @@ public class VistaViajante extends Vista {
         panelParams.add(labelCruce);
 
         comboCruce = new JComboBox<String>();
-        comboCruce.addItem("Aritmetico");
-        comboCruce.addItem("BLX");
-        comboCruce.addItem("Monopunto");
-        comboCruce.addItem("Multipunto");
-        comboCruce.addItem("Uniforme");
+        comboCruce.addItem("OX");
+        comboCruce.addItem("PMX");
         comboCruce.setBounds(128, 223, 168, 27);
         panelParams.add(comboCruce);
 
