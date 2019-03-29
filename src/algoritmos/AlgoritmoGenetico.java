@@ -65,7 +65,7 @@ public class AlgoritmoGenetico {
 			//MUTAR POBLACION
 			poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
 			//EVALUAR POBLACION
-			//System.out.println(poblacion);
+			System.out.println(poblacion);
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 			//REINTRODUCIR ELITE
 			poblacion.substitute(elite);

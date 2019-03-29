@@ -51,7 +51,7 @@ public class Heuristica extends Mutacion{
                 Individuo indCopy = new Individuo(new ArrayList<>(ind.getGenes()));
 
                 permutaciones(indCopy, conjunto, resultado, posiciones);
-                ind = this.mejor;
+                ind.setGenes(this.mejor.getGenes());
             }
         }
         this.nPoblacion = poblacion;
