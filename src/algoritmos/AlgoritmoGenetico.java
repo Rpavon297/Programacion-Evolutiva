@@ -33,6 +33,12 @@ public class AlgoritmoGenetico {
 		
 		//Creamos la funcion correspondiente
 		Funcion f = crearFuncion(funcion);
+
+		//Inicializamos los parametros que necesitar� la funcion de mutacion
+		List<Double> paramsCruce = new ArrayList<>();
+		paramsCruce.add(probabilidadCruce);
+		paramsCruce.add((double) parametroCruce);
+
 		//Inicializamos los parametros que necesitar� la funcion de mutacion
 		List<Double> paramsMutacion = new ArrayList<>();
 		paramsMutacion.add(probabilidadMutacion);
@@ -61,7 +67,7 @@ public class AlgoritmoGenetico {
 			//SELECCIONAR POBLACION
 			Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.getPoblacion(), parametroTruncProb).getPobSeleccionada());
 			//CRUZAR POBLACION
-			poblacion.substitute(FactoriaCruces.cruzarPoblacion(pobsel, cruce, parametroCruce));
+			poblacion.substitute(FactoriaCruces.cruzarPoblacion(pobsel, cruce, paramsCruce));
 			//MUTAR POBLACION
 			poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
 			//EVALUAR POBLACION

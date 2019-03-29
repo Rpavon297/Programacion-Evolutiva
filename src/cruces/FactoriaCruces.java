@@ -3,6 +3,8 @@ package cruces;
 import poblacion.Individuo;
 import poblacion.Poblacion;
 
+import java.util.List;
+
 public class FactoriaCruces {
 	
 	private static AlgoritmoCruce getAlgoritmoCruce(String algoritmo, Individuo padre1, Individuo padre2, int param) {
@@ -52,21 +54,24 @@ public class FactoriaCruces {
 		return cruce;
 	}
 
-	public static Poblacion cruzarPoblacion(Poblacion poblacion, String Algoritmo, int param) {
+	public static Poblacion cruzarPoblacion(Poblacion poblacion, String Algoritmo, List<Double> param) {
 
 		Poblacion pob = new Poblacion();
 		int aCruzar = 1;
 		Individuo j = null;
+		double probabilidad = param.get(0);
 
 		for(Individuo i : poblacion.getPoblacion()) {
-			if(aCruzar == 1)
-				j = i;
-			if(aCruzar == 2) {
-				aCruzar = 0;
-				pob.getPoblacion().addAll(getAlgoritmoCruce(Algoritmo, i, j, param).getHijos());
-			}
+			if(Math.random() < probabilidad) {
+				if (aCruzar == 1)
+					j = i;
+				if (aCruzar == 2) {
+					aCruzar = 0;
+					pob.getPoblacion().addAll(getAlgoritmoCruce(Algoritmo, i, j, param.get(1).intValue()).getHijos());
+				}
 
-			aCruzar++;
+				aCruzar++;
+			}
 		}
 		return pob;
 	}
