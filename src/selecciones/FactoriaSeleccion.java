@@ -5,7 +5,7 @@ import java.util.List;
 import poblacion.Individuo;
 
 public class FactoriaSeleccion {
-	private static final int TAM_SELECCION = 6;
+	private static final int TAM_SELECCION = 20;
 	
 	public static AlgoritmoSeleccion getAlgoritmoSeleccion(String algoritmo, List<Individuo> poblacion, Object param) {
 		
