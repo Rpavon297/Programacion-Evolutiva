@@ -39,7 +39,7 @@ public class FactoriaCruces {
 				cruce = new OXPP();
 				cruce.cruzar(padre1,padre2,param);
 				break;
-			case "OX orden prioritario":
+			case "OX Orden Prioritario":
 				cruce = new OXOP();
 				cruce.cruzar(padre1,padre2,param);
 				break;
