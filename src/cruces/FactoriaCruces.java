@@ -51,6 +51,10 @@ public class FactoriaCruces {
 				cruce = new ERX();
 				cruce.cruzar(padre1,padre2,param);
 				break;
+			case "Codificacion ordinal":
+				cruce = new Ordinal();
+				cruce.cruzar(padre1,padre2,param);
+				break;
 			default:
 				cruce = new Aritmetico();
 				cruce.cruzar(padre1, padre2, param);
