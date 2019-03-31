@@ -11,8 +11,7 @@ import algoritmos.AlgoritmoGenetico;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-import java.awt.Color;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -27,8 +26,6 @@ import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
-import java.awt.Panel;
-import java.awt.TextField;
 
 public class VistaViajante extends Vista {
 
@@ -45,7 +42,7 @@ public class VistaViajante extends Vista {
     private JCheckBox chckbxElitismo;
     private JComboBox<String> comboMutacion;
     private JLabel labelKilometros;
-    private TextField textFieldCiudades;
+    private JLabel textFieldCiudades;
     private JLabel labelTruncProb;
     private JSpinner spinnerTruncProb;
 
@@ -83,7 +80,7 @@ public class VistaViajante extends Vista {
         lblCiudad.setBounds(10, 76, 115, 19);
         panelParams.add(lblCiudad);
 
-        comboCiudad = new JComboBox<String>(Mapa.Ciudades);
+        comboCiudad = new JComboBox<>(Mapa.Ciudades);
         comboCiudad.setSelectedItem("Madrid");
         comboCiudad.setBounds(128, 72, 168, 27);
         panelParams.add(comboCiudad);
@@ -99,9 +96,8 @@ public class VistaViajante extends Vista {
 
         spinnerPoblacion = new JSpinner();
         spinnerPoblacion.setFocusable(false);
-        SpinnerModel modelPoblacion = new SpinnerNumberModel(100, 1, 200, 1);
+        SpinnerModel modelPoblacion = new SpinnerNumberModel(100, 1, 2000, 1);
         spinnerPoblacion.setModel(modelPoblacion);
-        ((DefaultEditor) spinnerPoblacion.getEditor()).getTextField().setEditable(false);
         ((DefaultEditor) spinnerPoblacion.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
         spinnerPoblacion.setBounds(209, 115, 87, 27);
         panelParams.add(spinnerPoblacion);
@@ -112,9 +108,8 @@ public class VistaViajante extends Vista {
         panelParams.add(labelGeners);
 
         spinnerGeners = new JSpinner();
-        SpinnerModel modelGeners = new SpinnerNumberModel(100, 1, 200, 1);
+        SpinnerModel modelGeners = new SpinnerNumberModel(100, 1, 2000, 1);
         spinnerGeners.setModel(modelGeners);
-        ((DefaultEditor) spinnerGeners.getEditor()).getTextField().setEditable(false);
         ((DefaultEditor) spinnerGeners.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
         spinnerGeners.setBounds(209, 148, 87, 27);
         panelParams.add(spinnerGeners);
@@ -128,7 +123,7 @@ public class VistaViajante extends Vista {
         labelSeleccion.setBounds(10, 193, 77, 19);
         panelParams.add(labelSeleccion);
 
-        comboSeleccion = new JComboBox<String>();
+        comboSeleccion = new JComboBox<>();
         comboSeleccion.addItem("Estocastica");
         comboSeleccion.addItem("Ruleta");
         comboSeleccion.addItem("Torneo");
@@ -142,7 +137,7 @@ public class VistaViajante extends Vista {
         labelCruce.setBounds(10, 227, 115, 19);
         panelParams.add(labelCruce);
 
-        comboCruce = new JComboBox<String>();
+        comboCruce = new JComboBox<>();
         comboCruce.addItem("OX");
         comboCruce.addItem("PMX");
         comboCruce.addItem("OX posiciones prioritarias");
@@ -155,7 +150,7 @@ public class VistaViajante extends Vista {
         lblMutacion.setBounds(10, 261, 115, 19);
         panelParams.add(lblMutacion);
 
-        comboMutacion = new JComboBox<String>();
+        comboMutacion = new JComboBox<>();
         comboMutacion.addItem("Heuristica");
         comboMutacion.addItem("Insercion");
         comboMutacion.addItem("Intercambio");
@@ -176,7 +171,6 @@ public class VistaViajante extends Vista {
         spinnerCruces.setBounds(212, 300, 58, 27);
         SpinnerModel crucesModel = new SpinnerNumberModel(60, 0, 100, 1);
         spinnerCruces.setModel(crucesModel);
-        ((DefaultEditor) spinnerCruces.getEditor()).getTextField().setEditable(false);
         ((DefaultEditor) spinnerCruces.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
         panelParams.add(spinnerCruces);
 
@@ -194,7 +188,6 @@ public class VistaViajante extends Vista {
         spinnerMutaciones.setBounds(212, 334, 58, 27);
         SpinnerModel mutacionesModel = new SpinnerNumberModel(5, 0, 100, 1);
         spinnerMutaciones.setModel(mutacionesModel);
-        ((DefaultEditor) spinnerMutaciones.getEditor()).getTextField().setEditable(false);
         ((DefaultEditor) spinnerMutaciones.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
         panelParams.add(spinnerMutaciones);
 
@@ -217,7 +210,6 @@ public class VistaViajante extends Vista {
         spinnerElitismo.setBounds(212, 376, 58, 27);
         SpinnerModel elitismoModel = new SpinnerNumberModel(2, 0, 5, 1);
         spinnerElitismo.setModel(elitismoModel);
-        ((DefaultEditor) spinnerElitismo.getEditor()).getTextField().setEditable(false);
         ((DefaultEditor) spinnerElitismo.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
         panelParams.add(spinnerElitismo);
 
@@ -298,8 +290,7 @@ public class VistaViajante extends Vista {
         labelKilometros.setBounds(10, 52, 131, 19);
         panelSolucion.add(labelKilometros);
 
-        textFieldCiudades = new TextField();
-        textFieldCiudades.setEditable(false);
+        textFieldCiudades = new JLabel();
         textFieldCiudades.setBounds(147, 10, 607, 105);
         panelSolucion.add(textFieldCiudades);
 
@@ -322,7 +313,6 @@ public class VistaViajante extends Vista {
                     labelTruncProb.setVisible(true);
                     SpinnerModel probModel = new SpinnerNumberModel(50, 50, 100, 1);
                     spinnerTruncProb.setModel(probModel);
-                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setEditable(false);
                     ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
                     spinnerTruncProb.setVisible(true);
                     percent4.setVisible(true);
@@ -332,7 +322,6 @@ public class VistaViajante extends Vista {
                     labelTruncProb.setVisible(true);
                     SpinnerModel truncModel = new SpinnerNumberModel(50, 10, 50, 10);
                     spinnerTruncProb.setModel(truncModel);
-                    ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setEditable(false);
                     ((DefaultEditor) spinnerTruncProb.getEditor()).getTextField().setHorizontalAlignment(SwingConstants.CENTER);
                     spinnerTruncProb.setVisible(true);
                     percent4.setVisible(true);
@@ -398,17 +387,26 @@ public class VistaViajante extends Vista {
         for(int i = 0; i < x.length; i++)
             x[i] = i+1;
 
-        labelKilometros.setText(String.valueOf(solucion) + " km.");
-        textFieldCiudades.setText("");
+        labelKilometros.setText(solucion + " km.");
+        textFieldCiudades.setText("<html>");
 
-        for(Double d : sol)
-            textFieldCiudades.setText(textFieldCiudades.getText()+ " -> " + Mapa.Ciudades[d.intValue()]);
+        int i = 0;
+        for(Double d : sol) {
+            textFieldCiudades.setText(textFieldCiudades.getText() + "&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;" + Mapa.Ciudades[d.intValue()]);
+            i++;
+            if(i == 6){
+                textFieldCiudades.setText(textFieldCiudades.getText() + "<br>");
+                i=0;
+            }
+        }
+
+        textFieldCiudades.setText(textFieldCiudades.getText() + "</html>");
+        textFieldCiudades.setHorizontalAlignment(SwingConstants.CENTER);
 
         panelMathPlot.addLegend("SOUTH");
         panelMathPlot.addLinePlot("Mejor Absoluto", Color.MAGENTA, x, mejorAbs);
         panelMathPlot.addLinePlot("Mejor de la Generacion", Color.GREEN, x, mejor);
         panelMathPlot.addLinePlot("Media Generacion", Color.ORANGE, x, media);
         panelMathPlot.addLinePlot("Peor de la Generacion", Color.RED, x, peor);
-
     }
 }
