@@ -1,13 +1,16 @@
 package vista;
 
 import algoritmos.AlgoritmoGenetico;
+import org.math.plot.Plot2DPanel;
 
+import java.awt.*;
 import java.util.List;
 
 public class VistaEstudio extends Vista {
 
     private List<Double> resultados;
     private List<List<Double>> soluciones;
+    private Plot2DPanel panelMathPlot;
 
     public void realizarEstudio(int num_ejecuciones,
                                 int pobSizeMin, int pobSizeMax,
@@ -38,12 +41,26 @@ public class VistaEstudio extends Vista {
                     probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
         }
 
+        mostrarEstudio();
+    }
 
+    private void mostrarEstudio() {
+        double [] x = new double[resultados.size()];
+        for(int i = 0; i < x.length; i++)
+            x[i] = i+1;
+
+        double[] y = new double[resultados.size()];
+        for(int i = 0;i < y.length; i++)
+            y[i] = resultados.get(i);
+
+        panelMathPlot.addLegend("SOUTH");
+        panelMathPlot.addLinePlot("Resultados", Color.MAGENTA, x, y);
     }
 
     @Override
     public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
         this.soluciones.add(sol);
         this.resultados.add(solucion);
+
     }
 }

@@ -140,7 +140,8 @@ public class VistaViajante extends Vista {
         comboCruce = new JComboBox<>();
         comboCruce.addItem("OX");
         comboCruce.addItem("PMX");
-        comboCruce.addItem("OX posiciones prioritarias");
+        comboCruce.addItem("OX Posiciones Prioritarias");
+        comboCruce.addItem("OX Orden Prioritario");
         comboCruce.addItem("Ciclos");
         comboCruce.addItem("ERX");
         comboCruce.addItem("Codificacion ordinal");

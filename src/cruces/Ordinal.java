@@ -42,8 +42,12 @@ public class Ordinal extends AlgoritmoCruce {
 
 
         setRecorridos(hijo1, rec3);
-
         setRecorridos(hijo2, rec4);
+
+        this.hijos = new ArrayList<>();
+
+        this.hijos.add(new Individuo(hijo1));
+        this.hijos.add(new Individuo(hijo2));
     }
 
     private void setRecorridos(List<Gen> hijo1, List<Integer> rec3) {
@@ -52,9 +56,13 @@ public class Ordinal extends AlgoritmoCruce {
         for(int i = 0; i < hijo1.size();i++)
             pos.add(i);
 
-        for(int i = 1; i < hijo1.size()-1; i++){
-            hijo1.get(i).setGenotipo(pos.get(rec3.get(i)));
-            pos.remove((int) rec3.get(i));
+        try {
+            for (int i = 1; i < hijo1.size() - 1; i++) {
+                hijo1.get(i).setGenotipo(pos.get(rec3.get(i-1)));
+                pos.remove(new Integer((int)hijo1.get(i).getFenotipo()));
+            }
+        }catch (Exception e) {
+            System.out.println(e);
         }
     }
 
@@ -62,11 +70,13 @@ public class Ordinal extends AlgoritmoCruce {
         List<Integer> pos = new ArrayList<>();
 
         for(int i = 0; i < hijo1.size();i++)
-            pos.add(i + 1);
+            pos.add(i);
 
         for(int i = 1; i < genes1.size()-1; i++) {
             Gen g = genes1.get(i);
             rec1.add(pos.indexOf((int) g.getFenotipo()));
+            if(rec1.get(rec1.size()-1) == -1)
+                System.out.println("");
             pos.remove(new Integer((int) g.getFenotipo()));
         }
     }
