@@ -47,6 +47,10 @@ public class FactoriaCruces {
 				cruce = new Ciclos();
 				cruce.cruzar(padre1,padre2,param);
 				break;
+			case "ERX":
+				cruce = new ERX();
+				cruce.cruzar(padre1,padre2,param);
+				break;
 			default:
 				cruce = new Aritmetico();
 				cruce.cruzar(padre1, padre2, param);
