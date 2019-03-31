@@ -55,6 +55,10 @@ public class FactoriaCruces {
 				cruce = new Ordinal();
 				cruce.cruzar(padre1,padre2,param);
 				break;
+			case "Intercambio de segmentos":
+				cruce = new ICC();
+				cruce.cruzar(padre1,padre2,param);
+				break;
 			default:
 				cruce = new Aritmetico();
 				cruce.cruzar(padre1, padre2, param);
