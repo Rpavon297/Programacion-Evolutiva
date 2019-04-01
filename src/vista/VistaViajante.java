@@ -45,6 +45,7 @@ public class VistaViajante extends Vista {
     private JLabel textFieldCiudades;
     private JLabel labelTruncProb;
     private JSpinner spinnerTruncProb;
+    private JButton btnEstudio;
 
     /**
      * Create the frame.
@@ -61,7 +62,7 @@ public class VistaViajante extends Vista {
         contentPane.setLayout(null);
 
         JPanel panelParams = new JPanel();
-        panelParams.setBounds(0, 0, 302, 586);
+        panelParams.setBounds(0, 0, 302, 527);
         contentPane.add(panelParams);
         panelParams.setLayout(null);
 
@@ -244,12 +245,12 @@ public class VistaViajante extends Vista {
         percent4.setVisible(false);
 
         Panel panelBotones = new Panel();
-        panelBotones.setBounds(0, 587, 302, 91);
+        panelBotones.setBounds(0, 527, 302, 151);
         contentPane.add(panelBotones);
         panelBotones.setLayout(null);
 
         JButton buttonEjecutar = new JButton("Comenzar");
-        buttonEjecutar.setBounds(57, 6, 171, 45);
+        buttonEjecutar.setBounds(58, 6, 171, 45);
         panelBotones.add(buttonEjecutar);
         buttonEjecutar.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
         buttonEjecutar.addActionListener(new ActionListener() {
@@ -262,8 +263,24 @@ public class VistaViajante extends Vista {
 
         JButton btnDefecto = new JButton("Valores por defecto");
         btnDefecto.setFont(new Font("Dialog", Font.PLAIN, 14));
-        btnDefecto.setBounds(42, 56, 203, 29);
+        btnDefecto.setBounds(43, 56, 203, 29);
         panelBotones.add(btnDefecto);
+
+        btnEstudio = new JButton("Realizar Estudio");
+        btnEstudio.setBounds(81, 108, 134, 29);
+        panelBotones.add(btnEstudio);
+        btnEstudio.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VistaEstudio v = new VistaEstudio(panelMathPlot);
+                v.setVisible(true);
+            }
+        });
+
+        JSeparator separator_6 = new JSeparator();
+        separator_6.setBounds(6, 90, 286, 14);
+        panelBotones.add(separator_6);
         btnDefecto.addActionListener(new ActionListener() {
 
             @Override
