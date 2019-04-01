@@ -8,6 +8,7 @@ import org.math.plot.Plot2DPanel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
@@ -27,17 +28,27 @@ public class VistaEstudio extends Vista {
     private List<List<Double>> soluciones;
     private Plot2DPanel panelMathPlot;
     private JButton btnRealizarEstudio;
+    //MIN GENER
     private JSpinner spinner;
+    //MAX GENER
     private JSpinner spinner_1;
+    //MIN INDIVIDUOS
     private JSpinner spinner_2;
+    //MAX INDIVIDUOS
     private JSpinner spinner_3;
     private JLabel lblProbabilidadCruce;
+    //MIN CRUCE
     private JSpinner spinner_4;
+    //MAX CRUCCE
     private JSpinner spinner_5;
     private JLabel lblProbabilidadMutacin;
+    //MIN MUTACION
     private JSpinner spinner_6;
+    //MAX MUTACION
     private JSpinner spinner_7;
+    //MIN ELITISMO
     private JSpinner spinner_8;
+    //MAX ELITISMO
     private JSpinner spinner_9;
     private JSeparator separator;
     private JSeparator separator_1;
@@ -50,6 +61,8 @@ public class VistaEstudio extends Vista {
     private JCheckBox chckbxNewCheckBox;
 
     public VistaEstudio(Plot2DPanel panelMathPlot) {
+        this.resultados = new ArrayList<>();
+        this.soluciones = new ArrayList<>();
         this.panelMathPlot = panelMathPlot;
         setResizable(false);
         setLocationRelativeTo(null);
@@ -201,24 +214,68 @@ public class VistaEstudio extends Vista {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                if((Integer)spinner_1.getValue() <= (Integer)spinner.getValue() || (Integer)spinner_3.getValue() <= (Integer)spinner_2.getValue() ||
-                        (Integer)spinner_5.getValue() <= (Integer)spinner_4.getValue() || (Integer)spinner_7.getValue() <= (Integer)spinner_6.getValue() ||
-                        (Integer)spinner_9.getValue() <= (Integer)spinner_8.getValue()) {
+                if ((Integer) spinner_1.getValue() < (Integer) spinner.getValue() || (Integer) spinner_3.getValue() < (Integer) spinner_2.getValue() ||
+                        (Integer) spinner_5.getValue() < (Integer) spinner_4.getValue() || (Integer) spinner_7.getValue() < (Integer) spinner_6.getValue() ||
+                        (Integer) spinner_9.getValue() < (Integer) spinner_8.getValue()) {
                     JOptionPane.showMessageDialog(
                             null,
                             "Intervalo de datos no valido",
                             "Error de los datos",
                             JOptionPane.INFORMATION_MESSAGE);
-                }
-                else {
+                } else {
                     setVisible(false);
-                    realizarEstudio(10, (int)spinner_2.getValue(), (int)spinner_3.getValue(), (int)spinner.getValue(), (int)spinner_1.getValue(), (String)comboBox.getSelectedItem(),
-                            (String)comboBox_1.getSelectedItem(), (String)comboBox_2.getSelectedItem(), ((Integer) spinner_4.getValue()).doubleValue()/100, ((Integer) spinner_5.getValue()).doubleValue()/100, ((Integer) spinner_6.getValue()).doubleValue()/100,
-                            ((Integer) spinner_7.getValue()).doubleValue()/100, chckbxNewCheckBox.isSelected(), ((Integer) spinner_8.getValue()).doubleValue()/100, ((Integer) spinner_9.getValue()).doubleValue()/100, 0.5, Mapa.Madrid);
+                    realizarEstudio(10, (int) spinner_2.getValue(), (int) spinner_3.getValue(), (int) spinner.getValue(), (int) spinner_1.getValue(), (String) comboBox.getSelectedItem(),
+                            (String) comboBox_1.getSelectedItem(), (String) comboBox_2.getSelectedItem(), ((Integer) spinner_4.getValue()).doubleValue() / 100, ((Integer) spinner_5.getValue()).doubleValue() / 100, ((Integer) spinner_6.getValue()).doubleValue() / 100,
+                            ((Integer) spinner_7.getValue()).doubleValue() / 100, chckbxNewCheckBox.isSelected(), ((Integer) spinner_8.getValue()).doubleValue() / 100, ((Integer) spinner_9.getValue()).doubleValue() / 100, 0.5, Mapa.Madrid);
                 }
 
             }
         });
+    }
+
+    private void capturaDatos() {
+
+        int ciudadInicio = 25;
+        int minTamPob = (int) this.spinner_2.getValue();
+        int maxTamPob = (int) this.spinner_3.getValue();
+        int minTamGen = (int) this.spinner.getValue();
+        int maxTamGen = (int) this.spinner_1.getValue();
+
+        String seleccion = (String) this.comboBox.getSelectedItem();
+        String cruce = (String) this.comboBox_1.getSelectedItem();
+        String mutacion = (String) this.comboBox_2.getSelectedItem();
+
+        double minProbCruce = (int) this.spinner_4.getValue();
+        minProbCruce = minProbCruce / 100;
+        double maxProbCruce = (int) this.spinner_5.getValue();
+        maxProbCruce = maxProbCruce / 100;
+        double minProbMuta = (int) this.spinner_6.getValue();
+        minProbMuta = minProbMuta / 100;
+        double maxProbMuta = (int) this.spinner_7.getValue();
+        maxProbMuta = maxProbMuta / 100;
+        boolean elitismo = this.chckbxNewCheckBox.isSelected();
+        double minElit = (int) this.spinner_8.getValue();
+        minElit = minElit / 100;
+        double maxElit = (int) this.spinner_9.getValue();
+        maxElit = maxElit / 100;
+
+        double parametroTruncProb = 0;
+
+        if (seleccion == "TorneoProb" || seleccion == "Truncamiento") {
+            /*parametroTruncProb = (int) this.spinnerTruncProb.getValue();
+            parametroTruncProb = parametroTruncProb / 100;*/
+            parametroTruncProb = 0.5;
+        }
+
+        realizarEstudio(10,
+                minTamPob, maxTamPob,
+                minTamGen, maxTamGen,
+                seleccion, cruce, mutacion,
+                minProbCruce, maxProbCruce,
+                minProbMuta, maxProbMuta,
+                elitismo,
+                minElit, maxElit,
+                parametroTruncProb, ciudadInicio);
     }
 
     public void realizarEstudio(int num_ejecuciones,
@@ -238,12 +295,12 @@ public class VistaEstudio extends Vista {
         double difPorcenElit = (porcenElitMax - porcenElitMin) / num_ejecuciones;
 
 
-        for (int i = 1; i <= num_ejecuciones; i++) {
-            int poblacionSize = difPobSize * i;
-            int numGeneraciones = difNumGen * i;
-            double probabilidadCruce = difProbCruce * i;
-            double probabilidadMutacion = difProbMuta * i;
-            double percentElitismo = difPorcenElit * i;
+        for (int i = 0; i < num_ejecuciones; i++) {
+            int poblacionSize = pobSizeMin + (difPobSize * i);
+            int numGeneraciones = numGenMin + (difNumGen * i);
+            double probabilidadCruce = probCruceMin + (difProbCruce * i);
+            double probabilidadMutacion = probMutaMin + (difProbMuta * i);
+            double percentElitismo = porcenElitMin + (difPorcenElit * i);
 
             AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
             ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
@@ -254,12 +311,14 @@ public class VistaEstudio extends Vista {
     }
 
     private void mostrarEstudio() {
-        double [] x = new double[resultados.size()];
-        for(int i = 0; i < x.length; i++)
-            x[i] = i+1;
+        panelMathPlot.removeAllPlots();
+
+        double[] x = new double[resultados.size()];
+        for (int i = 0; i < x.length; i++)
+            x[i] = i + 1;
 
         double[] y = new double[resultados.size()];
-        for(int i = 0;i < y.length; i++)
+        for (int i = 0; i < y.length; i++)
             y[i] = resultados.get(i);
 
         panelMathPlot.addLegend("SOUTH");
@@ -268,6 +327,7 @@ public class VistaEstudio extends Vista {
 
     @Override
     public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
+
         this.soluciones.add(sol);
         this.resultados.add(solucion);
 

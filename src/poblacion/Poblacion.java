@@ -93,4 +93,10 @@ public class Poblacion {
 
 		return cadena;
 	}
+
+    public void remove(Poblacion nPoblacion, Poblacion pobsel) {
+		for(int i = 0;i < nPoblacion.getPoblacion().size(); i++){
+			this.poblacion.set(this.poblacion.indexOf(pobsel.getPoblacion().get(i)),nPoblacion.getPoblacion().get(i));
+		}
+    }
 }

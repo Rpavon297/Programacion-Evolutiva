@@ -68,10 +68,13 @@ public class AlgoritmoGenetico {
 			Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.getPoblacion(), parametroTruncProb).getPobSeleccionada());
 			//CRUZAR POBLACION
 			poblacion.substitute(FactoriaCruces.cruzarPoblacion(pobsel, cruce, paramsCruce));
+
+			//Este metodo sustituye a los padres por los hijos
+			//poblacion.remove(FactoriaCruces.cruzarPoblacion(pobsel, cruce, paramsCruce), pobsel);
 			//MUTAR POBLACION
 			poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
 			//EVALUAR POBLACION
-			System.out.println(poblacion);
+			//System.out.println(poblacion);
 			fitnessTotal = actualizarPoblacion(poblacion, f, funcion);
 			//REINTRODUCIR ELITE
 			poblacion.substitute(elite);

@@ -1,15 +1,11 @@
 package vista;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import org.math.plot.Plot2DPanel;
 import poblacion.Mapa;
 import algoritmos.AlgoritmoGenetico;
-
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,14 +14,7 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
 
-import javax.swing.JSeparator;
-import javax.swing.JComboBox;
-import javax.swing.JSpinner;
 import javax.swing.JSpinner.DefaultEditor;
-import javax.swing.SpinnerModel;
-import javax.swing.SpinnerNumberModel;
-import javax.swing.JCheckBox;
-import javax.swing.JButton;
 
 public class VistaViajante extends Vista {
 
@@ -46,6 +35,7 @@ public class VistaViajante extends Vista {
     private JLabel labelTruncProb;
     private JSpinner spinnerTruncProb;
     private JButton btnEstudio;
+    private JPanel params;
 
     /**
      * Create the frame.
@@ -64,6 +54,7 @@ public class VistaViajante extends Vista {
         JPanel panelParams = new JPanel();
         panelParams.setBounds(0, 0, 302, 527);
         contentPane.add(panelParams);
+        this.params = panelParams;
         panelParams.setLayout(null);
 
         JLabel Titulo = new JLabel("Parametros");
@@ -396,9 +387,10 @@ public class VistaViajante extends Vista {
             parametroTruncProb = parametroTruncProb / 100;
         }
 
-        AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
-        ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
-                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
+            AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
+            ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
+                    probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
+
     }
 
     public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {

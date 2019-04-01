@@ -48,9 +48,7 @@ public class PMX extends AlgoritmoCruce {
             if (hijo2.get(i).getFenotipo() == -1 && !hijo2.contains(genes2.get(i)))
                 hijo2.set(i, genes2.get(i));
         }
-        int control = 0;
         while (tieneDuplicados(hijo1) || tieneDuplicados(hijo2)) {
-            control++;
             for (int i = 1; i < hijo1.size() - 1; i++) {
                 if (hijo1.get(i).getFenotipo() == -1){
                     hijo1.set(i, genes1.get(genes2.indexOf(genes1.get(i))));
@@ -65,8 +63,6 @@ public class PMX extends AlgoritmoCruce {
                     hijo2.set(i, genes2.get(genes1.indexOf(hijo2.get(i))));
                 }
             }
-            if(control == 20)
-                System.out.println("break");
         }
 
         this.hijos = new ArrayList<>();

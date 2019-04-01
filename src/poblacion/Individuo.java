@@ -100,4 +100,9 @@ public class Individuo {
 
 		return cad;
 	}
+
+	public boolean equals(Object o){
+		Individuo ind = (Individuo) o;
+		return ind.getGenes().equals(this.genes);
+	}
 }
