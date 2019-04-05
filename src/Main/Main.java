@@ -1,7 +1,6 @@
 package Main;
 
-import vista.VistaDebugging;
-import vista.VistaInicial;
+import Comun.Vista.VistaInicial;
 
 public class Main {
 	public static void main(String[] args) {
