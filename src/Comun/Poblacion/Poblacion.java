@@ -3,6 +3,7 @@ package Comun.Poblacion;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class Poblacion {
 
 	private List<Individuo> poblacion;
@@ -16,22 +17,11 @@ public class Poblacion {
 		for(Individuo ind : pob)
 			this.poblacion.add(new Individuo(ind));
 	}
-	public List<Individuo> copy(){
-		List<Individuo> ret = new ArrayList<Individuo>();
-		for(Individuo ind: poblacion)
-			ret.add(new Individuo(ind));
 
-		return ret;
-	}
-	
 	public List<Individuo> getPoblacion() {
 		return poblacion;
 	}
 
-	public void setPoblacion(List<Individuo> poblacion) {
-		this.poblacion = poblacion;
-	}
-	
 	public void revisarAdaptacion(boolean maximiza){
 		
 		double min = Double.POSITIVE_INFINITY;
@@ -70,11 +60,6 @@ public class Poblacion {
 		}
 	}
 
-	public void addAll(Poblacion nuevos) {
-		// TODO Auto-generated method stub
-		this.poblacion.addAll(nuevos.getPoblacion());
-	}
-
 	public void substitute(Poblacion nPoblacion) {
 		// TODO Auto-generated method stub
 		int i = this.poblacion.size() - 1;
@@ -94,9 +79,4 @@ public class Poblacion {
 		return cadena;
 	}
 
-    public void remove(Poblacion nPoblacion, Poblacion pobsel) {
-		for(int i = 0;i < nPoblacion.getPoblacion().size(); i++){
-			this.poblacion.set(this.poblacion.indexOf(pobsel.getPoblacion().get(i)),nPoblacion.getPoblacion().get(i));
-		}
-    }
 }

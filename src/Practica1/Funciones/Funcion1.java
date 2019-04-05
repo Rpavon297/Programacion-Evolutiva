@@ -6,6 +6,7 @@ import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class Funcion1 extends Funcion {
 
 	public Funcion1(){
@@ -17,8 +18,7 @@ public class Funcion1 extends Funcion {
 	}
 	@Override
 	public double ejecutar(List<Double> x) {
-		double sol = 21.5 + (x.get(0) * Math.sin(4 * Math.PI * x.get(0))) +
-				(x.get(1) * Math.sin(20 * Math.PI * x.get(1)));
-		return sol;
+        return 21.5 + (x.get(0) * Math.sin(4 * Math.PI * x.get(0))) +
+                (x.get(1) * Math.sin(20 * Math.PI * x.get(1)));
 	}
 }

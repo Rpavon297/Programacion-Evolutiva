@@ -4,6 +4,7 @@ import java.util.List;
 
 import Comun.Poblacion.Individuo;
 
+@SuppressWarnings("ALL")
 public class FactoriaSeleccion {
 	private static final int TAM_SELECCION = 50;
 	

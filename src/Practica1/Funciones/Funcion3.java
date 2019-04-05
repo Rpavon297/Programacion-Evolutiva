@@ -5,6 +5,7 @@ import Comun.Funcion.Funcion;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class Funcion3 extends Funcion {
 
 	public Funcion3(){
@@ -22,7 +23,7 @@ public class Funcion3 extends Funcion {
 		return total;
 	}
 	
-	public double sumatorio(double x) {
+	private double sumatorio(double x) {
 		double sumador = 0;
 		for(int i = 1; i <= 5; ++i)
 			sumador += i * Math.cos((i + 1) * x + i);

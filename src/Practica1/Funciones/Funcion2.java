@@ -5,6 +5,7 @@ import Comun.Funcion.Funcion;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class Funcion2 extends Funcion {
 
 	public Funcion2(){

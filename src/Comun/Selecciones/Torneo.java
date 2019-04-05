@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import Comun.Poblacion.Individuo;
 
+@SuppressWarnings("ALL")
 public class Torneo extends AlgoritmoSeleccion {
 	
 

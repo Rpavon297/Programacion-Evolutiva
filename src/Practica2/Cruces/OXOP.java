@@ -5,7 +5,6 @@ import Comun.Genetica.Gen;
 import Comun.Poblacion.Individuo;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -40,12 +39,7 @@ public class OXOP extends AlgoritmoCruce {
         for(Gen i : listaAcruzar){
             posiciones.add(padre2.getGenes().indexOf(i));
         }
-        Collections.sort(posiciones, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o1.compareTo(o2);
-            }
-        });
+        posiciones.sort(Comparator.naturalOrder());
         Individuo hijo1 = new Individuo(padre2.getGenes());
 
         int o = 0;

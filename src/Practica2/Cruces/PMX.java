@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+@SuppressWarnings("ALL")
 public class PMX extends AlgoritmoCruce {
     @Override
     public void cruzar(Individuo padre1, Individuo padre2, int param) {

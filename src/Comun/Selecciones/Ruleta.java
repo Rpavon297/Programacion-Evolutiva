@@ -9,7 +9,7 @@ public class Ruleta extends AlgoritmoSeleccion{
 	
 	public void seleccion(List<Individuo> poblacion, Object param) {
 		
-		pobSeleccionada = new ArrayList<Individuo>();
+		pobSeleccionada = new ArrayList<>();
 		double p;
 		int posSuper;
 		

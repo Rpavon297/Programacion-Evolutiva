@@ -7,6 +7,7 @@ import Comun.Cruces.AlgoritmoCruce;
 import Comun.Genetica.Gen;
 import Comun.Poblacion.Individuo;
 
+@SuppressWarnings("ALL")
 public class Uniforme extends AlgoritmoCruce {
 
 	@Override

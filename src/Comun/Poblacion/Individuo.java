@@ -7,6 +7,7 @@ import Comun.Genetica.GenBinario;
 import Comun.Genetica.GenEntero;
 import Comun.Genetica.GenReal;
 
+@SuppressWarnings("ALL")
 public class Individuo {
 	private List<Gen> genes;
 	private double acumulado;
@@ -64,7 +65,7 @@ public class Individuo {
 	
 	
 	public List<Gen> getGenes() {return genes;}
-	public int get() {return genes.size();}
+
 	public double getFitness() {return fitness;}
 	public double getAcumulado() {return acumulado;}
 	
@@ -72,7 +73,7 @@ public class Individuo {
 	public void setAcumulado(double acumulado) {this.acumulado = acumulado;}
 	public void setFitness(double fitness) {this.fitness = fitness;}
 
-	public double getProbSeleccion() {
+	private double getProbSeleccion() {
 		return probSeleccion;
 	}
 
@@ -93,12 +94,12 @@ public class Individuo {
     }
 
     public String toString(){
-		String cad = "[";
+		StringBuilder cad = new StringBuilder("[");
 		for(Gen g : this.genes)
-			cad = cad + g + ", ";
-		cad += "]";
+			cad.append(g).append(", ");
+		cad.append("]");
 
-		return cad;
+		return cad.toString();
 	}
 
 	public boolean equals(Object o){

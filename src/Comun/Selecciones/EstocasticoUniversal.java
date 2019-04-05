@@ -10,7 +10,7 @@ public class EstocasticoUniversal extends AlgoritmoSeleccion{
 
 	public void seleccion(List<Individuo> poblacion, Object param) {
 		
-		pobSeleccionada = new ArrayList<Individuo>();
+		pobSeleccionada = new ArrayList<>();
 		double p = Math.random() * (1.0/(int)param);
 	
 		for(int i = 0; i < (int)param; i++){

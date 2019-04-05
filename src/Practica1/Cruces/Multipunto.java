@@ -8,6 +8,7 @@ import Comun.Cruces.AlgoritmoCruce;
 import Comun.Genetica.Gen;
 import Comun.Poblacion.Individuo;
 
+@SuppressWarnings("ALL")
 public class Multipunto extends AlgoritmoCruce {
 
 	@Override

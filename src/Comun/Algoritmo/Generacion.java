@@ -5,11 +5,11 @@ import Comun.Poblacion.Poblacion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Generacion {
-    private double mejor;
-    private double peor;
-    private double media;
-    private List<Double> solucion;
+class Generacion {
+    private final double mejor;
+    private final double peor;
+    private final double media;
+    private final List<Double> solucion;
 
     public Generacion(Poblacion poblacion, double fitnessTotal){
         //Calculamos maximo, minimo, media y maximo absoluto. La solucion ser� el maximo absoluto en la ultima generacion
@@ -25,31 +25,16 @@ public class Generacion {
         return mejor;
     }
 
-    public void setMejor(double mejor) {
-        this.mejor = mejor;
-    }
-
     public double getPeor() {
         return peor;
-    }
-
-    public void setPeor(double peor) {
-        this.peor = peor;
     }
 
     public double getMedia() {
         return media;
     }
 
-    public void setMedia(double media) {
-        this.media = media;
-    }
-
     public List<Double> getSolucion() {
         return solucion;
     }
 
-    public void setSolucion(List<Double> solucion) {
-        this.solucion = solucion;
-    }
 }

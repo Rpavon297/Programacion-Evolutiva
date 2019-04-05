@@ -12,8 +12,8 @@ public class TorneoProb extends AlgoritmoSeleccion {
 	@Override
 	public void seleccion(List<Individuo> poblacion, Object param) {
 		
-		pobSeleccionada = new ArrayList<Individuo>();
-		int k = (int) ((Pair<Integer, Double>) param).getLeft();
+		pobSeleccionada = new ArrayList<>();
+		int k = ((Pair<Integer, Double>) param).getLeft();
 		double p = (double) ((Pair<Object, Object>) param).getRight();
 		int tamTorneo = 2;
 		

@@ -29,6 +29,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
+@SuppressWarnings("ALL")
 public class VistaGenetico extends Vista {
 
 	/**
@@ -36,7 +37,6 @@ public class VistaGenetico extends Vista {
 	 */
 	AlgoritmoGenetico ag;
 	private static final long serialVersionUID = 1L;
-	private JPanel contentPane;
 	private JComboBox<String> combofuncion;
 	private JSpinner spinnerPoblacion;
 	private JSpinner spinnerGeners;
@@ -65,7 +65,7 @@ public class VistaGenetico extends Vista {
 		setBounds(100, 100, 1064, 700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -528,10 +528,10 @@ public class VistaGenetico extends Vista {
 			i++;
 			d = Math.floor(d / 0.0001) * 0.0001;
 
-			String text = "X" + String.valueOf(i) + ": " + String.valueOf(d);
+			String text = "X" + i + ": " + d;
 			textField_1.addItem(text);
 
-		};
+		}
 
 		panelMathPlot.addLegend("SOUTH");
 		panelMathPlot.addLinePlot("Mejor Absoluto", Color.MAGENTA, x, mejorAbs);

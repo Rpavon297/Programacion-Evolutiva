@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+@SuppressWarnings("ALL")
 public class OXPP extends AlgoritmoCruce {
     @Override
     public void cruzar(Individuo padre1, Individuo padre2, int param) {

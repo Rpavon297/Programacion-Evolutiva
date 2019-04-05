@@ -1,7 +1,6 @@
 package Comun.Genetica;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GenEntero extends Gen {
@@ -13,11 +12,8 @@ public class GenEntero extends Gen {
 		this.max = nGen.getMax();
 		this.prec = nGen.getPrec();
 		this.neg = nGen.getNeg();
-		this.alelos = new ArrayList<Object>();
-		for(Object o : nGen.getAlelos()){
-			Object no = o;
-			this.alelos.add(no);
-		}
+		this.alelos = new ArrayList<>();
+		this.alelos.addAll(nGen.getAlelos());
 	}
 
 	@Override
@@ -30,13 +26,7 @@ public class GenEntero extends Gen {
 
 	@Override
 	public double getFenotipo() {
-		double d = (int)alelos.get(0);
-		return d;
-	}
-
-	@Override
-	public List<Object> getAlelosNum() {
-		return alelos;
+		return (double) (int)alelos.get(0);
 	}
 
 	@Override

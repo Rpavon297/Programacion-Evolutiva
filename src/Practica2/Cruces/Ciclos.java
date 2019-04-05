@@ -7,6 +7,7 @@ import Comun.Poblacion.Individuo;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class Ciclos extends AlgoritmoCruce {
     @Override
     public void cruzar(Individuo padre1, Individuo padre2, int param) {

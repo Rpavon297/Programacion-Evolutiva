@@ -3,31 +3,15 @@ package Comun.Genetica;
 import java.util.*;
 
 public abstract class Gen {
-	protected List<Object> alelos;
-	protected float prec;
-	protected boolean neg;
-	protected int tam_cod;
-	protected double min;
-	protected double max;
+	List<Object> alelos;
+	float prec;
+	boolean neg;
+	int tam_cod;
+	double min;
+	double max;
 
 
-	public Gen(Gen nGen){
-		this.min = nGen.getMin();
-		this.max = nGen.getMax();
-		this.prec = nGen.getPrec();
-		this.neg = nGen.getNeg();
-		this.alelos = new ArrayList<Object>();	
-		for(Object o : nGen.getAlelos()){
-			Object no = o;
-			this.alelos.add(no);
-		}
-	}
-	
-	public Gen(List<Object> alelos){
-		this.alelos = alelos;
-	}
-
-	public Gen() {
+	Gen() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -42,9 +26,9 @@ public abstract class Gen {
 	}*/
 	public double getMin(){return this.min;}
 	public double getMax(){return this.max;}
-	public boolean getNeg(){return this.neg;}
+	boolean getNeg(){return this.neg;}
 	public int getTam() {return this.alelos.size();}
-	public float getPrec() {return this.prec;}
+	float getPrec() {return this.prec;}
 	
 	public void setAlelos(List<Object> alelos) {
 		this.alelos = alelos;
@@ -61,7 +45,6 @@ public abstract class Gen {
 
 	public abstract double getFenotipo();
 	public abstract void randomize(double min, double max);
-	public abstract List<Object> getAlelosNum();
 
 	public boolean equals(Object o){
 		if(!(o instanceof  Gen)) return false;

@@ -22,44 +22,37 @@ import javax.swing.JSeparator;
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 
+@SuppressWarnings("ALL")
 public class VistaEstudio extends Vista {
 
     private static final long serialVersionUID = 1L;
-    private List<Double> resultados;
-    private List<List<Double>> soluciones;
-    private Plot2DPanel panelMathPlot;
-    private JButton btnRealizarEstudio;
+    private final List<Double> resultados;
+    private final List<List<Double>> soluciones;
+    private final Plot2DPanel panelMathPlot;
     //MIN GENER
-    private JSpinner spinner;
+    private final JSpinner spinner;
     //MAX GENER
-    private JSpinner spinner_1;
+    private final JSpinner spinner_1;
     //MIN INDIVIDUOS
-    private JSpinner spinner_2;
+    private final JSpinner spinner_2;
     //MAX INDIVIDUOS
-    private JSpinner spinner_3;
-    private JLabel lblProbabilidadCruce;
+    private final JSpinner spinner_3;
     //MIN CRUCE
-    private JSpinner spinner_4;
+    private final JSpinner spinner_4;
     //MAX CRUCCE
-    private JSpinner spinner_5;
-    private JLabel lblProbabilidadMutacin;
+    private final JSpinner spinner_5;
     //MIN MUTACION
-    private JSpinner spinner_6;
+    private final JSpinner spinner_6;
     //MAX MUTACION
-    private JSpinner spinner_7;
+    private final JSpinner spinner_7;
     //MIN ELITISMO
-    private JSpinner spinner_8;
+    private final JSpinner spinner_8;
     //MAX ELITISMO
-    private JSpinner spinner_9;
-    private JSeparator separator;
-    private JSeparator separator_1;
-    private JSeparator separator_2;
-    private JLabel lblSeleccion;
-    private JLabel lblCruce;
-    private JComboBox<String> comboBox_2;
-    private JComboBox<String> comboBox_1;
-    private JComboBox<String> comboBox;
-    private JCheckBox chckbxNewCheckBox;
+    private final JSpinner spinner_9;
+    private final JComboBox<String> comboBox_2;
+    private final JComboBox<String> comboBox_1;
+    private final JComboBox<String> comboBox;
+    private final JCheckBox chckbxNewCheckBox;
 
     public VistaEstudio(Plot2DPanel panelMathPlot) {
         this.resultados = new ArrayList<>();
@@ -109,7 +102,7 @@ public class VistaEstudio extends Vista {
 
         SpinnerModel model1 = new SpinnerNumberModel(60, 0, 100, 1);
 
-        lblProbabilidadCruce = new JLabel("Probabilidad Cruce:");
+        JLabel lblProbabilidadCruce = new JLabel("Probabilidad Cruce:");
         lblProbabilidadCruce.setBounds(18, 213, 165, 16);
         add(lblProbabilidadCruce);
 
@@ -124,7 +117,7 @@ public class VistaEstudio extends Vista {
         spinner_5.setModel(new SpinnerNumberModel(60, 0, 100, 1));
 
         SpinnerModel model2 = new SpinnerNumberModel(5, 0, 100, 1);
-        lblProbabilidadMutacin = new JLabel("Probabilidad AlgoritmoMutacion:");
+        JLabel lblProbabilidadMutacin = new JLabel("Probabilidad AlgoritmoMutacion:");
         lblProbabilidadMutacin.setBounds(18, 248, 165, 16);
         add(lblProbabilidadMutacin);
 
@@ -150,23 +143,23 @@ public class VistaEstudio extends Vista {
         add(spinner_9);
         spinner_9.setModel(new SpinnerNumberModel(2, 0, 10, 1));
 
-        separator = new JSeparator();
+        JSeparator separator = new JSeparator();
         separator.setBounds(16, 88, 325, 12);
         add(separator);
 
-        separator_1 = new JSeparator();
+        JSeparator separator_1 = new JSeparator();
         separator_1.setBounds(16, 276, 325, 12);
         add(separator_1);
 
-        separator_2 = new JSeparator();
+        JSeparator separator_2 = new JSeparator();
         separator_2.setBounds(16, 188, 325, 12);
         add(separator_2);
 
-        lblSeleccion = new JLabel("Seleccion:");
+        JLabel lblSeleccion = new JLabel("Seleccion:");
         lblSeleccion.setBounds(12, 108, 165, 16);
         add(lblSeleccion);
 
-        lblCruce = new JLabel("Cruce:");
+        JLabel lblCruce = new JLabel("Cruce:");
         lblCruce.setBounds(12, 136, 165, 16);
         add(lblCruce);
 
@@ -207,7 +200,7 @@ public class VistaEstudio extends Vista {
         chckbxNewCheckBox.setBounds(18, 296, 128, 23);
         add(chckbxNewCheckBox);
 
-        btnRealizarEstudio = new JButton("Realizar Estudio");
+        JButton btnRealizarEstudio = new JButton("Realizar Estudio");
         btnRealizarEstudio.setBounds(96, 17, 153, 29);
         panel_1.add(btnRealizarEstudio);
 
@@ -225,78 +218,31 @@ public class VistaEstudio extends Vista {
                             JOptionPane.INFORMATION_MESSAGE);
                 } else {
                     setVisible(false);
-                    realizarEstudio(10, (int) spinner_2.getValue(), (int) spinner_3.getValue(), (int) spinner.getValue(), (int) spinner_1.getValue(), (String) comboBox.getSelectedItem(),
+                    realizarEstudio((int) spinner_2.getValue(), (int) spinner_3.getValue(), (int) spinner.getValue(), (int) spinner_1.getValue(), (String) comboBox.getSelectedItem(),
                             (String) comboBox_1.getSelectedItem(), (String) comboBox_2.getSelectedItem(), ((Integer) spinner_4.getValue()).doubleValue() / 100, ((Integer) spinner_5.getValue()).doubleValue() / 100, ((Integer) spinner_6.getValue()).doubleValue() / 100,
-                            ((Integer) spinner_7.getValue()).doubleValue() / 100, chckbxNewCheckBox.isSelected(), ((Integer) spinner_8.getValue()).doubleValue() / 100, ((Integer) spinner_9.getValue()).doubleValue() / 100, 0.5, Mapa.Madrid);
+                            ((Integer) spinner_7.getValue()).doubleValue() / 100, chckbxNewCheckBox.isSelected(), ((Integer) spinner_8.getValue()).doubleValue() / 100, ((Integer) spinner_9.getValue()).doubleValue() / 100);
                 }
 
             }
         });
     }
 
-    private void capturaDatos() {
+    private void realizarEstudio(int pobSizeMin, int pobSizeMax,
+                                 int numGenMin, int numGenMax,
+                                 String seleccion, String cruce, String mutacion,
+                                 double probCruceMin, double probCruceMax,
+                                 double probMutaMin, double probMutaMax,
+                                 boolean elitismo,
+                                 double porcenElitMin, double porcenElitMax) {
 
-        int ciudadInicio = 25;
-        int minTamPob = (int) this.spinner_2.getValue();
-        int maxTamPob = (int) this.spinner_3.getValue();
-        int minTamGen = (int) this.spinner.getValue();
-        int maxTamGen = (int) this.spinner_1.getValue();
-
-        String seleccion = (String) this.comboBox.getSelectedItem();
-        String cruce = (String) this.comboBox_1.getSelectedItem();
-        String mutacion = (String) this.comboBox_2.getSelectedItem();
-
-        double minProbCruce = (int) this.spinner_4.getValue();
-        minProbCruce = minProbCruce / 100;
-        double maxProbCruce = (int) this.spinner_5.getValue();
-        maxProbCruce = maxProbCruce / 100;
-        double minProbMuta = (int) this.spinner_6.getValue();
-        minProbMuta = minProbMuta / 100;
-        double maxProbMuta = (int) this.spinner_7.getValue();
-        maxProbMuta = maxProbMuta / 100;
-        boolean elitismo = this.chckbxNewCheckBox.isSelected();
-        double minElit = (int) this.spinner_8.getValue();
-        minElit = minElit / 100;
-        double maxElit = (int) this.spinner_9.getValue();
-        maxElit = maxElit / 100;
-
-        double parametroTruncProb = 0;
-
-        if (seleccion == "TorneoProb" || seleccion == "Truncamiento") {
-            /*parametroTruncProb = (int) this.spinnerTruncProb.getValue();
-            parametroTruncProb = parametroTruncProb / 100;*/
-            parametroTruncProb = 0.5;
-        }
-
-        realizarEstudio(10,
-                minTamPob, maxTamPob,
-                minTamGen, maxTamGen,
-                seleccion, cruce, mutacion,
-                minProbCruce, maxProbCruce,
-                minProbMuta, maxProbMuta,
-                elitismo,
-                minElit, maxElit,
-                parametroTruncProb, ciudadInicio);
-    }
-
-    public void realizarEstudio(int num_ejecuciones,
-                                int pobSizeMin, int pobSizeMax,
-                                int numGenMin, int numGenMax,
-                                String seleccion, String cruce, String mutacion,
-                                double probCruceMin, double probCruceMax,
-                                double probMutaMin, double probMutaMax,
-                                boolean elitismo,
-                                double porcenElitMin, double porcenElitMax,
-                                double parametroTruncProb, int ciudadInicio) {
-
-        int difPobSize = (int) ((pobSizeMax - pobSizeMin) / num_ejecuciones);
-        int difNumGen = (int) ((numGenMax - numGenMin) / num_ejecuciones);
-        double difProbCruce = (probCruceMax - probCruceMin) / num_ejecuciones;
-        double difProbMuta = (probMutaMax - probMutaMin) / num_ejecuciones;
-        double difPorcenElit = (porcenElitMax - porcenElitMin) / num_ejecuciones;
+        int difPobSize = (int) ((pobSizeMax - pobSizeMin) / 10);
+        int difNumGen = (int) ((numGenMax - numGenMin) / 10);
+        double difProbCruce = (probCruceMax - probCruceMin) / 10;
+        double difProbMuta = (probMutaMax - probMutaMin) / 10;
+        double difPorcenElit = (porcenElitMax - porcenElitMin) / 10;
 
 
-        for (int i = 0; i < num_ejecuciones; i++) {
+        for (int i = 0; i < 10; i++) {
             int poblacionSize = pobSizeMin + (difPobSize * i);
             int numGeneraciones = numGenMin + (difNumGen * i);
             double probabilidadCruce = probCruceMin + (difProbCruce * i);
@@ -305,7 +251,7 @@ public class VistaEstudio extends Vista {
 
             AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
             ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
-                    probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
+                    probabilidadMutacion, 0, elitismo, percentElitismo, 0.5, 0, Mapa.Madrid);
         }
 
         mostrarEstudio();

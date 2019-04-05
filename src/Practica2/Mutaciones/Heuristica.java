@@ -9,6 +9,7 @@ import Comun.Poblacion.Individuo;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class Heuristica extends AlgoritmoMutacion {
 
     private Individuo mejor;

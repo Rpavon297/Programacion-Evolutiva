@@ -1,13 +1,14 @@
-package Practica2.Vista;
+package Practica3.Vista;
 
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-
-import org.math.plot.Plot2DPanel;
-import Practica2.Mapa;
 import Comun.Algoritmo.AlgoritmoGenetico;
 import Comun.Vista.Vista;
+import Practica2.Mapa;
+import Practica2.Vista.VistaEstudio;
+import org.math.plot.Plot2DPanel;
 
+import javax.swing.*;
+import javax.swing.JSpinner.DefaultEditor;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,10 +16,8 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
 
-import javax.swing.JSpinner.DefaultEditor;
-
 @SuppressWarnings("ALL")
-public class VistaViajante extends Vista {
+public class VistaHormiga extends Vista {
 
     private static final long serialVersionUID = 1L;
     private JSpinner spinnerPoblacion;
@@ -40,7 +39,7 @@ public class VistaViajante extends Vista {
     /**
      * Create the frame.
      */
-    public VistaViajante() {
+    public VistaHormiga() {
         setTitle("Practica 2");
         setResizable(false);
         setBounds(100, 100, 1064, 710);

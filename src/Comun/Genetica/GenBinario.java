@@ -1,7 +1,6 @@
 package Comun.Genetica;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GenBinario extends Gen {
@@ -17,11 +16,8 @@ public class GenBinario extends Gen {
 		this.max = nGen.getMax();
 		this.prec = nGen.getPrec();
 		this.neg = nGen.getNeg();
-		this.alelos = new ArrayList<Object>();	
-		for(Object o : nGen.getAlelos()){
-			Object no = o;
-			this.alelos.add(no);
-		}
+		this.alelos = new ArrayList<>();
+		this.alelos.addAll(nGen.getAlelos());
 	}
 	
 	@Override
@@ -29,7 +25,7 @@ public class GenBinario extends Gen {
 		this.max = max;
 		this.min = min;
 
-		Double aux = ThreadLocalRandom.current().nextDouble(min, max);
+		double aux = ThreadLocalRandom.current().nextDouble(min, max);
 		
 		int max_int = (int) (max/this.prec);
 		int min_int = (int) (min/this.prec);
@@ -40,16 +36,6 @@ public class GenBinario extends Gen {
 		this.tam_cod = Math.max(arrmax.length(), arrmin.length());
 		
 		this.setGenotipo(aux);
-	}
-
-	@Override
-	public List<Object> getAlelosNum() {
-		List<Object> ret = new ArrayList<>();
-		
-		for(Object b : this.alelos) 
-			ret.add((boolean) (b) ? 1 : 0);
-			
-		return ret;
 	}
 
 	@Override
