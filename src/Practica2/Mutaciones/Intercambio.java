@@ -6,6 +6,7 @@ import Comun.Poblacion.Individuo;
 
 import java.util.List;
 
+@SuppressWarnings("ALL")
 public class Intercambio extends AlgoritmoMutacion {
     @Override
     public void mutar(List<Individuo> poblacion, List<Double> params) {
