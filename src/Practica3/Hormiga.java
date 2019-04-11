@@ -1,16 +1,18 @@
 package Practica3;
 
+import java.util.Map;
+
 public class Hormiga {
 
     private Integer fila;
     private Integer columna;
     private Direccion direccion;
 
-    public static enum Direccion {
+    public enum Direccion {
         ARRIBA, DERECHA, ABAJO, IZQUIERDA
     }
 
-    public static enum Giro {
+    public enum Giro {
         DERECHA, IZQUIERDA
     }
 
@@ -29,12 +31,12 @@ public class Hormiga {
                 break;
             case DERECHA:
                 this.columna++;
-                if(this.columna == Mapa.columnas)
+                if(this.columna.equals(Mapa.columnas))
                     this.columna = 0;
                 break;
             case ABAJO:
                 this.fila++;
-                if(this.fila == Mapa.filas)
+                if(this.fila.equals(Mapa.filas))
                     this.fila = 0;
                 break;
             case IZQUIERDA:
@@ -47,7 +49,77 @@ public class Hormiga {
 
     public void girar(Giro giro){
         switch (giro){
-
+            case DERECHA:
+                switch (this.direccion){
+                    case ARRIBA:
+                        this.direccion = Direccion.DERECHA;
+                        break;
+                    case DERECHA:
+                        this.direccion = Direccion.ABAJO;
+                        break;
+                    case ABAJO:
+                        this.direccion = Direccion.IZQUIERDA;
+                        break;
+                    case IZQUIERDA:
+                        this.direccion =Direccion.ARRIBA;
+                        break;
+                }
+                break;
+            case IZQUIERDA:
+                switch (this.direccion){
+                    case ARRIBA:
+                        this.direccion = Direccion.IZQUIERDA;
+                        break;
+                    case DERECHA:
+                        this.direccion = Direccion.ARRIBA;
+                        break;
+                    case ABAJO:
+                        this.direccion = Direccion.DERECHA;
+                        break;
+                    case IZQUIERDA:
+                        this.direccion =Direccion.ABAJO;
+                        break;
+                }
+                break;
         }
+    }
+
+    public boolean hayComidaDelante(){
+        int aux;
+        switch (this.direccion){
+            case ARRIBA:
+                if(this.fila == 0)
+                    aux = Mapa.filas - 1;
+                else
+                    aux = this.fila - 1;
+                if(Mapa.tablero[aux][this.columna] == Mapa.tipo.COMIDA)
+                    return true;
+                break;
+            case DERECHA:
+                if(this.columna.equals(Mapa.columnas))
+                    aux = 0;
+                else
+                    aux = this.columna + 1;
+                if(Mapa.tablero[this.fila][aux] == Mapa.tipo.COMIDA)
+                    return true;
+                break;
+            case ABAJO:
+                if(this.fila.equals(Mapa.filas))
+                    aux = 0;
+                else
+                    aux = this.fila + 1;
+                if(Mapa.tablero[aux][this.columna] == Mapa.tipo.COMIDA)
+                    return true;
+                break;
+            case IZQUIERDA:
+                if(this.columna == 0)
+                    aux = Mapa.columnas - 1;
+                else
+                    aux = this.columna - 1;
+                if(Mapa.tablero[this.fila][aux] == Mapa.tipo.COMIDA)
+                    return true;
+                break;
+        }
+        return false;
     }
 }
