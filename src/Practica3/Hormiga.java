@@ -23,7 +23,7 @@ public class Hormiga {
     }
 
     public void avanza(){
-        switch (direccion){
+        switch (this.direccion){
             case ARRIBA:
                 this.fila--;
                 if(this.fila == -1)

@@ -110,6 +110,9 @@ public class AlgoritmoGenetico {
 			case 5:
 				f = new FuncionViajante();
 				break;
+            case 6:
+                f = new FuncionHormiga();
+                break;
 		}
 		return f;
 	}
