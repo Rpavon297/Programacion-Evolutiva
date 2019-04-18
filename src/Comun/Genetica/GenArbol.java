@@ -1,4 +1,6 @@
-package genetica;
+package Comun.Genetica;
+
+import Comun.Genetica.Gen;
 
 import java.util.List;
 
@@ -16,10 +18,5 @@ public class GenArbol extends Gen {
     @Override
     public void randomize(double min, double max) {
 
-    }
-
-    @Override
-    public List<Object> getAlelosNum() {
-        return null;
     }
 }

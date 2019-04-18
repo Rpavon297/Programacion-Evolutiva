@@ -21,6 +21,7 @@ import Comun.Poblacion.Individuo;
 import Comun.Poblacion.Poblacion;
 import Comun.Selecciones.FactoriaSeleccion;
 import Comun.Vista.Vista;
+import Practica3.FuncionHormiga;
 
 @SuppressWarnings("ALL")
 public class AlgoritmoGenetico {

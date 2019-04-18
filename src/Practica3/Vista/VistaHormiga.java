@@ -2,12 +2,12 @@ package Practica3.Vista;
 
 import Comun.Algoritmo.AlgoritmoGenetico;
 import Comun.Vista.Vista;
-import Practica2.Mapa;
-import Practica2.Vista.VistaEstudio;
+import Practica3.Mapa;
 import org.math.plot.Plot2DPanel;
 
 import javax.swing.*;
 import javax.swing.JSpinner.DefaultEditor;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +16,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.List;
 
-@SuppressWarnings("ALL")
 public class VistaHormiga extends Vista {
 
     private static final long serialVersionUID = 1L;
@@ -31,18 +30,20 @@ public class VistaHormiga extends Vista {
     private JSpinner spinnerElitismo;
     private JCheckBox chckbxElitismo;
     private JComboBox<String> comboMutacion;
-    private JLabel labelKilometros;
-    private JLabel textFieldCiudades;
     private JLabel labelTruncProb;
     private JSpinner spinnerTruncProb;
+    private JPanel panelMapa;
+    private JLabel lblResultado;
+
+    private JLabel tablero[][];
 
     /**
      * Create the frame.
      */
     public VistaHormiga() {
-        setTitle("Practica 2");
+        setTitle("Practica 3");
         setResizable(false);
-        setBounds(100, 100, 1064, 710);
+        setBounds(100, 100, 1362, 643);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         JPanel contentPane = new JPanel();
@@ -50,15 +51,28 @@ public class VistaHormiga extends Vista {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
+        JPanel panelTitulo1 = new JPanel();
+        panelTitulo1.setBounds(0, 0, 528, 35);
+        contentPane.add(panelTitulo1);
+
+        JLabel lblGrafica = new JLabel("Grafica");
+        lblGrafica.setHorizontalAlignment(SwingConstants.CENTER);
+        lblGrafica.setFont(new Font("Dialog", Font.PLAIN, 24));
+        panelTitulo1.add(lblGrafica);
+
+        panelMathPlot = new Plot2DPanel();
+        panelMathPlot.setBounds(0, 35, 528, 527);
+        contentPane.add(panelMathPlot);
+
         JPanel panelParams = new JPanel();
-        panelParams.setBounds(0, 0, 302, 527);
+        panelParams.setBounds(527, 0, 302, 452);
         contentPane.add(panelParams);
         panelParams.setLayout(null);
 
         JLabel Titulo = new JLabel("Parametros");
         Titulo.setFont(new Font("Dialog", Font.PLAIN, 24));
         Titulo.setHorizontalAlignment(SwingConstants.CENTER);
-        Titulo.setBounds(0, 11, 275, 41);
+        Titulo.setBounds(10, 11, 275, 41);
         panelParams.add(Titulo);
 
         JSeparator separator = new JSeparator();
@@ -70,7 +84,7 @@ public class VistaHormiga extends Vista {
         lblCiudad.setBounds(10, 76, 115, 19);
         panelParams.add(lblCiudad);
 
-        comboCiudad = new JComboBox<>(Mapa.Ciudades);
+        comboCiudad = new JComboBox<>(/*Mapa.Ciudades*/);
         comboCiudad.setSelectedItem("Madrid");
         comboCiudad.setBounds(128, 72, 168, 27);
         panelParams.add(comboCiudad);
@@ -234,12 +248,12 @@ public class VistaHormiga extends Vista {
         percent4.setVisible(false);
 
         Panel panelBotones = new Panel();
-        panelBotones.setBounds(0, 527, 302, 151);
+        panelBotones.setBounds(527, 452, 302, 110);
         contentPane.add(panelBotones);
         panelBotones.setLayout(null);
 
         JButton buttonEjecutar = new JButton("Comenzar");
-        buttonEjecutar.setBounds(58, 6, 171, 45);
+        buttonEjecutar.setBounds(57, 24, 171, 45);
         panelBotones.add(buttonEjecutar);
         buttonEjecutar.setFont(new Font("Yu Gothic UI", Font.BOLD, 16));
         buttonEjecutar.addActionListener(new ActionListener() {
@@ -252,23 +266,11 @@ public class VistaHormiga extends Vista {
 
         JButton btnDefecto = new JButton("Valores por defecto");
         btnDefecto.setFont(new Font("Dialog", Font.PLAIN, 14));
-        btnDefecto.setBounds(43, 56, 203, 29);
+        btnDefecto.setBounds(42, 74, 203, 29);
         panelBotones.add(btnDefecto);
 
-        JButton btnEstudio = new JButton("Realizar Estudio");
-        btnEstudio.setBounds(81, 108, 134, 29);
-        panelBotones.add(btnEstudio);
-        btnEstudio.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                VistaEstudio v = new VistaEstudio(panelMathPlot);
-                v.setVisible(true);
-            }
-        });
-
         JSeparator separator_6 = new JSeparator();
-        separator_6.setBounds(6, 90, 286, 14);
+        separator_6.setBounds(10, 11, 286, 14);
         panelBotones.add(separator_6);
         btnDefecto.addActionListener(new ActionListener() {
 
@@ -279,40 +281,35 @@ public class VistaHormiga extends Vista {
             }
         });
 
-        panelMathPlot = new Plot2DPanel();
-        panelMathPlot.setBounds(300, 0, 764, 527);
-        contentPane.add(panelMathPlot);
+        JPanel panelTitulo2 = new JPanel();
+        panelTitulo2.setBounds(829, 0, 528, 35);
+        contentPane.add(panelTitulo2);
+
+        JLabel lblMapa = new JLabel("Mapa");
+        lblMapa.setHorizontalAlignment(SwingConstants.CENTER);
+        lblMapa.setFont(new Font("Dialog", Font.PLAIN, 24));
+        panelTitulo2.add(lblMapa);
+
+        panelMapa = new JPanel();
+        panelMapa.setBounds(829, 35, 528, 527);
+        contentPane.add(panelMapa);
+        generarMapa();
 
         JPanel panelSolucion = new JPanel();
-        panelSolucion.setBounds(300, 527, 764, 125);
+        panelSolucion.setBounds(0, 562, 1357, 54);
         contentPane.add(panelSolucion);
         panelSolucion.setLayout(null);
 
-        JLabel lblResultado = new JLabel("Resultado");
+        lblResultado = new JLabel("Resultado");
         lblResultado.setHorizontalAlignment(SwingConstants.CENTER);
         lblResultado.setFont(new Font("Dialog", Font.PLAIN, 14));
-        lblResultado.setBounds(10, 22, 132, 19);
+        lblResultado.setBounds(527, 11, 304, 19);
         panelSolucion.add(lblResultado);
 
-        labelKilometros = new JLabel("");
-        labelKilometros.setHorizontalAlignment(SwingConstants.CENTER);
-        labelKilometros.setFont(new Font("Dialog", Font.PLAIN, 14));
-        labelKilometros.setBounds(10, 52, 131, 19);
-        panelSolucion.add(labelKilometros);
-
-        textFieldCiudades = new JLabel();
-        textFieldCiudades.setBounds(147, 10, 607, 105);
-        panelSolucion.add(textFieldCiudades);
-
-        JPanel panelNombres = new JPanel();
-        panelNombres.setBounds(300, 651, 764, 27);
-        contentPane.add(panelNombres);
-        panelNombres.setLayout(null);
-
         JLabel labelNombres = new JLabel("Grupo 2 - Programacion Evolutiva - Jesus Granizo y Roberto Pavon");
+        labelNombres.setBounds(0, 35, 1357, 19);
+        panelSolucion.add(labelNombres);
         labelNombres.setHorizontalAlignment(SwingConstants.CENTER);
-        labelNombres.setBounds(0, 0, 752, 27);
-        panelNombres.add(labelNombres);
 
         comboSeleccion.addItemListener(new ItemListener() {
 
@@ -385,34 +382,39 @@ public class VistaHormiga extends Vista {
             parametroTruncProb = parametroTruncProb / 100;
         }
 
-            AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
-            ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
-                    probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
+        AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
+        ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
+                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
 
     }
 
+    public void generarMapa(){
+
+        Mapa.cargarMapa("santaFe.txt");
+        panelMapa.setLayout(new GridLayout(Practica3.Mapa.filas, Practica3.Mapa.columnas, 0, 0));
+        tablero = new JLabel[Practica3.Mapa.filas][Practica3.Mapa.columnas];
+        Border border = BorderFactory.createLineBorder(Color.black);
+        for(int i = 0; i < Practica3.Mapa.filas; i++) {
+            for(int j = 0; j < Practica3.Mapa.columnas; j++) {
+                tablero[i][j] = new JLabel();
+                tablero[i][j].setOpaque(true);
+                tablero[i][j].setBackground(Mapa.getColor(i, j));
+                tablero[i][j].setBorder(border);
+                panelMapa.add(tablero[i][j]);
+            }
+        }
+    }
+    public void actualizarMapa(){
+        for(int i = 0; i < Practica3.Mapa.filas; i++)
+            for(int j = 0; j < Practica3.Mapa.columnas; j++)
+                tablero[i][j].setBackground(Mapa.getColor(i, j));
+    }
     public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
 
         panelMathPlot.removeAllPlots();
         double [] x = new double[mejorAbs.length];
         for(int i = 0; i < x.length; i++)
             x[i] = i+1;
-
-        labelKilometros.setText(solucion + " km.");
-        textFieldCiudades.setText("<html>");
-
-        int i = 0;
-        for(Double d : sol) {
-            textFieldCiudades.setText(textFieldCiudades.getText() + "&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;&nbsp;" + Mapa.Ciudades[d.intValue()]);
-            i++;
-            if(i == 6){
-                textFieldCiudades.setText(textFieldCiudades.getText() + "<br>");
-                i=0;
-            }
-        }
-
-        textFieldCiudades.setText(textFieldCiudades.getText() + "</html>");
-        textFieldCiudades.setHorizontalAlignment(SwingConstants.CENTER);
 
         panelMathPlot.addLegend("SOUTH");
         panelMathPlot.addLinePlot("Mejor Absoluto", Color.MAGENTA, x, mejorAbs);

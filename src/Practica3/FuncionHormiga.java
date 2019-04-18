@@ -1,4 +1,6 @@
-package funciones;
+package Practica3;
+
+import Comun.Funcion.Funcion;
 
 import java.util.List;
 
