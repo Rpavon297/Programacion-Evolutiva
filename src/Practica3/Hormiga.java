@@ -23,6 +23,7 @@ public class Hormiga {
     }
 
     public void avanza(){
+        Mapa.tablero[this.fila][this.columna] = Mapa.tipo.PASO;
         switch (this.direccion){
             case ARRIBA:
                 this.fila--;
@@ -45,8 +46,10 @@ public class Hormiga {
                     this.columna = Mapa.columnas - 1;
                 break;
         }
-        if(Mapa.tablero[this.fila][this.columna] == Mapa.tipo.COMIDA)
+        if(Mapa.tablero[this.fila][this.columna] == Mapa.tipo.COMIDA) {
             Mapa.comidas++;
+        }
+        Mapa.tablero[this.fila][this.columna] = Mapa.tipo.HORMIGA;
     }
 
     public void girar(Giro giro){
@@ -98,7 +101,7 @@ public class Hormiga {
                     return true;
                 break;
             case DERECHA:
-                if(this.columna.equals(Mapa.columnas))
+                if(this.columna.equals(Mapa.columnas-1))
                     aux = 0;
                 else
                     aux = this.columna + 1;
@@ -106,7 +109,7 @@ public class Hormiga {
                     return true;
                 break;
             case ABAJO:
-                if(this.fila.equals(Mapa.filas))
+                if(this.fila.equals(Mapa.filas-1))
                     aux = 0;
                 else
                     aux = this.fila + 1;

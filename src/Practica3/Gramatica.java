@@ -61,8 +61,9 @@ public class Gramatica {
     }
 
     private int decode(List<Double> codones, Hormiga hormiga, int i, boolean operativa) {
-
-        if (i == codones.size()) i = 0;
+        //PARA WRAPPING: DE MOMENTO PRODUCE STACK OVERFLOW
+        //if (i == codones.size()) i = 0;
+        if (i >= codones.size()) return i;
         int instruc = codones.get(i).intValue() % 6;
 
         switch (instruc) {

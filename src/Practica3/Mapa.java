@@ -13,49 +13,56 @@ public class Mapa {
     public static tipo[][] inicial;
     public static tipo[][] tablero;
 
-    public enum tipo{VACIO, COMIDA, PASO, HORMIGA};
+    public enum tipo {VACIO, COMIDA, PASO, HORMIGA}
+
+    ;
 
     public static void cargarMapa(String nombre) {
 
         String cadena;
         tablero = new tipo[filas][columnas];
+        inicial = new tipo[filas][columnas];
 
         try {
             FileReader f = new FileReader(nombre);
             BufferedReader b = new BufferedReader(f);
             int i = 0;
-            while((cadena = b.readLine())!=null) {
+            while ((cadena = b.readLine()) != null) {
                 cadena = cadena.replaceAll(" ", "");
-                for(int j = 0; j < cadena.length(); j++){
-                    switch (cadena.charAt(j)){
+                for (int j = 0; j < cadena.length(); j++) {
+                    switch (cadena.charAt(j)) {
                         case '0':
                             tablero[i][j] = tipo.VACIO;
+                            inicial[i][j] = tipo.VACIO;
                             break;
                         case '#':
                             tablero[i][j] = tipo.COMIDA;
+                            inicial[i][j] = tipo.VACIO;
                             break;
                         case '@':
                             tablero[i][j] = tipo.HORMIGA;
+                            inicial[i][j] = tipo.VACIO;
                             break;
                         case '$':
                             tablero[i][j] = tipo.PASO;
+                            inicial[i][j] = tipo.VACIO;
                             break;
-                            default:
-                                break;
+                        default:
+                            break;
                     }
                 }
                 i++;
             }
             b.close();
-            inicial = tablero;
-        } catch (Exception e){
+            inicial = (tipo[][]) tablero.clone();
+        } catch (Exception e) {
             System.out.println("Error al cargar el mapa");
         }
     }
 
-    public static Color getColor(int i, int j){
+    public static Color getColor(int i, int j) {
         Color color;
-        switch(tablero[i][j]){
+        switch (tablero[i][j]) {
             case COMIDA:
                 color = Color.gray;
                 break;
@@ -65,15 +72,15 @@ public class Mapa {
             case PASO:
                 color = Color.darkGray;
                 break;
-                default:
-                    color = Color.lightGray;
-                    break;
+            default:
+                color = Color.lightGray;
+                break;
         }
         return color;
     }
 
-    public static void reset(){
-        tablero = inicial;
+    public static void reset() {
+        tablero = inicial.clone();
         comidas = 0;
     }
 }

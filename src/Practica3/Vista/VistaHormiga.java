@@ -383,7 +383,7 @@ public class VistaHormiga extends Vista {
         }
 
         AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
-        ag.ejecutarAlgoritmo(5, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
+        ag.ejecutarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, "Monopunto", "Basica", probabilidadCruce,
                 probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
 
     }
@@ -421,5 +421,6 @@ public class VistaHormiga extends Vista {
         panelMathPlot.addLinePlot("Mejor de la Generacion", Color.GREEN, x, mejor);
         panelMathPlot.addLinePlot("Media Generacion", Color.ORANGE, x, media);
         panelMathPlot.addLinePlot("Peor de la Generacion", Color.RED, x, peor);
+        System.out.println(solucion);
     }
 }

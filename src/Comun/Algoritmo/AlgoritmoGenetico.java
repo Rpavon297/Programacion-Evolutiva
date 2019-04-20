@@ -196,7 +196,7 @@ public class AlgoritmoGenetico {
 			ind.setFitness(f.ejecutar(lista));
 		}
 		
-		if(funcion == 1)
+		if(funcion == 1 || funcion == 6)
 			poblacion.revisarAdaptacion(true);
 		else
 			poblacion.revisarAdaptacion(false);
@@ -217,7 +217,7 @@ public class AlgoritmoGenetico {
 	public void mostrarSolucion(List<Generacion> generaciones, int funcion, double precision){
 		int numGeneraciones = generaciones.size();
 		double maxAbs = Double.POSITIVE_INFINITY;
-		if(funcion == 1)
+		if(funcion == 1 || funcion == 6)
 			maxAbs = Double.NEGATIVE_INFINITY;
 
 		List<Double> sols = new ArrayList();
@@ -227,7 +227,7 @@ public class AlgoritmoGenetico {
 		double[] peor = new double[numGeneraciones];
 
 		for (int i = 0;i < numGeneraciones; i++){
-			if(funcion == 1) {
+			if(funcion == 1 || funcion == 6) {
 				if(maxAbs < generaciones.get(i).getMejor()) {
 					maxAbs = generaciones.get(i).getMejor();
 					sols = (generaciones.get(i).getSolucion());
