@@ -9,6 +9,8 @@ public class Mapa {
 
     public static Integer filas = 32;
     public static Integer columnas = 32;
+    public static int comidas = 0;
+    public static tipo[][] inicial;
     public static tipo[][] tablero;
 
     public enum tipo{VACIO, COMIDA, PASO, HORMIGA};
@@ -45,6 +47,7 @@ public class Mapa {
                 i++;
             }
             b.close();
+            inicial = tablero;
         } catch (Exception e){
             System.out.println("Error al cargar el mapa");
         }
@@ -67,5 +70,10 @@ public class Mapa {
                     break;
         }
         return color;
+    }
+
+    public static void reset(){
+        tablero = inicial;
+        comidas = 0;
     }
 }

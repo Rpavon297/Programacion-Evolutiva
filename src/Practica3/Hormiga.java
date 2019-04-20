@@ -45,6 +45,8 @@ public class Hormiga {
                     this.columna = Mapa.columnas - 1;
                 break;
         }
+        if(Mapa.tablero[this.fila][this.columna] == Mapa.tipo.COMIDA)
+            Mapa.comidas++;
     }
 
     public void girar(Giro giro){

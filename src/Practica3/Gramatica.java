@@ -2,6 +2,8 @@ package Practica3;
 
 import Comun.Poblacion.Individuo;
 
+import java.util.List;
+
 /**
  * <S> = <exp>
  *
@@ -14,13 +16,13 @@ import Comun.Poblacion.Individuo;
 
 public class Gramatica {
 
-    public void S(Individuo codones, Hormiga hormiga) {
-        int instruc = (int) codones.getGenes().get(0).getFenotipo() % 6;
+    public void S(List<Double> codones, Hormiga hormiga) {
+        int instruc = codones.get(0).intValue() % 6;
 
         int i = decode(codones, hormiga, 0, true);
     }
 
-    private int progn2(Individuo codones, int i, boolean operativa, Hormiga hormiga) {
+    private int progn2(List<Double> codones, int i, boolean operativa, Hormiga hormiga) {
         i++;
         i = decode(codones, hormiga, i, operativa);
 
@@ -28,7 +30,7 @@ public class Gramatica {
         return decode(codones, hormiga, i, operativa);
     }
 
-    private int progn3(Individuo codones, int i, boolean operativa, Hormiga hormiga) {
+    private int progn3(List<Double> codones, int i, boolean operativa, Hormiga hormiga) {
         i++;
         i = decode(codones, hormiga, i, operativa);
 
@@ -39,7 +41,7 @@ public class Gramatica {
         return decode(codones, hormiga, i, operativa);
     }
 
-    private int sicomida(Individuo codones, int i, boolean operativa, Hormiga hormiga) {
+    private int sicomida(List<Double> codones, int i, boolean operativa, Hormiga hormiga) {
         i++;
         if (operativa) {
             if (!hormiga.hayComidaDelante()) {
@@ -58,10 +60,10 @@ public class Gramatica {
         }
     }
 
-    private int decode(Individuo codones, Hormiga hormiga, int i, boolean operativa) {
+    private int decode(List<Double> codones, Hormiga hormiga, int i, boolean operativa) {
 
-        if (i == codones.getGenes().size()) i = 0;
-        int instruc = (int) codones.getGenes().get(i).getFenotipo() % 6;
+        if (i == codones.size()) i = 0;
+        int instruc = codones.get(i).intValue() % 6;
 
         switch (instruc) {
             case 0:

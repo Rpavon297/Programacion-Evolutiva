@@ -170,6 +170,12 @@ public class AlgoritmoGenetico {
 					gen.setMin(0);
 					gen.setMax(28);
 					genes.add(gen);
+					break;
+				case 6:
+					for(int j = 0; j < 20; j++){
+						genes.add(new GenBinario(1));
+						genes.get(j).randomize(0,256);
+					}
 			}
 			poblacion.getPoblacion().add(new Individuo(genes));
 		}
