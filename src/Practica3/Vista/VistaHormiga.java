@@ -2,6 +2,8 @@ package Practica3.Vista;
 
 import Comun.Algoritmo.AlgoritmoGenetico;
 import Comun.Vista.Vista;
+import Practica3.Gramatica;
+import Practica3.Hormiga;
 import Practica3.Mapa;
 import Practica3.SingletonMapa;
 import org.math.plot.Plot2DPanel;
@@ -396,6 +398,16 @@ public class VistaHormiga extends Vista {
         for(int i = 0; i < x.length; i++)
             x[i] = i+1;
 
+        Gramatica gramatica = new Gramatica();
+        Hormiga hormiga = new Hormiga();
+
+        //EN ESTA PRIMERA VERSION, SE EJECUTAN 100 PASOS Y NO SE COMPRUEBA SI SE HA COMIDO TODA LA COMIDA
+        for(int i = 0; i < 100; i++) {
+            gramatica.S(sol, hormiga);
+        }
+
+        solucion = SingletonMapa.getInstance().getComidas();
+        actualizarMapa();
 
         panelMathPlot.addLegend("SOUTH");
         //solucion optima: 89

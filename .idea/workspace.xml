@@ -4,6 +4,7 @@
     <list default="true" id="1369f4ca-1098-4947-94de-2fe28aad16d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Practica3/FuncionRastro.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Practica3/Hormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Hormiga.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Practica3/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Mapa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" afterDir="false" />
@@ -31,10 +32,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Practica3/Gramatica.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#S#0;class#Gramatica#0" />
+                <element signature="method#progn2#0;class#Gramatica#0" />
+                <element signature="method#progn3#0;class#Gramatica#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="257">
               <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
             </state>
           </provider>
@@ -43,29 +59,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Practica3/Mapa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="-440">
+              <caret line="100" column="20" lean-forward="true" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
               <folding>
-                <element signature="e#1922#1923#0" expanded="true" />
-                <element signature="e#1967#1968#0" expanded="true" />
-                <element signature="e#2925#2926#0" expanded="true" />
-                <element signature="e#3002#3003#0" expanded="true" />
-                <element signature="e#3069#3070#0" expanded="true" />
-                <element signature="e#3158#3159#0" expanded="true" />
-                <element signature="e#3219#3220#0" expanded="true" />
-                <element signature="e#3300#3301#0" expanded="true" />
-                <element signature="e#3366#3367#0" expanded="true" />
-                <element signature="e#3452#3453#0" expanded="true" />
+                <element signature="method#cargarMapa#0;class#Mapa#0" />
+                <element signature="e#3011#3012#0" expanded="true" />
+                <element signature="e#3088#3089#0" expanded="true" />
+                <element signature="e#3155#3156#0" expanded="true" />
+                <element signature="e#3244#3245#0" expanded="true" />
+                <element signature="e#3305#3306#0" expanded="true" />
+                <element signature="e#3386#3387#0" expanded="true" />
+                <element signature="e#3398#3399#0" expanded="true" />
+                <element signature="e#3426#3427#0" expanded="true" />
+                <element signature="e#3508#3509#0" expanded="true" />
+                <element signature="e#3594#3595#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="400" column="29" selection-start-line="400" selection-start-column="29" selection-end-line="400" selection-end-column="29" />
+            <state relative-caret-position="175">
+              <caret line="404" column="30" selection-start-line="404" selection-start-column="30" selection-end-line="404" selection-end-column="30" />
+              <folding>
+                <element signature="e#9817#9818#0" expanded="true" />
+                <element signature="e#9863#9864#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,6 +96,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="229">
               <caret line="521" column="50" selection-start-line="521" selection-start-column="26" selection-end-line="521" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Practica3/Hormiga.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="51" column="45" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -184,8 +214,8 @@
         <option value="$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoGenetico.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Hormiga.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Mapa.java" />
-        <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" />
         <option value="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" />
+        <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" />
       </list>
     </option>
   </component>
@@ -256,7 +286,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555846778597" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555851191548" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -336,7 +366,7 @@
       <workItem from="1555577508644" duration="985000" />
       <workItem from="1555753817624" duration="127000" />
       <workItem from="1555760564716" duration="8078000" />
-      <workItem from="1555840855512" duration="4973000" />
+      <workItem from="1555840855512" duration="6151000" />
     </task>
     <task id="LOCAL-00001" summary="Iniciando rama local">
       <created>1552299773578</created>
@@ -429,11 +459,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555842586811</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Implementacion basica terminada.">
+      <created>1555846896183</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1555846896183</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80610000" />
+    <option name="totallyTimeSpent" value="81788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -520,7 +557,8 @@
     <MESSAGE value="Implementada la funcion de fitness y retocada la recursion y el algoritmoGenetico" />
     <MESSAGE value="Funcionando el algoritmo, pero el Mapa no se comporta como debería" />
     <MESSAGE value="Adaptada la vista (usa genes binarios y la funcion 6)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adaptada la vista (usa genes binarios y la funcion 6)" />
+    <MESSAGE value="Implementacion basica terminada." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementacion basica terminada." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -598,16 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionRastro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica2/Mapa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -626,19 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/Gramatica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#S#0;class#Gramatica#0" />
-            <element signature="method#progn2#0;class#Gramatica#0" />
-            <element signature="method#progn3#0;class#Gramatica#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/Hormiga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="123" column="74" selection-start-line="123" selection-start-column="74" selection-end-line="123" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Comun/Genetica/Gen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-372">
@@ -705,25 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1052">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/Mapa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1967#1968#0" expanded="true" />
-            <element signature="e#2925#2926#0" expanded="true" />
-            <element signature="e#3002#3003#0" expanded="true" />
-            <element signature="e#3069#3070#0" expanded="true" />
-            <element signature="e#3158#3159#0" expanded="true" />
-            <element signature="e#3219#3220#0" expanded="true" />
-            <element signature="e#3300#3301#0" expanded="true" />
-            <element signature="e#3366#3367#0" expanded="true" />
-            <element signature="e#3452#3453#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -748,17 +737,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
+    <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionRastro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="400" column="29" selection-start-line="400" selection-start-column="29" selection-end-line="400" selection-end-column="29" />
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/Gramatica.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#S#0;class#Gramatica#0" />
+            <element signature="method#progn2#0;class#Gramatica#0" />
+            <element signature="method#progn3#0;class#Gramatica#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/Hormiga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="51" column="45" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/Mapa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-440">
+          <caret line="100" column="20" lean-forward="true" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+          <folding>
+            <element signature="method#cargarMapa#0;class#Mapa#0" />
+            <element signature="e#3011#3012#0" expanded="true" />
+            <element signature="e#3088#3089#0" expanded="true" />
+            <element signature="e#3155#3156#0" expanded="true" />
+            <element signature="e#3244#3245#0" expanded="true" />
+            <element signature="e#3305#3306#0" expanded="true" />
+            <element signature="e#3386#3387#0" expanded="true" />
+            <element signature="e#3398#3399#0" expanded="true" />
+            <element signature="e#3426#3427#0" expanded="true" />
+            <element signature="e#3508#3509#0" expanded="true" />
+            <element signature="e#3594#3595#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="257">
           <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="404" column="30" selection-start-line="404" selection-start-column="30" selection-end-line="404" selection-end-column="30" />
+          <folding>
+            <element signature="e#9817#9818#0" expanded="true" />
+            <element signature="e#9863#9864#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

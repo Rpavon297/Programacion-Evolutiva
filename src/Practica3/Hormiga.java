@@ -49,6 +49,7 @@ public class Hormiga {
         if (SingletonMapa.getInstance().getCasilla(this.fila, this.columna) == Mapa.tipo.COMIDA) {
             SingletonMapa.getInstance().upComidas();
         }
+        SingletonMapa.getInstance().upPaso();
         SingletonMapa.getInstance().setCasilla(this.fila, this.columna, Mapa.tipo.HORMIGA);
     }
 

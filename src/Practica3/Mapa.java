@@ -10,6 +10,7 @@ public class Mapa {
     private Integer filas = 32;
     private Integer columnas = 32;
     private int comidas = 0;
+    private int pasos = 0;
     private tipo[][] inicial;
     private tipo[][] tablero;
 
@@ -69,6 +70,8 @@ public class Mapa {
 
     public void upComidas() {this.comidas++;}
 
+    public void upPaso(){this.pasos++;}
+
     public Color getColor(int i, int j) {
         Color color;
         switch (tablero[i][j]) {
@@ -79,7 +82,7 @@ public class Mapa {
                 color = Color.RED;
                 break;
             case PASO:
-                color = Color.darkGray;
+                color = Color.MAGENTA;
                 break;
             default:
                 color = Color.lightGray;
@@ -96,6 +99,7 @@ public class Mapa {
             }
         }
         comidas = 0;
+        pasos = 0;
     }
 
     public Integer getFilas() {
@@ -120,6 +124,10 @@ public class Mapa {
 
     public void setComidas(int comidas) {
         this.comidas = comidas;
+    }
+
+    public int getPasos(){
+        return pasos;
     }
 
     public tipo[][] getTablero() {

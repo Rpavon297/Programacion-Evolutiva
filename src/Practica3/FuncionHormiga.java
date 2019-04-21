@@ -18,13 +18,15 @@ public class FuncionHormiga extends Funcion {
         Hormiga hormiga = new Hormiga();
 
         //EN ESTA PRIMERA VERSION, SE EJECUTAN 100 PASOS Y NO SE COMPRUEBA SI SE HA COMIDO TODA LA COMIDA
-        for(int i = 0; i < 200; i++) {
+        for(int i = 0; i < 100; i++) {
             gramatica.S(x, hormiga);
         }
 
         int comidas = SingletonMapa.getInstance().getComidas();
+        int pasos = SingletonMapa.getInstance().getPasos();
         SingletonMapa.getInstance().reset();
 
+        //IMPLEMENTAR CONTROL DEL BLOATING
         return comidas;
     }
 }
