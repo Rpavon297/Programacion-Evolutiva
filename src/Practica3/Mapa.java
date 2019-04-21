@@ -7,17 +7,17 @@ import java.io.FileReader;
 
 public class Mapa {
 
-    public static Integer filas = 32;
-    public static Integer columnas = 32;
-    public static int comidas = 0;
-    public static tipo[][] inicial;
-    public static tipo[][] tablero;
+    private Integer filas = 32;
+    private Integer columnas = 32;
+    private int comidas = 0;
+    private tipo[][] inicial;
+    private tipo[][] tablero;
 
     public enum tipo {VACIO, COMIDA, PASO, HORMIGA}
 
     ;
 
-    public static void cargarMapa(String nombre) {
+    public void cargarMapa(String nombre) {
 
         String cadena;
         tablero = new tipo[filas][columnas];
@@ -37,15 +37,15 @@ public class Mapa {
                             break;
                         case '#':
                             tablero[i][j] = tipo.COMIDA;
-                            inicial[i][j] = tipo.VACIO;
+                            inicial[i][j] = tipo.COMIDA;
                             break;
                         case '@':
                             tablero[i][j] = tipo.HORMIGA;
-                            inicial[i][j] = tipo.VACIO;
+                            inicial[i][j] = tipo.HORMIGA;
                             break;
                         case '$':
                             tablero[i][j] = tipo.PASO;
-                            inicial[i][j] = tipo.VACIO;
+                            inicial[i][j] = tipo.PASO;
                             break;
                         default:
                             break;
@@ -59,7 +59,17 @@ public class Mapa {
         }
     }
 
-    public static Color getColor(int i, int j) {
+    public void setCasilla(Integer fila, Integer columna, tipo paso) {
+        tablero[fila][columna] = paso;
+    }
+
+    public tipo getCasilla(Integer fila, Integer columna){
+        return tablero[fila][columna];
+    }
+
+    public void upComidas() {this.comidas++;}
+
+    public Color getColor(int i, int j) {
         Color color;
         switch (tablero[i][j]) {
             case COMIDA:
@@ -78,8 +88,58 @@ public class Mapa {
         return color;
     }
 
-    public static void reset() {
-        tablero = inicial.clone();
+    public void reset() {
+        //tablero = inicial.clone();
+        for(int i = 0; i < this.filas; i++){
+            for(int j = 0; j < this.columnas; j++){
+                this.tablero[i][j] = this.inicial[i][j];
+            }
+        }
         comidas = 0;
+    }
+
+    public Integer getFilas() {
+        return filas;
+    }
+
+    public void setFilas(Integer filas) {
+        this.filas = filas;
+    }
+
+    public Integer getColumnas() {
+        return columnas;
+    }
+
+    public void setColumnas(Integer columnas) {
+        this.columnas = columnas;
+    }
+
+    public int getComidas() {
+        return comidas;
+    }
+
+    public void setComidas(int comidas) {
+        this.comidas = comidas;
+    }
+
+    public tipo[][] getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(tipo[][] tablero) {
+        this.tablero = tablero;
+    }
+
+    public String toString(){
+        StringBuilder cad = new StringBuilder();
+
+        for(int i = 0; i < this.filas; i++){
+            for(int j = 0; j < this.columnas; j++){
+                cad.append(tablero[i][j].toString()).append(" ");
+            }
+            cad.append("\n");
+        }
+
+        return cad.toString();
     }
 }

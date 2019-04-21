@@ -3,6 +3,7 @@ package Practica3.Vista;
 import Comun.Algoritmo.AlgoritmoGenetico;
 import Comun.Vista.Vista;
 import Practica3.Mapa;
+import Practica3.SingletonMapa;
 import org.math.plot.Plot2DPanel;
 
 import javax.swing.*;
@@ -369,25 +370,24 @@ public class VistaHormiga extends Vista {
     }
 
     public void generarMapa(){
-
-        Mapa.cargarMapa("santaFe.txt");
-        panelMapa.setLayout(new GridLayout(Practica3.Mapa.filas, Practica3.Mapa.columnas, 0, 0));
-        tablero = new JLabel[Practica3.Mapa.filas][Practica3.Mapa.columnas];
+        SingletonMapa.getInstance().cargarMapa("santaFe.txt");
+        panelMapa.setLayout(new GridLayout(SingletonMapa.getInstance().getFilas(), SingletonMapa.getInstance().getColumnas(), 0, 0));
+        tablero = new JLabel[SingletonMapa.getInstance().getFilas()][SingletonMapa.getInstance().getColumnas()];
         Border border = BorderFactory.createLineBorder(Color.black);
-        for(int i = 0; i < Practica3.Mapa.filas; i++) {
-            for(int j = 0; j < Practica3.Mapa.columnas; j++) {
+        for(int i = 0; i < SingletonMapa.getInstance().getFilas(); i++) {
+            for(int j = 0; j < SingletonMapa.getInstance().getColumnas(); j++) {
                 tablero[i][j] = new JLabel();
                 tablero[i][j].setOpaque(true);
-                tablero[i][j].setBackground(Mapa.getColor(i, j));
+                tablero[i][j].setBackground(SingletonMapa.getInstance().getColor(i, j));
                 tablero[i][j].setBorder(border);
                 panelMapa.add(tablero[i][j]);
             }
         }
     }
     public void actualizarMapa(){
-        for(int i = 0; i < Practica3.Mapa.filas; i++)
-            for(int j = 0; j < Practica3.Mapa.columnas; j++)
-                tablero[i][j].setBackground(Mapa.getColor(i, j));
+        for(int i = 0; i < SingletonMapa.getInstance().getFilas(); i++)
+            for(int j = 0; j < SingletonMapa.getInstance().getColumnas(); j++)
+                tablero[i][j].setBackground(SingletonMapa.getInstance().getColor(i, j));
     }
     public void mostrarGrafica(double[] mejorAbs, double[] mejor, double[] media, double[] peor, double solucion, List<Double> sol) {
 
@@ -396,11 +396,12 @@ public class VistaHormiga extends Vista {
         for(int i = 0; i < x.length; i++)
             x[i] = i+1;
 
+
         panelMathPlot.addLegend("SOUTH");
-        panelMathPlot.addLinePlot("Mejor Absoluto", Color.MAGENTA, x, mejorAbs);
+        //solucion optima: 89
+        panelMathPlot.addLinePlot("Mejor Absoluto: " + String.valueOf(solucion), Color.MAGENTA, x, mejorAbs);
         panelMathPlot.addLinePlot("Mejor de la Generacion", Color.GREEN, x, mejor);
         panelMathPlot.addLinePlot("Media Generacion", Color.ORANGE, x, media);
         panelMathPlot.addLinePlot("Peor de la Generacion", Color.RED, x, peor);
-        System.out.println(solucion);
     }
 }
