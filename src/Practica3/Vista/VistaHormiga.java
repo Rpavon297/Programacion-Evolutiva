@@ -26,7 +26,6 @@ public class VistaHormiga extends Vista {
     private JSpinner spinnerCruces;
     private JSpinner spinnerMutaciones;
     private Plot2DPanel panelMathPlot;
-    private JComboBox<String> comboCiudad;
     private JSpinner spinnerElitismo;
     private JCheckBox chckbxElitismo;
     private JComboBox<String> comboMutacion;
@@ -78,16 +77,6 @@ public class VistaHormiga extends Vista {
         JSeparator separator = new JSeparator();
         separator.setBounds(10, 64, 286, 14);
         panelParams.add(separator);
-
-        JLabel lblCiudad = new JLabel("Ciudad Origen:");
-        lblCiudad.setFont(new Font("Dialog", Font.PLAIN, 14));
-        lblCiudad.setBounds(10, 76, 115, 19);
-        panelParams.add(lblCiudad);
-
-        comboCiudad = new JComboBox<>(/*Mapa.Ciudades*/);
-        comboCiudad.setSelectedItem("Madrid");
-        comboCiudad.setBounds(128, 72, 168, 27);
-        panelParams.add(comboCiudad);
 
         JSeparator separator_1 = new JSeparator();
         separator_1.setBounds(10, 107, 286, 14);
@@ -142,14 +131,11 @@ public class VistaHormiga extends Vista {
         panelParams.add(labelCruce);
 
         comboCruce = new JComboBox<>();
-        comboCruce.addItem("OX");
-        comboCruce.addItem("PMX");
-        comboCruce.addItem("OX Posiciones Prioritarias");
-        comboCruce.addItem("OX Orden Prioritario");
-        comboCruce.addItem("Ciclos");
-        comboCruce.addItem("ERX");
-        comboCruce.addItem("Codificacion ordinal");
-        comboCruce.addItem("Intercambio de segmentos");
+        comboCruce.addItem("Aritmetico");
+        comboCruce.addItem("BLX");
+        comboCruce.addItem("Monopunto");
+        comboCruce.addItem("Multipunto");
+        comboCruce.addItem("Uniforme");
         comboCruce.setBounds(128, 223, 168, 27);
         panelParams.add(comboCruce);
 
@@ -159,10 +145,7 @@ public class VistaHormiga extends Vista {
         panelParams.add(lblMutacion);
 
         comboMutacion = new JComboBox<>();
-        comboMutacion.addItem("Heuristica");
-        comboMutacion.addItem("Insercion");
-        comboMutacion.addItem("Intercambio");
-        comboMutacion.addItem("Inversion");
+        comboMutacion.addItem("Basica");
         comboMutacion.setBounds(128, 257, 168, 27);
         panelParams.add(comboMutacion);
 
@@ -345,7 +328,6 @@ public class VistaHormiga extends Vista {
     }
 
     protected void valoresPorDefecto() {
-        comboCiudad.setSelectedItem("Madrid");
         spinnerPoblacion.setValue(100);
         spinnerGeners.setValue(100);
         comboSeleccion.setSelectedIndex(0);
@@ -358,8 +340,6 @@ public class VistaHormiga extends Vista {
     }
 
     private void capturaDatos() {
-
-        int ciudadInicio = this.comboCiudad.getSelectedIndex();
         int poblacionSize = (int) this.spinnerPoblacion.getValue();
         int numGeneraciones = (int) this.spinnerGeners.getValue();
 
@@ -383,8 +363,8 @@ public class VistaHormiga extends Vista {
         }
 
         AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
-        ag.ejecutarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, "Monopunto", "Basica", probabilidadCruce,
-                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, ciudadInicio);
+        ag.ejecutarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
+                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, 0);
 
     }
 

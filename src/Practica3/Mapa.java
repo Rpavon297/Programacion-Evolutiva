@@ -54,7 +54,6 @@ public class Mapa {
                 i++;
             }
             b.close();
-            inicial = (tipo[][]) tablero.clone();
         } catch (Exception e) {
             System.out.println("Error al cargar el mapa");
         }
