@@ -415,5 +415,7 @@ public class VistaHormiga extends Vista {
         panelMathPlot.addLinePlot("Mejor de la Generacion", Color.GREEN, x, mejor);
         panelMathPlot.addLinePlot("Media Generacion", Color.ORANGE, x, media);
         panelMathPlot.addLinePlot("Peor de la Generacion", Color.RED, x, peor);
+
+        SingletonMapa.getInstance().reset();
     }
 }

@@ -195,12 +195,12 @@ public class AlgoritmoGenetico {
 			List<Double> lista = ind.getFenotipo();
 			ind.setFitness(f.ejecutar(lista));
 		}
-		
+
 		if(funcion == 1 || funcion == 6)
 			poblacion.revisarAdaptacion(true);
 		else
 			poblacion.revisarAdaptacion(false);
-		
+
 		double fitnessTotal = 0;
 		double fitnessTotalNA = 0;
 		for(Individuo ind : poblacion.getPoblacion()){
@@ -247,7 +247,8 @@ public class AlgoritmoGenetico {
 			peor[i] = gen.getPeor();
 		}
 
-		//maxAbs = Math.floor(maxAbs / precision) * precision;
+		//
+		// maxAbs = Math.floor(maxAbs / precision) * precision;
 
 		this.vista.mostrarGrafica(mejorAbsoluto, mejor, media, peor, maxAbs, sols);
 	}
