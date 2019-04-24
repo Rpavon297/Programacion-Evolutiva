@@ -23,34 +23,36 @@ public class Hormiga {
     }
 
     public void avanza() {
-        SingletonMapa.getInstance().setCasilla(this.fila, this.columna, Mapa.tipo.PASO);
-        switch (this.direccion) {
-            case ARRIBA:
-                this.fila--;
-                if (this.fila == -1)
-                    this.fila = SingletonMapa.getInstance().getFilas() - 1;
-                break;
-            case DERECHA:
-                this.columna++;
-                if (this.columna.equals(SingletonMapa.getInstance().getColumnas()))
-                    this.columna = 0;
-                break;
-            case ABAJO:
-                this.fila++;
-                if (this.fila.equals(SingletonMapa.getInstance().getFilas()))
-                    this.fila = 0;
-                break;
-            case IZQUIERDA:
-                this.columna--;
-                if (this.columna == -1)
-                    this.columna = SingletonMapa.getInstance().getColumnas() - 1;
-                break;
+        if(SingletonMapa.getInstance().getComidas() < SingletonMapa.getInstance().getTotalComidas()) {
+            SingletonMapa.getInstance().setCasilla(this.fila, this.columna, Mapa.tipo.PASO);
+            switch (this.direccion) {
+                case ARRIBA:
+                    this.fila--;
+                    if (this.fila == -1)
+                        this.fila = SingletonMapa.getInstance().getFilas() - 1;
+                    break;
+                case DERECHA:
+                    this.columna++;
+                    if (this.columna.equals(SingletonMapa.getInstance().getColumnas()))
+                        this.columna = 0;
+                    break;
+                case ABAJO:
+                    this.fila++;
+                    if (this.fila.equals(SingletonMapa.getInstance().getFilas()))
+                        this.fila = 0;
+                    break;
+                case IZQUIERDA:
+                    this.columna--;
+                    if (this.columna == -1)
+                        this.columna = SingletonMapa.getInstance().getColumnas() - 1;
+                    break;
+            }
+            if (SingletonMapa.getInstance().getCasilla(this.fila, this.columna) == Mapa.tipo.COMIDA) {
+                SingletonMapa.getInstance().upComidas();
+            }
+            SingletonMapa.getInstance().upPaso();
+            SingletonMapa.getInstance().setCasilla(this.fila, this.columna, Mapa.tipo.HORMIGA);
         }
-        if (SingletonMapa.getInstance().getCasilla(this.fila, this.columna) == Mapa.tipo.COMIDA) {
-            SingletonMapa.getInstance().upComidas();
-        }
-        SingletonMapa.getInstance().upPaso();
-        SingletonMapa.getInstance().setCasilla(this.fila, this.columna, Mapa.tipo.HORMIGA);
     }
 
     public void girar(Giro giro) {

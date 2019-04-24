@@ -15,6 +15,13 @@ import java.util.List;
  */
 
 public class Gramatica {
+    private int wraps;
+    private int maxWraps;
+
+    public Gramatica(int maxWraps){
+        this.wraps = 0;
+        this.maxWraps = maxWraps;
+    }
 
     public void S(List<Double> codones, Hormiga hormiga) {
         int instruc = codones.get(0).intValue() % 6;
@@ -63,7 +70,12 @@ public class Gramatica {
     private int decode(List<Double> codones, Hormiga hormiga, int i, boolean operativa) {
         //PARA WRAPPING: DE MOMENTO PRODUCE STACK OVERFLOW
         //if (i == codones.size()) i = 0;
-        if (i >= codones.size()) return i;
+        if (i >= codones.size()){
+            i = 0;
+            this.wraps++;
+        }
+        if(this.wraps >= this.maxWraps)
+            return i;
         int instruc = codones.get(i).intValue() % 6;
 
         switch (instruc) {

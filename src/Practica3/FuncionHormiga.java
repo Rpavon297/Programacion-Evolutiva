@@ -14,11 +14,11 @@ public class FuncionHormiga extends Funcion {
     }
     @Override
     public double ejecutar(List<Double> x) {
-        Gramatica gramatica = new Gramatica();
+        Gramatica gramatica = new Gramatica(2);
         Hormiga hormiga = new Hormiga();
 
         //EN ESTA PRIMERA VERSION, SE EJECUTAN 100 PASOS Y NO SE COMPRUEBA SI SE HA COMIDO TODA LA COMIDA
-        for(int i = 0; i < 100; i++) {
+        for(int i = 0; i < 400; i++) {
             gramatica.S(x, hormiga);
         }
 

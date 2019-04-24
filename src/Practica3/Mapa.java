@@ -10,13 +10,12 @@ public class Mapa {
     private Integer filas = 32;
     private Integer columnas = 32;
     private int comidas = 0;
+    private int totalComida;
     private int pasos = 0;
     private tipo[][] inicial;
     private tipo[][] tablero;
 
     public enum tipo {VACIO, COMIDA, PASO, HORMIGA}
-
-    ;
 
     public void cargarMapa(String nombre) {
 
@@ -37,6 +36,7 @@ public class Mapa {
                             inicial[i][j] = tipo.VACIO;
                             break;
                         case '#':
+                            this.totalComida++;
                             tablero[i][j] = tipo.COMIDA;
                             inicial[i][j] = tipo.COMIDA;
                             break;
@@ -71,6 +71,8 @@ public class Mapa {
     public void upComidas() {this.comidas++;}
 
     public void upPaso(){this.pasos++;}
+
+    public int getTotalComidas() { return totalComida; }
 
     public Color getColor(int i, int j) {
         Color color;
