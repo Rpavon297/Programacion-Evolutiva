@@ -7,6 +7,7 @@ import java.io.FileReader;
 
 public class Mapa {
 
+    public static final int TotalPasos = 800;
     private Integer filas = 32;
     private Integer columnas = 32;
     private int comidas = 0;

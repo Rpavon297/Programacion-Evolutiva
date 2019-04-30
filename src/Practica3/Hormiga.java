@@ -23,7 +23,7 @@ public class Hormiga {
     }
 
     public void avanza() {
-        if(SingletonMapa.getInstance().getComidas() < SingletonMapa.getInstance().getTotalComidas()) {
+        if(SingletonMapa.getInstance().getComidas() < SingletonMapa.getInstance().getTotalComidas() && SingletonMapa.getInstance().getPasos() < SingletonMapa.getInstance().TotalPasos) {
             SingletonMapa.getInstance().setCasilla(this.fila, this.columna, Mapa.tipo.PASO);
             switch (this.direccion) {
                 case ARRIBA:

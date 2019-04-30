@@ -22,11 +22,18 @@ public class FuncionHormiga extends Funcion {
             gramatica.S(x, hormiga);
         }
 
-        int comidas = SingletonMapa.getInstance().getComidas();
-        int pasos = SingletonMapa.getInstance().getPasos();
+        double comidas = SingletonMapa.getInstance().getComidas();
+        double pasos = SingletonMapa.getInstance().getPasos();
+
+        double ratioc = comidas/SingletonMapa.getInstance().getTotalComidas();
+        double ratiop = pasos/SingletonMapa.getInstance().TotalPasos;
+
         SingletonMapa.getInstance().reset();
 
         //IMPLEMENTAR CONTROL DEL BLOATING
-        return comidas;
+        if(ratiop == 0) return 0;
+        // Opcion muy conservadora:
+        // return comidas - (comidas *ratiop);
+        return comidas - ratiop;
     }
 }
