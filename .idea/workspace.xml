@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1369f4ca-1098-4947-94de-2fe28aad16d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practica3/Hormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Hormiga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practica3/Mapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Mapa.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+            <state relative-caret-position="410">
+              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -239,39 +236,7 @@
       <hideEmptyPackages ProjectPane="false" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Practica3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PEV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PEV2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Practica3" type="462c0819:PsiDirectoryNode" />
-              <item name="Vista" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -360,7 +325,7 @@
       <workItem from="1555840855512" duration="6410000" />
       <workItem from="1555927676165" duration="113000" />
       <workItem from="1556107759204" duration="6645000" />
-      <workItem from="1556622993429" duration="3654000" />
+      <workItem from="1556622993429" duration="4099000" />
     </task>
     <task id="LOCAL-00001" summary="Iniciando rama local">
       <created>1552299773578</created>
@@ -481,15 +446,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556112971476</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Implementado un porcentaje de pasos dados que se tiene en cuenta a la hora de calcular el fitness. Hay que jugar un poco con ello.">
+      <created>1556627650408</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1556627650408</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92459000" />
+    <option name="totallyTimeSpent" value="92904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46373057" weight="0.22995462" />
       <window_info id="Designer" order="1" />
@@ -501,7 +472,7 @@
       <window_info id="Structure" order="7" sideWeight="0.5362694" side_tool="true" weight="0.22390318" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5155483" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5155483" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.57937807" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -577,7 +548,8 @@
     <MESSAGE value="Implementada la funcion de mostrar solucion en la vista" />
     <MESSAGE value="Pequeño detalle que no podemos aprovechar aun" />
     <MESSAGE value="Vista arreglada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Vista arreglada" />
+    <MESSAGE value="Implementado un porcentaje de pasos dados que se tiene en cuenta a la hora de calcular el fitness. Hay que jugar un poco con ello." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado un porcentaje de pasos dados que se tiene en cuenta a la hora de calcular el fitness. Hay que jugar un poco con ello." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -819,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        <state relative-caret-position="410">
+          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
         </state>
       </provider>
     </entry>

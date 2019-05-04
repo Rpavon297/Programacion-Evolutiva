@@ -34,6 +34,6 @@ public class FuncionHormiga extends Funcion {
         if(ratiop == 0) return 0;
         // Opcion muy conservadora:
         // return comidas - (comidas *ratiop);
-        return comidas - ratiop;
+        return (comidas * (SingletonMapa.getInstance().TotalPasos + 1)) - pasos
     }
 }
