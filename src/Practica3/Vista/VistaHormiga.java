@@ -2,6 +2,7 @@ package Practica3.Vista;
 
 import Comun.Algoritmo.AlgoritmoGenetico;
 import Comun.Vista.Vista;
+import Practica2.Vista.VistaEstudio;
 import Practica3.Gramatica;
 import Practica3.Hormiga;
 import Practica3.Mapa;
@@ -80,7 +81,17 @@ public class VistaHormiga extends Vista {
         JSeparator separator = new JSeparator();
         separator.setBounds(10, 64, 286, 14);
         panelParams.add(separator);
+        JButton btnEstudio = new JButton("Realizar Estudio");
+        btnEstudio.setBounds(70, 70, 134, 29);
+        panelParams.add(btnEstudio);
+        btnEstudio.addActionListener(new ActionListener() {
 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                VistaEstudioHormiga v = new VistaEstudioHormiga(panelMathPlot);
+                v.setVisible(true);
+            }
+        });
         JSeparator separator_1 = new JSeparator();
         separator_1.setBounds(10, 107, 286, 14);
         panelParams.add(separator_1);

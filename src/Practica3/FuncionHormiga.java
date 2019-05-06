@@ -33,7 +33,7 @@ public class FuncionHormiga extends Funcion {
         //IMPLEMENTAR CONTROL DEL BLOATING
         if(ratiop == 0) return 0;
         // Opcion muy conservadora:
-        // return comidas - (comidas *ratiop);
-        return (comidas * (SingletonMapa.getInstance().TotalPasos + 1)) - pasos
+        return comidas - (comidas *ratiop);
+        // return (comidas * (SingletonMapa.getInstance().TotalPasos + 1)) - pasos;
     }
 }
