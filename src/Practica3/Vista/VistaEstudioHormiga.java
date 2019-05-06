@@ -62,6 +62,7 @@ public class VistaEstudioHormiga extends Vista {
 
     public VistaEstudioHormiga(Plot2DPanel panelMathPlot) {
         this.full = 0;
+        this.comidas = new ArrayList<>();
         this.resultados = new ArrayList<>();
         this.soluciones = new ArrayList<>();
         this.panelMathPlot = panelMathPlot;
@@ -269,14 +270,14 @@ public class VistaEstudioHormiga extends Vista {
         for (int i = 0; i < y.length; i++)
             y[i] = resultados.get(i);
 
-/*        double[] z = new double[this.comidas.size()];
+        double[] z = new double[this.comidas.size()];
         for(int i = 0; i < z.length; i++)
             z[i] = this.comidas.get(i);
-*/
-        double percent = (this.full/this.resultados.size()) * 100;
+
+        double percent = ((double)this.full/10) * 100;
         panelMathPlot.addLegend("SOUTH");
         panelMathPlot.addLinePlot("Solucion", Color.MAGENTA, x, y);
-        //panelMathPlot.addLinePlot("Comidas, "+ this.full + " (" + percent + ") perfectas", Color.GREEN, x, z);
+        panelMathPlot.addLinePlot("Comidas -> iteraciones perfectas: "+ this.full + " (" + percent + "%)", Color.GREEN, x, z);
     }
 
     @Override
@@ -289,6 +290,10 @@ public class VistaEstudioHormiga extends Vista {
             gramatica.S(sol, hormiga);
         }
 
+        int ncomi = SingletonMapa.getInstance().getComidas();
+        this.comidas.add(ncomi);
+        if(ncomi == SingletonMapa.getInstance().getTotalComidas())
+            this.full++;
         //this.comidas.add(SingletonMapa.getInstance().getComidas());
         this.soluciones.add(sol);
         this.resultados.add(solucion);

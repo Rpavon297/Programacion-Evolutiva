@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1369f4ca-1098-4947-94de-2fe28aad16d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,13 +32,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state relative-caret-position="393">
+              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
@@ -52,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="192" column="18" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
+            <state relative-caret-position="173">
+              <caret line="276" column="45" selection-start-line="276" selection-start-column="45" selection-end-line="276" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -184,9 +183,9 @@
         <option value="$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoGenetico.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Hormiga.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Mapa.java" />
+        <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" />
         <option value="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java" />
-        <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" />
       </list>
     </option>
   </component>
@@ -257,7 +256,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557139075890" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557139943443" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -343,7 +342,7 @@
       <workItem from="1556107759204" duration="6645000" />
       <workItem from="1556622993429" duration="4099000" />
       <workItem from="1556989141532" duration="638000" />
-      <workItem from="1557134027348" duration="3673000" />
+      <workItem from="1557134027348" duration="4805000" />
     </task>
     <task id="LOCAL-00001" summary="Iniciando rama local">
       <created>1552299773578</created>
@@ -478,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556989283796</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Implementada la función para realizar estudios. Mejorada la función de fitness.">
+      <created>1557139117680</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1557139117680</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97215000" />
+    <option name="totallyTimeSpent" value="98347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -575,7 +581,8 @@
     <MESSAGE value="Pequeño detalle que no podemos aprovechar aun" />
     <MESSAGE value="Vista arreglada" />
     <MESSAGE value="Implementado un porcentaje de pasos dados que se tiene en cuenta a la hora de calcular el fitness. Hay que jugar un poco con ello." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementado un porcentaje de pasos dados que se tiene en cuenta a la hora de calcular el fitness. Hay que jugar un poco con ello." />
+    <MESSAGE value="Implementada la función para realizar estudios. Mejorada la función de fitness." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementada la función para realizar estudios. Mejorada la función de fitness." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -609,6 +616,12 @@
           <line>22</line>
           <properties />
           <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java</url>
+          <line>293</line>
+          <properties />
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -766,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica3/Mapa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -816,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="192" column="18" selection-start-line="192" selection-start-column="18" selection-end-line="192" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -831,6 +830,20 @@
             <element signature="e#10269#10270#0" expanded="true" />
             <element signature="e#10315#10316#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="276" column="45" selection-start-line="276" selection-start-column="45" selection-end-line="276" selection-end-column="45" />
         </state>
       </provider>
     </entry>
