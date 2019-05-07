@@ -6,10 +6,11 @@ import Comun.Poblacion.Individuo;
 
 @SuppressWarnings("ALL")
 public class FactoriaSeleccion {
-	private static final int TAM_SELECCION = 50;
+	private static int TAM_SELECCION = 20;
 	
 	public static AlgoritmoSeleccion getAlgoritmoSeleccion(String algoritmo, List<Individuo> poblacion, Object param) {
-		
+		TAM_SELECCION = poblacion.size()/2;
+
 		AlgoritmoSeleccion sel;
 		switch(algoritmo) {
 		case "Estocastica":
