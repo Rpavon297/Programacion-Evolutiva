@@ -92,7 +92,7 @@ public class AlgoritmoGenetico {
 		return poblacion;
 	}
 
-	private Funcion crearFuncion(int funcion) {
+	protected Funcion crearFuncion(int funcion) {
 		Funcion f = new Funcion1();
 
 		switch (funcion) {
