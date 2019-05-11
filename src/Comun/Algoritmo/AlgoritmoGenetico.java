@@ -25,7 +25,7 @@ import Practica3.FuncionHormiga;
 
 @SuppressWarnings("ALL")
 public class AlgoritmoGenetico {
-	private Vista vista;
+	protected Vista vista;
 
 
 	public AlgoritmoGenetico(Vista vista){this.vista = vista;}

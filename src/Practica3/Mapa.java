@@ -7,19 +7,20 @@ import java.io.FileReader;
 
 public class Mapa {
 
-    public static final int TotalPasos = 800;
+    public static final int TotalPasos = 400;
     private Integer filas = 32;
     private Integer columnas = 32;
     private int comidas = 0;
     private int totalComida;
-    private int pasos = 0;
+    private int pasos;
     private tipo[][] inicial;
     private tipo[][] tablero;
 
     public enum tipo {VACIO, COMIDA, PASO, HORMIGA}
 
     public void cargarMapa(String nombre) {
-
+        totalComida = 0;
+        pasos = 0;
         String cadena;
         tablero = new tipo[filas][columnas];
         inicial = new tipo[filas][columnas];

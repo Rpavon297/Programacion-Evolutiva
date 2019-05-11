@@ -294,7 +294,6 @@ public class VistaEstudioHormiga extends Vista {
         this.comidas.add(ncomi);
         if(ncomi == SingletonMapa.getInstance().getTotalComidas())
             this.full++;
-        //this.comidas.add(SingletonMapa.getInstance().getComidas());
         this.soluciones.add(sol);
         this.resultados.add(solucion);
 

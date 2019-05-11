@@ -1,27 +1,51 @@
 package Comun.Algoritmo;
 
 import Comun.Funcion.Funcion;
+import Comun.Poblacion.Individuo;
 import Comun.Poblacion.Poblacion;
 import Comun.Vista.Vista;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class AlgoritmoParalelos extends AlgoritmoGenetico {
-    public AlgoritmoParalelos(Vista vista) {
+    private int totalIslas;
+    private int islasOperando;
+    private int epocas;
+    private int epocaActual;
+
+    private Poblacion[] poblaciones;
+    private List<Isla> islas;
+    private List<List<Generacion>> generaciones;
+
+    public AlgoritmoParalelos(Vista vista, int nhebras, int nepoch) {
         super(vista);
+
+        this.totalIslas = nhebras;
+        this.islasOperando = nhebras;
+        this.epocas = nepoch;
+
     }
 
-    public Poblacion paralelizarAlgoritmo(int nepoch, int nhebras, int funcion, int paramsFuncion, int poblacionSize, int numGeneraciones,
-                                       String seleccion, String cruce, String mutacion, double probabilidadCruce, double probabilidadMutacion, double precision,
-                                       boolean elitismo, double percentElitismo, double parametroTruncProb, int parametroCruce, int ciudadInicio) {
-        Poblacion[] islas = new Poblacion[nhebras];
-        int ejecuciones = numGeneraciones/nepoch;
+    public void paralelizarAlgoritmo(int funcion, int paramsFuncion, int poblacionSize, int numGeneraciones,
+                                     String seleccion, String cruce, String mutacion,
+                                     double probabilidadCruce, double probabilidadMutacion, double precision,
+                                     boolean elitismo, double percentElitismo, double parametroTruncProb,
+                                     int parametroCruce, int ciudadInicio) {
+
+        epocaActual = 0;
+        poblaciones = new Poblacion[totalIslas];
+        islas = new ArrayList<>();
+        generaciones = new ArrayList<>();
+
+        int nindividuos = poblacionSize / totalIslas;
+        int nejecuciones = numGeneraciones / epocas;
 
         //Creamos la funcion correspondiente
         Funcion f = crearFuncion(funcion);
 
-        //Inicializamos los parametros que necesitar� la funcion de mutacion
+        //Inicializamos los parametros que necesitar� la funcion de cruce
         List<Double> paramsCruce = new ArrayList<>();
         paramsCruce.add(probabilidadCruce);
         paramsCruce.add((double) parametroCruce);
@@ -32,18 +56,172 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
         paramsMutacion.addAll(f.getIntervalo());
 
         //Inicializamos las poblaciones
-        for(Poblacion pob : islas){
-            pob = new Poblacion();
-            inicalizarPoblacion(pob,poblacionSize,precision,funcion,paramsFuncion, ciudadInicio);
+        /**
+         * CAMBIAR POR FOR INT
+         */
+
+        for (int i = 0; i < totalIslas; i++){
+            poblaciones[i] = new Poblacion();
+            inicalizarPoblacion(poblaciones[i], nindividuos, precision, funcion, paramsFuncion, ciudadInicio);
         }
 
-        //Generar x hebras
-        //Lanzar x algoritmos por nepoch generaciones, un numero numGeneraciones/nepoch veces
-        for(int i = 0; i < ejecuciones; i++){
+        //Creamos las islas
+        for (int i = 0; i < totalIslas; i++) {
+            List<Generacion> generacions = new ArrayList<>();
+            generaciones.add(generacions);
+            islas.add(new Isla(this, paramsCruce, paramsMutacion, f, poblaciones[i], elitismo, nejecuciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion, generacions, i));
 
         }
 
-
-        return null;
+        //Lanzar x algoritmos por nejecucion generaciones, un numero nepoch veces
+        for (Isla isla : islas)
+            isla.start();
     }
+
+
+    /**
+     * SE LLAMA CADA VEZ QUE UNA ISLA HA TERMINADO SU ÉPOCA
+     * Comprueba si aún hay procesos (islas) operando. Cuando no queda ninguno, migra las poblaciones entre sí.
+     * @param poblacion
+     * @param islaID
+     * @param generaciones
+     */
+    public void done(Poblacion poblacion, int islaID, List<Generacion> generaciones,
+                     List<Double> paramsCruce, List<Double> paramsMutacion, Funcion f, boolean elitismo,
+                     int nejecuciones, double percentElitismo, double parametroTruncProb,
+                     String seleccion, String cruce, String mutacion) {
+        this.islasOperando--;
+        poblaciones[islaID] = poblacion;
+        this.generaciones.get(islaID).addAll(generaciones);
+        //Todas las islas han acabado su epoca de evolucion
+        if (this.islasOperando == 0) {
+            epocaActual++;
+
+            //Si esta era la última época
+            if (epocaActual == epocas)
+                mostrarSoluciones();
+            else
+                migrar(paramsCruce, paramsMutacion,f,elitismo,nejecuciones,percentElitismo,parametroTruncProb,seleccion,cruce,mutacion);
+        }
+    }
+
+    /**
+     * SE LLAMA CUANDO TODAS LAS ISLAS TERMINAN UNA EPOCA
+     * Coge algunos individuos al azar de las islas y los intercambia con otras islas para aumentar la diversidad.
+     */
+    private void migrar(List<Double> paramsCruce, List<Double> paramsMutacion, Funcion f, boolean elitismo,
+                        int nejecuciones, double percentElitismo, double parametroTruncProb,
+                        String seleccion, String cruce, String mutacion) {
+
+        islasOperando = totalIslas;
+
+        List<List<Individuo>> pobs = new ArrayList<>();
+
+        /**
+         * Se extraen un numero aleatorio de individuos de las islas
+         * (un 10%)
+         */
+        for (Poblacion p : poblaciones) {
+            List<Individuo> pob = new ArrayList<>();
+
+            for (int i = 0; i < p.getPoblacion().size() / 10; i++) {
+                int random = ThreadLocalRandom.current().nextInt(0, p.getPoblacion().size());
+                //Si se da el caso en que no hay tantos individuos diferentes, deberemos resignarnos a repetir miembros
+                //Tras 100 bucles buscando miembros, suponemos que ya no hay ninguno diferente
+                int secure_count = 0;
+                while (pob.contains(p.getPoblacion().get(random)) && secure_count < 100) {
+                    random = ThreadLocalRandom.current().nextInt(0, p.getPoblacion().size());
+                    secure_count++;
+                }
+                pob.add(p.getPoblacion().get(random));
+            }
+            pobs.add(pob);
+        }
+
+        /**MIGRACION EN CIRCULO EXCLUSIVAMENTE
+         * POSIBILIDAD DE AMPLIACION AQUI
+         */
+
+        for (int i = 0; i < totalIslas; i++) {
+            int target = i + 1;
+            if (target == totalIslas)
+                target = 0;
+
+            poblaciones[i].substitute(pobs.get(target));
+        }
+
+        for (int i = 0; i < totalIslas; i++) {
+            islas.set(i,new Isla(this, paramsCruce, paramsMutacion, f, poblaciones[i], elitismo, nejecuciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion, generaciones.get(i), i));
+
+        }
+        //Relanzamos los procesos
+        for (Isla isla : islas)
+            isla.start();
+    }
+
+    /**
+     * Cuando todas las islas acaban todas las epicas, se llama a la grafica con los datos combinados de todas las islas.
+     */
+    private void mostrarSoluciones() {
+        int numGeneraciones = generaciones.get(0).size();
+        double maxAbs = Double.NEGATIVE_INFINITY;
+
+
+        /*
+        double[][] mejoresAbsolutos = new double[totalIslas][numGeneraciones];
+        double[][] mejores = new double[totalIslas][numGeneraciones];
+        double[][] medias = new double[totalIslas][numGeneraciones];
+        double[][] peores = new double[totalIslas][numGeneraciones];
+        */
+
+        List<Double> sols = new ArrayList();
+        double[] mejorAbsoluto = new double[numGeneraciones];
+        double[] mejor = new double[numGeneraciones];
+        double[] media = new double[numGeneraciones];
+        double[] peor = new double[numGeneraciones];
+
+
+        for (int i = 0; i < numGeneraciones; i++) {
+            double mejor_total = Double.NEGATIVE_INFINITY;
+            double media_total = 0;
+            double peor_total = Double.POSITIVE_INFINITY;
+
+            for (int n = 0; n < totalIslas; n++) {
+                List<Generacion> gen = generaciones.get(n);
+
+
+                if (maxAbs < gen.get(i).getMejor()) {
+                    maxAbs = gen.get(i).getMejor();
+                    sols = (gen.get(i).getSolucion());
+
+                }
+
+                Generacion g = gen.get(i);
+                if(g.getMejor() < mejor_total)
+                    mejor_total = g.getMejor();
+                if(g.getPeor() > peor_total)
+                    peor_total = g.getPeor();
+                media_total += g.getMedia();
+            }
+
+            mejorAbsoluto[i] = maxAbs;
+            mejor[i] = mejor_total;
+            media[i] = media_total/totalIslas;
+            peor[i] = peor_total;
+                /*
+                mejoresAbsolutos[n][i] = maxAbs;
+                mejores[n][i] = g.getMejor();
+                medias[n][i] = g.getMedia();
+                peores[n][i] = g.getPeor();
+                */
+
+        }
+
+        //
+        // maxAbs = Math.floor(maxAbs / precision) * precision;
+
+        this.vista.mostrarGrafica(mejorAbsoluto, mejor, media, peor, maxAbs, sols);
+    }
+
 }
+

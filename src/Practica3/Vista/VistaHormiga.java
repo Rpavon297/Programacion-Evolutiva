@@ -1,6 +1,7 @@
 package Practica3.Vista;
 
 import Comun.Algoritmo.AlgoritmoGenetico;
+import Comun.Algoritmo.AlgoritmoParalelos;
 import Comun.Vista.Vista;
 import Practica2.Vista.VistaEstudio;
 import Practica3.Gramatica;
@@ -386,8 +387,12 @@ public class VistaHormiga extends Vista {
             parametroTruncProb = parametroTruncProb / 100;
         }
 
-        AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
+       /* AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
         ag.ejecutarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
+                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, 0);
+                */
+        AlgoritmoParalelos ag = new AlgoritmoParalelos(this,4,4);
+        ag.paralelizarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
                 probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, 0);
 
     }

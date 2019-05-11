@@ -69,6 +69,15 @@ public class Poblacion {
 		}
 	}
 
+	public void substitute(List<Individuo> nPoblacion) {
+		// TODO Auto-generated method stub
+		int i = this.poblacion.size() - 1;
+		for(Individuo ind : nPoblacion){
+			this.poblacion.set(i, ind);
+			i--;
+		}
+	}
+
 	//Para debugear
 
 	public String toString(){
