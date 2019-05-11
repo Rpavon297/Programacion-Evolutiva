@@ -95,7 +95,6 @@ public class Isla extends Thread {
     }
 
     public void run(){
-        List<Generacion> generaciones = new ArrayList<>();
         int salvados = (int) Math.ceil(poblacion.getPoblacion().size() * percentElitismo);
         Poblacion elite = new Poblacion();
 

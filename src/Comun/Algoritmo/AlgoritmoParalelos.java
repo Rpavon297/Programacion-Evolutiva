@@ -56,10 +56,6 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
         paramsMutacion.addAll(f.getIntervalo());
 
         //Inicializamos las poblaciones
-        /**
-         * CAMBIAR POR FOR INT
-         */
-
         for (int i = 0; i < totalIslas; i++){
             poblaciones[i] = new Poblacion();
             inicalizarPoblacion(poblaciones[i], nindividuos, precision, funcion, paramsFuncion, ciudadInicio);
@@ -91,9 +87,8 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
                      int nejecuciones, double percentElitismo, double parametroTruncProb,
                      String seleccion, String cruce, String mutacion) {
         this.islasOperando--;
-        poblaciones[islaID] = poblacion;
-        this.generaciones.get(islaID).addAll(generaciones);
-        //Todas las islas han acabado su epoca de evolucion
+
+        //¿Todas las islas han acabado su epoca de evolucion?
         if (this.islasOperando == 0) {
             epocaActual++;
 
@@ -165,8 +160,6 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
     private void mostrarSoluciones() {
         int numGeneraciones = generaciones.get(0).size();
         double maxAbs = Double.NEGATIVE_INFINITY;
-
-
         /*
         double[][] mejoresAbsolutos = new double[totalIslas][numGeneraciones];
         double[][] mejores = new double[totalIslas][numGeneraciones];
@@ -197,9 +190,9 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
                 }
 
                 Generacion g = gen.get(i);
-                if(g.getMejor() < mejor_total)
+                if(g.getMejor() > mejor_total)
                     mejor_total = g.getMejor();
-                if(g.getPeor() > peor_total)
+                if(g.getPeor() < peor_total)
                     peor_total = g.getPeor();
                 media_total += g.getMedia();
             }
