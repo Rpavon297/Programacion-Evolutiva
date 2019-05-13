@@ -145,7 +145,9 @@ public class VistaHormiga extends Vista {
         panelParams.add(lblMutacion);
 
         comboMutacion = new JComboBox<>();
-        comboMutacion.addItem("Basica");
+        comboMutacion.addItem("Inicializacion");
+        comboMutacion.addItem("Terminal");
+        comboMutacion.addItem("Funcion");
         comboMutacion.setBounds(128, 200, 168, 27);
         panelParams.add(comboMutacion);
 

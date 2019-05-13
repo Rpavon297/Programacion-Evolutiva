@@ -6,6 +6,7 @@ import Practica2.Mutaciones.Insercion;
 import Practica2.Mutaciones.Intercambio;
 import Practica2.Mutaciones.Inversion;
 import Comun.Poblacion.Poblacion;
+import Practica3.Mutaciones.Terminal;
 
 import java.util.List;
 
@@ -25,6 +26,15 @@ public class FactoriaMutacion {
                 break;
             case "Heuristica":
                 mut = new Heuristica();
+                break;
+            case "Terminal":
+                mut = new Terminal();
+                break;
+            case "Funcion":
+                mut = new Terminal();
+                break;
+            case "Inicializacion":
+                mut = new Terminal();
                 break;
             default:
                 mut = new Insercion();
