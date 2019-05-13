@@ -73,7 +73,7 @@ public class Poblacion {
 		// TODO Auto-generated method stub
 		int i = this.poblacion.size() - 1;
 		for(Individuo ind : nPoblacion){
-			this.poblacion.set(i, ind);
+			this.poblacion.set(i, new Individuo(ind));
 			i--;
 		}
 	}

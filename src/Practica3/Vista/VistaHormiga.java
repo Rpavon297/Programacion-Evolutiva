@@ -387,14 +387,16 @@ public class VistaHormiga extends Vista {
             parametroTruncProb = parametroTruncProb / 100;
         }
 
-       /* AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
+        /*long startTime = System.nanoTime();
+        AlgoritmoGenetico ag = new AlgoritmoGenetico(this);
         ag.ejecutarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
                 probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, 0);
-                */
-        AlgoritmoParalelos ag = new AlgoritmoParalelos(this,4,4);
-        ag.paralelizarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
-                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, 0);
+        long endTime = System.nanoTime();
+        System.out.println(endTime-startTime);*/
 
+        AlgoritmoParalelos ag2 = new AlgoritmoParalelos(this,1,4);
+        ag2.paralelizarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
+                probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, 0);
     }
 
     public void generarMapa(){
@@ -428,7 +430,6 @@ public class VistaHormiga extends Vista {
         Gramatica gramatica = new Gramatica(2);
         Hormiga hormiga = new Hormiga();
 
-        //EN ESTA PRIMERA VERSION, SE EJECUTAN 100 PASOS Y NO SE COMPRUEBA SI SE HA COMIDO TODA LA COMIDA
         for(int i = 0; i < 400; i++) {
             gramatica.S(sol, hormiga);
         }

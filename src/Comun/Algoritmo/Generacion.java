@@ -1,5 +1,6 @@
 package Comun.Algoritmo;
 
+import Comun.Poblacion.Individuo;
 import Comun.Poblacion.Poblacion;
 
 import java.util.ArrayList;
@@ -36,5 +37,7 @@ class Generacion {
     public List<Double> getSolucion() {
         return solucion;
     }
+
+    public String toString(){return "Mejor: " + mejor + ", peor: " + peor + ", media: " + media; }
 
 }

@@ -15,7 +15,7 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
     private int epocas;
     private int epocaActual;
 
-    private Poblacion[] poblaciones;
+    private volatile Poblacion[] poblaciones;
     private List<Isla> islas;
     private List<List<Generacion>> generaciones;
 
@@ -56,7 +56,7 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
         paramsMutacion.addAll(f.getIntervalo());
 
         //Inicializamos las poblaciones
-        for (int i = 0; i < totalIslas; i++){
+        for (int i = 0; i < totalIslas; i++) {
             poblaciones[i] = new Poblacion();
             inicalizarPoblacion(poblaciones[i], nindividuos, precision, funcion, paramsFuncion, ciudadInicio);
         }
@@ -65,8 +65,7 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
         for (int i = 0; i < totalIslas; i++) {
             List<Generacion> generacions = new ArrayList<>();
             generaciones.add(generacions);
-            islas.add(new Isla(this, paramsCruce, paramsMutacion, f, poblaciones[i], elitismo, nejecuciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion, generacions, i));
-
+            islas.add(new Isla(this, paramsCruce, paramsMutacion, f, poblaciones[i], elitismo, nejecuciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion, generacions, i, epocas));
         }
 
         //Lanzar x algoritmos por nejecucion generaciones, un numero nepoch veces
@@ -78,6 +77,7 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
     /**
      * SE LLAMA CADA VEZ QUE UNA ISLA HA TERMINADO SU ÉPOCA
      * Comprueba si aún hay procesos (islas) operando. Cuando no queda ninguno, migra las poblaciones entre sí.
+     *
      * @param poblacion
      * @param islaID
      * @param generaciones
@@ -86,17 +86,26 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
                      List<Double> paramsCruce, List<Double> paramsMutacion, Funcion f, boolean elitismo,
                      int nejecuciones, double percentElitismo, double parametroTruncProb,
                      String seleccion, String cruce, String mutacion) {
+        //System.out.println("Funcion done de la isla " + islaID + " en la epoca " + epocaActual);
         this.islasOperando--;
 
-        //¿Todas las islas han acabado su epoca de evolucion?
-        if (this.islasOperando == 0) {
-            epocaActual++;
+        synchronized (this.islas.get(islaID)) {
+            //¿Todas las islas han acabado su epoca de evolucion?
+            if (this.islasOperando == 0) {
+                epocaActual++;
 
-            //Si esta era la última época
-            if (epocaActual == epocas)
-                mostrarSoluciones();
-            else
-                migrar(paramsCruce, paramsMutacion,f,elitismo,nejecuciones,percentElitismo,parametroTruncProb,seleccion,cruce,mutacion);
+                migrar(paramsCruce, paramsMutacion, f, elitismo, nejecuciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion);
+
+                //Si esta era la última época
+                if (epocaActual == epocas)
+                    mostrarSoluciones();
+            } else {
+                try {
+                    this.islas.get(islaID).wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -108,6 +117,9 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
                         int nejecuciones, double percentElitismo, double parametroTruncProb,
                         String seleccion, String cruce, String mutacion) {
 
+
+        //System.out.println("Inicio funcion migrar en la epoca " + (epocaActual - 1));
+
         islasOperando = totalIslas;
 
         List<List<Individuo>> pobs = new ArrayList<>();
@@ -116,6 +128,7 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
          * Se extraen un numero aleatorio de individuos de las islas
          * (un 10%)
          */
+
         for (Poblacion p : poblaciones) {
             List<Individuo> pob = new ArrayList<>();
 
@@ -128,7 +141,7 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
                     random = ThreadLocalRandom.current().nextInt(0, p.getPoblacion().size());
                     secure_count++;
                 }
-                pob.add(p.getPoblacion().get(random));
+                pob.add(new Individuo(p.getPoblacion().get(random)));
             }
             pobs.add(pob);
         }
@@ -145,29 +158,26 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
             poblaciones[i].substitute(pobs.get(target));
         }
 
-        for (int i = 0; i < totalIslas; i++) {
-            islas.set(i,new Isla(this, paramsCruce, paramsMutacion, f, poblaciones[i], elitismo, nejecuciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion, generaciones.get(i), i));
 
+        //System.out.println("Fin funcion migrar en la epoca " + (epocaActual - 1));
+
+        for (Isla isla : islas) {
+            synchronized (isla) {
+                isla.notify();
+            }
         }
-        //Relanzamos los procesos
-        for (Isla isla : islas)
-            isla.start();
     }
 
     /**
      * Cuando todas las islas acaban todas las epicas, se llama a la grafica con los datos combinados de todas las islas.
      */
+
     private void mostrarSoluciones() {
+        //System.out.println("Fin del algoritmo");
         int numGeneraciones = generaciones.get(0).size();
         double maxAbs = Double.NEGATIVE_INFINITY;
-        /*
-        double[][] mejoresAbsolutos = new double[totalIslas][numGeneraciones];
-        double[][] mejores = new double[totalIslas][numGeneraciones];
-        double[][] medias = new double[totalIslas][numGeneraciones];
-        double[][] peores = new double[totalIslas][numGeneraciones];
-        */
-
         List<Double> sols = new ArrayList();
+
         double[] mejorAbsoluto = new double[numGeneraciones];
         double[] mejor = new double[numGeneraciones];
         double[] media = new double[numGeneraciones];
@@ -185,34 +195,23 @@ public class AlgoritmoParalelos extends AlgoritmoGenetico {
 
                 if (maxAbs < gen.get(i).getMejor()) {
                     maxAbs = gen.get(i).getMejor();
-                    sols = (gen.get(i).getSolucion());
-
+                    sols = gen.get(i).getSolucion();
                 }
 
-                Generacion g = gen.get(i);
-                if(g.getMejor() > mejor_total)
-                    mejor_total = g.getMejor();
-                if(g.getPeor() < peor_total)
-                    peor_total = g.getPeor();
-                media_total += g.getMedia();
+                if (gen.get(i).getMejor() > mejor_total)
+                    mejor_total = gen.get(i).getMejor();
+
+                if (gen.get(i).getPeor() < peor_total)
+                    peor_total = gen.get(i).getPeor();
+
+                media_total += gen.get(i).getMedia();
             }
 
             mejorAbsoluto[i] = maxAbs;
             mejor[i] = mejor_total;
-            media[i] = media_total/totalIslas;
+            media[i] = media_total / totalIslas;
             peor[i] = peor_total;
-                /*
-                mejoresAbsolutos[n][i] = maxAbs;
-                mejores[n][i] = g.getMejor();
-                medias[n][i] = g.getMedia();
-                peores[n][i] = g.getPeor();
-                */
-
         }
-
-        //
-        // maxAbs = Math.floor(maxAbs / precision) * precision;
-
         this.vista.mostrarGrafica(mejorAbsoluto, mejor, media, peor, maxAbs, sols);
     }
 

@@ -56,11 +56,12 @@ public class Isla extends Thread {
      */
 
     private int islaID;
+    private int epocas;
 
     private List<Double> paramsCruce;
     private List<Double> paramsMutacion;
     private Funcion f;
-    private Poblacion poblacion;
+    private volatile Poblacion poblacion;
 
     private boolean elitismo;
     private int numGeneraciones;
@@ -77,7 +78,7 @@ public class Isla extends Thread {
     public Isla(AlgoritmoParalelos mainThread, List<Double> paramsCruce, List<Double> paramsMutacion, Funcion f,
                 Poblacion poblacion, boolean elitismo, int numGeneraciones, double percentElitismo,
                 double parametroTruncProb, String seleccion, String cruce, String mutacion, List<Generacion> generaciones,
-                int islaID) {
+                int islaID, int epocas) {
         this.mainThread = mainThread;
         this.paramsCruce = paramsCruce;
         this.paramsMutacion = paramsMutacion;
@@ -92,41 +93,44 @@ public class Isla extends Thread {
         this.mutacion = mutacion;
         this.generaciones = generaciones;
         this.islaID = islaID;
+        this.epocas = epocas;
     }
 
     public void run(){
-        int salvados = (int) Math.ceil(poblacion.getPoblacion().size() * percentElitismo);
-        Poblacion elite = new Poblacion();
+        for(int n = 0; n < epocas; n++) {
+            System.out.println("Empieza en la isla " + islaID +" la epoca " + n);
+            int salvados = (int) Math.ceil(poblacion.getPoblacion().size() * percentElitismo);
+            Poblacion elite = new Poblacion();
 
-        //INICIO DEL ALGORITMO
+            //INICIO DEL ALGORITMO
 
-        //EVALUAR LA POBLACION INICIAL
-        double fitnessTotal = actualizarPoblacion(poblacion);
+            //EVALUAR LA POBLACION INICIAL
+            double fitnessTotal = actualizarPoblacion(poblacion);
 
-        for(int i = 0; i < numGeneraciones; i++) {
-            generaciones.add(new Generacion(poblacion, fitnessTotal));
+            for (int i = 0; i < numGeneraciones; i++) {
+                generaciones.add(new Generacion(poblacion, fitnessTotal));
 
-            //GUARDAR ELITE
-            if(elitismo)
-                elite = new Poblacion(poblacion.getPoblacion().subList(0, salvados+1));
+                //GUARDAR ELITE
+                if (elitismo)
+                    elite = new Poblacion(poblacion.getPoblacion().subList(0, salvados + 1));
 
-            //SELECCIONAR POBLACION
-            Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.getPoblacion(), parametroTruncProb).getPobSeleccionada());
-            //CRUZAR POBLACION
-            poblacion.substitute(FactoriaCruces.cruzarPoblacion(pobsel, cruce, paramsCruce));
+                //SELECCIONAR POBLACION
+                Poblacion pobsel = new Poblacion(FactoriaSeleccion.getAlgoritmoSeleccion(seleccion, poblacion.getPoblacion(), parametroTruncProb).getPobSeleccionada());
+                //CRUZAR POBLACION
+                poblacion.substitute(FactoriaCruces.cruzarPoblacion(pobsel, cruce, paramsCruce));
 
-            //MUTAR POBLACION
-            poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion,poblacion, paramsMutacion).getPobMutada());
-            //EVALUAR POBLACION
-            fitnessTotal = actualizarPoblacion(poblacion);
-            //REINTRODUCIR ELITE
-            poblacion.substitute(elite);
-            //REEVALUAR CON LA ELITE
-            fitnessTotal = actualizarPoblacion(poblacion);
+                //MUTAR POBLACION
+                poblacion = new Poblacion(FactoriaMutacion.mutarPoblacion(mutacion, poblacion, paramsMutacion).getPobMutada());
+                //EVALUAR POBLACION
+                fitnessTotal = actualizarPoblacion(poblacion);
+                //REINTRODUCIR ELITE
+                poblacion.substitute(elite);
+                //REEVALUAR CON LA ELITE
+                fitnessTotal = actualizarPoblacion(poblacion);
+            }
+            System.out.println("Acabada en la isla " + islaID +" la epoca " + n);
+            this.mainThread.done(this.poblacion, this.islaID, this.generaciones, paramsCruce, paramsMutacion, f, elitismo, numGeneraciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion);
         }
-
-        this.mainThread.done(this.poblacion, this.islaID, this.generaciones, paramsCruce, paramsMutacion,f,elitismo,numGeneraciones,percentElitismo,parametroTruncProb,seleccion,cruce,mutacion);
-
     }
 
     public void ordenarPoblacion(Poblacion poblacion){
@@ -157,5 +161,9 @@ public class Isla extends Thread {
         poblacion.setProbSeleccion(fitnessTotal);
 
         return fitnessTotalNA;
+    }
+
+    public int getIDIsla() {
+        return islaID;
     }
 }

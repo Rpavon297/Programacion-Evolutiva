@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1369f4ca-1098-4947-94de-2fe28aad16d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoParalelos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoParalelos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comun/Algoritmo/Generacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comun/Algoritmo/Generacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Comun/Algoritmo/Isla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comun/Algoritmo/Isla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comun/Poblacion/Poblacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comun/Poblacion/Poblacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,54 +33,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="394" selection-start-line="394" selection-end-line="394" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoParalelos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11">
-              <caret line="90" column="11" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="374">
+              <caret line="396" column="62" selection-start-line="396" selection-start-column="62" selection-end-line="396" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/Isla.java">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoParalelos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
+            <state relative-caret-position="-816">
+              <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ordenarPoblacion#0;class#Isla#0" />
-                <element signature="method#actualizarPoblacion#0;class#Isla#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoGenetico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4284">
-              <caret line="276" column="45" selection-start-line="276" selection-start-column="45" selection-end-line="276" selection-end-column="45" />
+            <state relative-caret-position="706">
+              <caret line="251" lean-forward="true" selection-start-line="251" selection-end-line="252" selection-end-column="83" />
+              <folding>
+                <element signature="method#crearFuncion#0;class#AlgoritmoGenetico#0" />
+                <element signature="method#inicalizarPoblacion#0;class#AlgoritmoGenetico#0" />
+                <element signature="method#ordenarPoblacion#0;class#AlgoritmoGenetico#0" />
+                <element signature="method#actualizarPoblacion#0;class#AlgoritmoGenetico#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Vista/Vista.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/Generacion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -93,42 +96,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/FactoriaSeleccion.java">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Poblacion/Poblacion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Practica3/Gramatica.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="204">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#progn2#0;class#Gramatica#0" />
-                <element signature="method#progn3#0;class#Gramatica#0" />
+                <element signature="method#revisarAdaptacion#0;class#Poblacion#0" />
+                <element signature="method#setProbSeleccion#0;class#Poblacion#0" />
+                <element signature="method#substitute#0;class#Poblacion#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Practica2/Vista/VistaEstudio.java">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/EstocasticoUniversal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3094">
-              <caret line="202" column="34" selection-start-line="202" selection-start-column="27" selection-end-line="202" selection-end-column="34" />
+            <state relative-caret-position="68">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Practica2/Vista/VistaViajante.java">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/Isla.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4148">
-              <caret line="269" selection-start-line="269" selection-end-line="269" />
+            <state relative-caret-position="334">
+              <caret line="131" column="33" lean-forward="true" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#ordenarPoblacion#0;class#Isla#0" />
+                <element signature="method#actualizarPoblacion#0;class#Isla#0" />
+                <element signature="e#5415#5416#0" expanded="true" />
+                <element signature="e#5444#5445#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/FactoriaSeleccion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -144,7 +154,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>frame</find>
       <find>panel</find>
       <find>loading</find>
       <find>contentPane</find>
@@ -170,10 +179,11 @@
       <find>totalComid</find>
       <find>totalComida</find>
       <find>this.full</find>
-      <find>generaciones</find>
       <find>sols</find>
       <find>nejecuciones</find>
       <find>numGeneraciones</find>
+      <find>system</find>
+      <find>generaciones</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,7 +226,6 @@
         <option value="$PROJECT_DIR$/src/Practica3/FuncionRastro.java" />
         <option value="$PROJECT_DIR$/src/Practica3/SingletonJuego.java" />
         <option value="$PROJECT_DIR$/src/Practica3/SingletonMapa.java" />
-        <option value="$PROJECT_DIR$/src/Comun/Selecciones/FactoriaSeleccion.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Hormiga.java" />
         <option value="$PROJECT_DIR$/src/Comun/Selecciones/Torneo.java" />
         <option value="$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoGenetico.java" />
@@ -225,10 +234,12 @@
         <option value="$PROJECT_DIR$/src/Practica3/FuncionHormiga.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Mapa.java" />
         <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java" />
+        <option value="$PROJECT_DIR$/src/Comun/Algoritmo/Generacion.java" />
         <option value="$PROJECT_DIR$/src/Comun/Poblacion/Poblacion.java" />
-        <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" />
+        <option value="$PROJECT_DIR$/src/Comun/Selecciones/FactoriaSeleccion.java" />
         <option value="$PROJECT_DIR$/src/Comun/Algoritmo/Isla.java" />
         <option value="$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoParalelos.java" />
+        <option value="$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java" />
       </list>
     </option>
   </component>
@@ -250,7 +261,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,19 +291,26 @@
               <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
               <item name="PEV" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Comun" type="462c0819:PsiDirectoryNode" />
+              <item name="Poblacion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PEV" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PEV" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Practica3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557610494055" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557623504367" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -380,6 +398,8 @@
       <workItem from="1556989141532" duration="638000" />
       <workItem from="1557134027348" duration="7414000" />
       <workItem from="1557231451831" duration="24917000" />
+      <workItem from="1557668444856" duration="314000" />
+      <workItem from="1557759772053" duration="6417000" />
     </task>
     <task id="LOCAL-00001" summary="Iniciando rama local">
       <created>1552299773578</created>
@@ -542,15 +562,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557496254014</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Paralelizacion implementada. Necesita debugear.">
+      <created>1557610550597</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1557610550597</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127263000" />
+    <option name="totallyTimeSpent" value="138833000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46373057" visible="true" weight="0.23240939" />
       <window_info id="Designer" order="1" />
@@ -562,8 +588,8 @@
       <window_info id="Structure" order="7" sideWeight="0.5362694" side_tool="true" weight="0.22390318" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.267316" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.32359308" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38311687" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.62445885" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -585,9 +611,9 @@
       <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46373057" visible="true" weight="0.22995462" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46373057" visible="true" weight="0.23240939" />
       <window_info id="Designer" order="1" />
-      <window_info id="Learn" order="2" />
+      <window_info id="Learn" order="2" weight="0.32980332" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Capture Tool" order="5" />
@@ -595,8 +621,8 @@
       <window_info id="Structure" order="7" sideWeight="0.5362694" side_tool="true" weight="0.22390318" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.95090014" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.14402619" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.267316" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.60714287" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -608,7 +634,7 @@
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3289689" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -643,7 +669,8 @@
     <MESSAGE value="Ampliada la funcion de realizar estudios para que muestre la comida consumida en cada iteracion. Arreglada la funcion de fitness." />
     <MESSAGE value="Modificada la cantidad que se selecciona para cruce en cada generacion. Ahora depende del tamaño de la poblacion." />
     <MESSAGE value="Creada la base para paralelizar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creada la base para paralelizar" />
+    <MESSAGE value="Paralelizacion implementada. Necesita debugear." />
+    <option name="LAST_COMMIT_MESSAGE" value="Paralelizacion implementada. Necesita debugear." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -698,6 +725,7 @@
         <watch expression="padre2" />
         <watch expression="padre2" language="JAVA" />
         <watch expression="poblacion.poblacion.get(0)" />
+        <watch expression="pob" />
       </configuration>
     </watches-manager>
   </component>
@@ -777,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Vista/Vista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica3/SingletonMapa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -792,20 +813,6 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_202/src.zip!/java/util/ArrayList.java" />
-    <entry file="file://$PROJECT_DIR$/src/Comun/Cruces/AlgoritmoCruce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Cruces/FactoriaCruces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica2/Mapa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
@@ -827,20 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/AlgoritmoSeleccion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/FactoriaSeleccion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/TorneoProb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -855,24 +848,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/EstocasticoUniversal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/Torneo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/Generacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -903,48 +882,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4284">
-          <caret line="276" column="45" selection-start-line="276" selection-start-column="45" selection-end-line="276" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica1/Cruces/Monopunto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Poblacion/Poblacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-          <folding>
-            <element signature="method#revisarAdaptacion#0;class#Poblacion#0" />
-            <element signature="method#setProbSeleccion#0;class#Poblacion#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoGenetico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="251" lean-forward="true" selection-start-line="251" selection-end-line="251" />
-          <folding>
-            <element signature="method#crearFuncion#0;class#AlgoritmoGenetico#0" />
-            <element signature="method#inicalizarPoblacion#0;class#AlgoritmoGenetico#0" />
-            <element signature="method#ordenarPoblacion#0;class#AlgoritmoGenetico#0" />
-            <element signature="method#actualizarPoblacion#0;class#AlgoritmoGenetico#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -955,9 +896,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/FuncionHormiga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaEstudioHormiga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4216">
+          <caret line="276" column="45" selection-start-line="276" selection-start-column="45" selection-end-line="276" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Practica3/Gramatica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
+        <state relative-caret-position="408">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -967,31 +922,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
+    <entry file="file://$PROJECT_DIR$/src/Comun/Cruces/AlgoritmoCruce.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="394" selection-start-line="394" selection-end-line="394" />
+        <state relative-caret-position="68">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoParalelos.java">
+    <entry file="file://$PROJECT_DIR$/src/Comun/Cruces/FactoriaCruces.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11">
-          <caret line="90" column="11" selection-start-line="90" selection-start-column="11" selection-end-line="90" selection-end-column="11" />
+        <state relative-caret-position="170">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/AlgoritmoSeleccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/EstocasticoUniversal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Selecciones/FactoriaSeleccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Poblacion/Poblacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#revisarAdaptacion#0;class#Poblacion#0" />
+            <element signature="method#setProbSeleccion#0;class#Poblacion#0" />
+            <element signature="method#substitute#0;class#Poblacion#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/Generacion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Vista/Vista.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/Isla.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        <state relative-caret-position="334">
+          <caret line="131" column="33" lean-forward="true" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#ordenarPoblacion#0;class#Isla#0" />
             <element signature="method#actualizarPoblacion#0;class#Isla#0" />
+            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#5444#5445#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoGenetico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="251" lean-forward="true" selection-start-line="251" selection-end-line="252" selection-end-column="83" />
+          <folding>
+            <element signature="method#crearFuncion#0;class#AlgoritmoGenetico#0" />
+            <element signature="method#inicalizarPoblacion#0;class#AlgoritmoGenetico#0" />
+            <element signature="method#ordenarPoblacion#0;class#AlgoritmoGenetico#0" />
+            <element signature="method#actualizarPoblacion#0;class#AlgoritmoGenetico#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Practica3/Vista/VistaHormiga.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="396" column="62" selection-start-line="396" selection-start-column="62" selection-end-line="396" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comun/Algoritmo/AlgoritmoParalelos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-816">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
