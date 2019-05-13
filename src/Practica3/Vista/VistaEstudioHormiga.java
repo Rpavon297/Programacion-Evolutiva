@@ -59,6 +59,7 @@ public class VistaEstudioHormiga extends Vista {
     private final JComboBox<String> comboBox_1;
     private final JComboBox<String> comboBox;
     private final JCheckBox chckbxNewCheckBox;
+    private Gramatica gramatica;
 
     public VistaEstudioHormiga(Plot2DPanel panelMathPlot) {
         this.full = 0;

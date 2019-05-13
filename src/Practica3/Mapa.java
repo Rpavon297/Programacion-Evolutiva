@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class Mapa {
+public class Mapa extends SingletonMapa{
 
     public static final int TotalPasos = 400;
     private Integer filas = 32;

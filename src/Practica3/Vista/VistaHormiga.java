@@ -394,7 +394,7 @@ public class VistaHormiga extends Vista {
         long endTime = System.nanoTime();
         System.out.println(endTime-startTime);*/
 
-        AlgoritmoParalelos ag2 = new AlgoritmoParalelos(this,1,4);
+        AlgoritmoParalelos ag2 = new AlgoritmoParalelos(this,4,4);
         ag2.paralelizarAlgoritmo(6, 0, poblacionSize, numGeneraciones, seleccion, cruce, mutacion, probabilidadCruce,
                 probabilidadMutacion, 0, elitismo, percentElitismo, parametroTruncProb, 0, 0);
     }

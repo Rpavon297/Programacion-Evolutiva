@@ -98,7 +98,7 @@ public class Isla extends Thread {
 
     public void run(){
         for(int n = 0; n < epocas; n++) {
-            System.out.println("Empieza en la isla " + islaID +" la epoca " + n);
+            System.out.println("Empieza en la isla " + Thread.currentThread().getId() +" la epoca " + n);
             int salvados = (int) Math.ceil(poblacion.getPoblacion().size() * percentElitismo);
             Poblacion elite = new Poblacion();
 
@@ -128,7 +128,7 @@ public class Isla extends Thread {
                 //REEVALUAR CON LA ELITE
                 fitnessTotal = actualizarPoblacion(poblacion);
             }
-            System.out.println("Acabada en la isla " + islaID +" la epoca " + n);
+            System.out.println("Acabada en la isla " + Thread.currentThread().getId() +" la epoca " + n);
             this.mainThread.done(this.poblacion, this.islaID, this.generaciones, paramsCruce, paramsMutacion, f, elitismo, numGeneraciones, percentElitismo, parametroTruncProb, seleccion, cruce, mutacion);
         }
     }

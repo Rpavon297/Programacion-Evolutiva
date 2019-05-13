@@ -25,7 +25,7 @@ public class FuncionHormiga extends Funcion {
         double comidas = SingletonMapa.getInstance().getComidas();
         double pasos = SingletonMapa.getInstance().getPasos();
         double demo = SingletonMapa.getInstance().getTotalComidas();
-        double ratiop = pasos/SingletonMapa.getInstance().TotalPasos;
+        double ratiop = pasos/Mapa.TotalPasos;
 
         SingletonMapa.getInstance().reset();
 
