@@ -349,12 +349,12 @@ public class VistaHormiga extends Vista {
     protected void valoresPorDefecto() {
         spinnerPoblacion.setValue(50);
         spinnerGeners.setValue(400);
-        comboSeleccion.setSelectedIndex(2);
+        comboSeleccion.setSelectedIndex(0);
         comboCruce.setSelectedIndex(2);
         comboMutacion.setSelectedIndex(0);
         spinnerCruces.setValue(60);
         spinnerMutaciones.setValue(20);
-        chckbxElitismo.setSelected(false);
+        chckbxElitismo.setSelected(true);
         spinnerElitismo.setValue(5);
         generarMapa();
         SingletonMapa.getInstance().reset();
